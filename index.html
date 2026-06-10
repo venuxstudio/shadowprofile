@@ -613,6 +613,54 @@ footer{
 
 /* ── ARIA LIVE REGION ── */
 #a11y-live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+
+/* ── HERO VIDEO BG ── */
+.hero-video-wrap{
+  position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;
+}
+.hero-video-wrap::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(9,9,14,0.72) 0%,rgba(9,9,14,0.55) 40%,rgba(9,9,14,0.80) 100%);
+  z-index:1;
+}
+.hero-video-wrap video{
+  position:absolute;top:50%;left:50%;
+  min-width:100%;min-height:100%;
+  width:auto;height:auto;
+  transform:translate(-50%,-50%);
+  object-fit:cover;
+  opacity:0.38;
+}
+.hero>*:not(.hero-video-wrap){position:relative;z-index:2}
+
+/* ── SCORE PAGE EDGE GLOW ── */
+.score-edge-glow{
+  position:fixed;inset:0;pointer-events:none;z-index:2;
+  opacity:0;transition:opacity 0.8s ease;
+}
+.score-edge-glow.visible{opacity:1}
+.score-edge-glow canvas{
+  position:absolute;inset:0;width:100%;height:100%;
+}
+/* Red glow keyframes */
+@keyframes edgeGlowRed{
+  0%,100%{box-shadow:inset 0 0 60px 8px rgba(232,41,74,0.18),inset 0 -4px 40px 0px rgba(232,41,74,0.08)}
+  50%{box-shadow:inset 0 0 90px 14px rgba(232,41,74,0.30),inset 0 -4px 60px 4px rgba(232,41,74,0.14)}
+}
+@keyframes edgeGlowGreen{
+  0%,100%{box-shadow:inset 0 0 60px 8px rgba(39,201,106,0.16),inset 0 -4px 40px 0px rgba(39,201,106,0.08)}
+  50%{box-shadow:inset 0 0 90px 14px rgba(39,201,106,0.26),inset 0 -4px 60px 4px rgba(39,201,106,0.12)}
+}
+.score-edge-glow.glow-red .glow-frame{
+  animation:edgeGlowRed 2.8s ease-in-out infinite;
+}
+.score-edge-glow.glow-green .glow-frame{
+  animation:edgeGlowGreen 2.8s ease-in-out infinite;
+}
+.glow-frame{
+  position:absolute;inset:0;border-radius:0;
+  transition:box-shadow 0.6s ease;
+}
 </style>
 </head>
 <body>
@@ -633,6 +681,10 @@ footer{
     </div>
     <div class="modal-inner" id="modal-inner"></div>
   </div>
+</div>
+
+<div id="score-edge-glow" class="score-edge-glow" aria-hidden="true">
+  <div class="glow-frame"></div>
 </div>
 
 <div class="page">
@@ -664,6 +716,15 @@ footer{
     </div>
 
     <div class="hero">
+      <!-- Hero background video -->
+      <div class="hero-video-wrap" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="none"
+               poster=""
+               aria-hidden="true">
+          <source src="https://res.cloudinary.com/ddiaedfkx/video/upload/q_auto,f_auto/v1781089527/288203_small_xhcm1d.mp4" type="video/mp4">
+        </video>
+      </div>
+
       <div class="hero-label" aria-hidden="true">
         <span class="hero-label-line"></span>
         Breach Intelligence Engine
@@ -1297,6 +1358,16 @@ function showResults(breaches, score){
     ? `My Shadow Score is ${score}/100. My data was found in ${breaches.length} breaches. Check yours.`
     : `My Shadow Score is ${score}/100. I ran a breach scan on my email — you should too.`;
 
+  // Edge glow based on score
+  const glowEl = document.getElementById('score-edge-glow');
+  glowEl.classList.remove('glow-red','glow-green','visible');
+  void glowEl.offsetWidth; // reflow to restart animation
+  if(score > 60){
+    glowEl.classList.add('glow-red','visible');
+  } else if(score <= 30){
+    glowEl.classList.add('glow-green','visible');
+  }
+
   setTimeout(setupReveal, 400);
   window.scrollTo({top:0, behavior:'smooth'});
 }
@@ -1444,6 +1515,9 @@ function resetAll(){
   document.getElementById('hero-state').style.display   = 'block';
   document.getElementById('email-input').value = '';
   BG_COLOR = {r:232,g:41,b:74}; BG_SPEED = 1.0;
+  // Hide edge glow
+  const glowEl = document.getElementById('score-edge-glow');
+  glowEl.classList.remove('glow-red','glow-green','visible');
   window.scrollTo({top:0, behavior:'smooth'});
   document.getElementById('email-input').focus();
   announce('Ready to scan another email');
