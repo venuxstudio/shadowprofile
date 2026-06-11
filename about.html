@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shadow Profile is a free data breach checker built for Indian users. Learn how we scan your email against billions of leaked records — and why your digital privacy matters more than ever.">
+<meta name="keywords" content="about shadow profile, data breach checker India, email leak checker, have I been pwned alternative India, personal data security India, cyber security tool India, how to check data breach, email exposed dark web, Indian data breach database, Venux Studio">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Venux Studio">
+<link rel="canonical" href="https://shadowprofile.app/about.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shadowprofile.app/about.html">
+<meta property="og:title" content="About Shadow Profile — Why We Built This & How It Works">
+<meta property="og:description" content="Shadow Profile scans your email against 14 billion leaked records from major Indian and global breaches. Free, instant, no data stored. Built by Venux Studio.">
+<meta property="og:image" content="https://shadowprofile.app/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Shadow Profile — Digital Exposure Intelligence">
+<meta name="twitter:description" content="Learn how Shadow Profile checks if your data was leaked — and what to do about it.">
+<title>About Shadow Profile — How It Works & Why It Matters | Venux Studio</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Shadow Profile",
+  "url": "https://shadowprofile.app/about.html",
+  "description": "Shadow Profile is a free data breach intelligence tool for Indian users, built by Venux Studio.",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Venux Studio",
+    "url": "https://www.google.com",
+    "foundingDate": "2024",
+    "description": "Venux Studio builds digital tools focused on privacy, safety, and intelligent automation."
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is my email safe when I use Shadow Profile?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We never store, log, or share your email address. It is used only to query the breach database in real time and is discarded immediately after." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where does Shadow Profile get its breach data?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Email breach data comes from the HaveIBeenPwned API, which aggregates billions of records from thousands of publicly documented data breaches. Phone number checks use locally processed Indian breach datasets." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does Shadow Profile charge for the full report?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The free scan gives you your exposure score and breach names. The paid reports unlock full details, recovery steps, and phone checks. We keep prices low — ₹49 and ₹99 — because everyone deserves to know if their data was compromised." }
+    },
+    {
+      "@type": "Question",
+      "name": "My email showed no breaches. Does that mean I am safe?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Not necessarily. Our database covers thousands of known, publicly documented breaches. Many breaches are never disclosed or take years to surface. A clean result means your email has not appeared in any known breach we have on record." }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --base:#09090E;--surface:#0D0E15;--card:#11121A;--panel:#161820;
+  --border:rgba(255,255,255,0.06);--border-hi:rgba(255,255,255,0.10);
+  --text:#ECEEF5;--text-soft:#C4C8D8;--muted:#767B90;--faint:#32364A;
+  --crimson:#E8294A;--crimson-hi:#FF3D5C;--jade:#27C96A;--amber:#F5A623;
+  --focus-ring:0 0 0 3px rgba(232,41,74,0.35);
+  --radius:6px;--radius-lg:10px;--font:'Montserrat',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--base);color:var(--text);font-family:var(--font);font-weight:400;min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.skip-link{position:absolute;top:-100px;left:16px;background:var(--crimson);color:#fff;padding:8px 16px;border-radius:var(--radius);font-weight:600;font-size:13px;z-index:9999;transition:top 0.2s}
+.skip-link:focus{top:8px}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 28px;height:58px;border-bottom:1px solid var(--border);background:rgba(9,9,14,0.90);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:sticky;top:0;z-index:300}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--text)}
+.logo-mark{width:28px;height:28px;border-radius:5px;background:var(--crimson);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-mark svg{width:14px;height:14px}
+.logo-text{font-weight:700;font-size:14px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text)}
+.nav-r{display:flex;align-items:center;gap:12px}
+.nav-link{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:4px 2px;border-bottom:1px solid transparent;transition:color 0.15s,border-color 0.15s}
+.nav-link:hover{color:var(--text);border-bottom-color:var(--crimson)}
+.nav-link.active{color:var(--text);border-bottom-color:var(--crimson)}
+.nav-tag{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border-hi);padding:4px 11px;border-radius:var(--radius);background:var(--card);text-decoration:none;transition:color 0.15s,border-color 0.15s}
+.nav-tag:hover{color:var(--text);border-color:var(--crimson)}
+@media(max-width:500px){.nav-tag{display:none}}
+
+/* PAGE LAYOUT */
+.page{max-width:760px;margin:0 auto;padding:0 24px 80px}
+
+/* HERO */
+.page-hero{padding:56px 0 48px;border-bottom:1px solid var(--border);margin-bottom:48px}
+.page-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--crimson);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.page-eyebrow::before{content:'';width:24px;height:1px;background:var(--crimson);opacity:0.5}
+h1.page-title{font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.1;letter-spacing:-0.03em;margin-bottom:16px}
+.page-lead{font-size:clamp(14px,2vw,16px);font-weight:300;color:var(--text-soft);line-height:1.8;max-width:580px}
+
+/* ARTICLE BODY */
+.article h2{font-size:clamp(18px,3vw,22px);font-weight:700;letter-spacing:-0.02em;margin:40px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.article h3{font-size:15px;font-weight:700;letter-spacing:-0.01em;margin:28px 0 10px;color:var(--text)}
+.article p{font-size:14px;font-weight:400;color:var(--text-soft);line-height:1.85;margin-bottom:16px}
+.article p strong{color:var(--text);font-weight:600}
+.article a{color:var(--crimson);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(232,41,74,0.3);transition:border-color 0.15s}
+.article a:hover{border-bottom-color:var(--crimson)}
+.article ul,
+.article ol{padding-left:0;list-style:none;margin-bottom:16px}
+.article ul li,
+.article ol li{font-size:14px;font-weight:400;color:var(--text-soft);line-height:1.75;padding:6px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:flex-start}
+.article ul li::before{content:'→';color:var(--crimson);font-weight:700;font-size:11px;flex-shrink:0;margin-top:3px}
+.article ol{counter-reset:ol-counter}
+.article ol li{counter-increment:ol-counter}
+.article ol li::before{content:counter(ol-counter)'.';color:var(--crimson);font-weight:700;font-size:11px;flex-shrink:0;margin-top:3px;min-width:16px}
+
+/* STAT CARDS */
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin:28px 0}
+@media(max-width:480px){.stat-row{grid-template-columns:1fr 1fr}.stat-cell:last-child{grid-column:span 2}}
+.stat-cell{background:var(--card);padding:20px 14px;text-align:center}
+.stat-val{display:block;font-size:clamp(22px,4vw,30px);font-weight:800;letter-spacing:-0.03em;color:var(--crimson)}
+.stat-desc{display:block;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+
+/* INFO CARD */
+.info-card{background:var(--card);border:1px solid var(--border-hi);border-radius:var(--radius-lg);padding:20px 22px;margin:24px 0}
+.info-card-head{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.info-card p{font-size:13px;color:var(--text-soft);line-height:1.75;margin-bottom:0}
+.info-card.highlight{border-color:rgba(232,41,74,0.22);background:linear-gradient(135deg,var(--card),rgba(232,41,74,0.03))}
+.info-card.jade{border-color:rgba(39,201,106,0.2);background:rgba(39,201,106,0.03)}
+
+/* BREACH TIMELINE */
+.breach-timeline{margin:20px 0}
+.bt-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)}
+.bt-item:last-child{border-bottom:none}
+.bt-year{font-size:11px;font-weight:700;letter-spacing:0.06em;color:var(--crimson);min-width:44px;padding-top:2px}
+.bt-info{}
+.bt-name{font-size:14px;font-weight:700;letter-spacing:-0.01em;margin-bottom:3px}
+.bt-desc{font-size:12px;font-weight:400;color:var(--muted);line-height:1.6}
+.bt-pill{display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:2px 7px;border-radius:3px;margin-left:7px;vertical-align:middle}
+.bt-pill.crit{background:rgba(176,16,48,0.2);color:#FF6B7A;border:1px solid rgba(176,16,48,0.3)}
+.bt-pill.high{background:rgba(232,41,74,0.14);color:var(--crimson);border:1px solid rgba(232,41,74,0.25)}
+.bt-pill.med{background:rgba(245,166,35,0.14);color:var(--amber);border:1px solid rgba(245,166,35,0.25)}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--border);padding:18px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-size:14px;font-weight:600;letter-spacing:-0.01em;margin-bottom:8px;cursor:pointer;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.faq-q span{color:var(--text)}
+.faq-arrow{color:var(--faint);font-size:11px;font-weight:700;transition:transform 0.25s;flex-shrink:0;margin-top:2px}
+.faq-item.open .faq-arrow{transform:rotate(90deg);color:var(--crimson)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s cubic-bezier(0.4,0,0.2,1)}
+.faq-a-inner{font-size:13px;font-weight:400;color:var(--text-soft);line-height:1.8;padding-bottom:4px}
+
+/* CTA STRIP */
+.cta-strip{margin-top:48px;background:var(--card);border:1px solid rgba(232,41,74,0.2);border-radius:var(--radius-lg);padding:28px 24px;text-align:center;background:linear-gradient(135deg,var(--card) 60%,rgba(232,41,74,0.04))}
+.cta-label{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:8px}
+.cta-title{font-size:clamp(18px,3.5vw,24px);font-weight:800;letter-spacing:-0.02em;margin-bottom:10px}
+.cta-sub{font-size:13px;font-weight:400;color:var(--muted);line-height:1.65;margin-bottom:22px;max-width:400px;margin-left:auto;margin-right:auto}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--crimson);color:#fff;border:none;border-radius:var(--radius);padding:13px 26px;font-family:var(--font);font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(232,41,74,0.2)}
+.cta-btn:hover{background:var(--crimson-hi);box-shadow:0 4px 28px rgba(232,41,74,0.35);transform:translateY(-1px)}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:20px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-brand{font-size:11px;font-weight:500;color:var(--faint);letter-spacing:0.06em}
+.footer-brand a{color:var(--muted);font-weight:700;text-decoration:none;transition:color 0.15s}
+.footer-brand a:hover{color:var(--text)}
+.footer-r{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.footer-link{font-size:10px;font-weight:600;letter-spacing:0.05em;color:var(--faint);text-decoration:none;transition:color 0.15s}
+.footer-link:hover{color:var(--muted)}
+.footer-powered{font-size:10px;font-weight:600;letter-spacing:0.06em;color:var(--faint);display:flex;align-items:center;gap:5px}
+.footer-powered span{color:var(--muted);font-weight:700}
+
+/* READING TIME */
+.read-meta{display:flex;align-items:center;gap:16px;margin-top:16px;flex-wrap:wrap}
+.read-tag{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);background:var(--panel);border:1px solid var(--border-hi);padding:3px 10px;border-radius:var(--radius)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity 0.5s ease,transform 0.5s ease}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- NAV -->
+<nav role="banner">
+  <a class="logo" href="index.html" aria-label="Shadow Profile Home">
+    <div class="logo-mark" aria-hidden="true">
+      <svg viewBox="0 0 14 14" fill="none"><path d="M7 1L1 4v6l6 3 6-3V4z" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/></svg>
+    </div>
+    <span class="logo-text">Shadow Profile</span>
+  </a>
+  <div class="nav-r">
+    <a href="index.html" class="nav-link">Scan</a>
+    <a href="about.html" class="nav-link active">About</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <a href="privacy-terms.html#privacy" class="nav-tag">Privacy</a>
+  </div>
+</nav>
+
+<main id="main-content">
+<div class="page">
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-eyebrow">About This Tool</div>
+    <h1 class="page-title">We built this because<br>nobody else was telling you the truth.</h1>
+    <p class="page-lead">
+      Millions of Indian users have had their email addresses, phone numbers, passwords, and personal details leaked in data breaches — most of them never found out. Shadow Profile was built to change that.
+    </p>
+    <div class="read-meta">
+      <span class="read-tag">5 min read</span>
+      <span class="read-tag">Built by Venux Studio</span>
+      <span class="read-tag">No data stored</span>
+    </div>
+  </div>
+
+  <div class="article">
+
+    <!-- SECTION 1 -->
+    <h2 class="reveal">The problem with data breaches in India</h2>
+    <p class="reveal">
+      India has become one of the most breached countries in the world. Every year, tens of millions of Indian users have their personal data exposed through breaches at platforms they trust daily — food delivery apps, grocery services, payment wallets, job portals, airlines. The data ends up on dark web forums, gets sold in bulk, and eventually gets used for phishing, identity fraud, and credential stuffing attacks.
+    </p>
+    <p class="reveal">
+      The frustrating part is that <strong>users are almost never told directly</strong>. Companies issue vague press statements, regulators rarely enforce notification obligations, and by the time news reaches the public, the damage is already done. Hackers don't wait for press releases.
+    </p>
+
+    <div class="stat-row reveal" role="region" aria-label="Breach statistics India">
+      <div class="stat-cell">
+        <span class="stat-val">14.2B</span>
+        <span class="stat-desc">Records in breach databases globally</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-val">50M+</span>
+        <span class="stat-desc">Indian users affected in top 6 breaches alone</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-val">&lt;5%</span>
+        <span class="stat-desc">Of affected users ever find out</span>
+      </div>
+    </div>
+
+    <p class="reveal">
+      Most people only discover their data was compromised after something bad has already happened — a fraudulent transaction, a hacked Instagram account, an OTP scam. We wanted to give people a way to check <em>before</em> that happens.
+    </p>
+
+    <!-- SECTION 2 -->
+    <h2 class="reveal">What Shadow Profile actually does</h2>
+    <p class="reveal">
+      When you type your email into Shadow Profile, we send a query to the HaveIBeenPwned database — one of the most comprehensive and trusted breach intelligence services in the world, maintained by security researcher Troy Hunt. It aggregates billions of records from thousands of documented data breaches and lets you check whether your email appeared in any of them.
+    </p>
+    <p class="reveal">
+      We do not store your email. We do not log your query. The request goes out, the result comes back, and that's it — nothing is written to any database on our end. Your scan is ephemeral by design.
+    </p>
+
+    <div class="info-card highlight reveal">
+      <div class="info-card-head">How the scan works — step by step</div>
+      <p>You enter your email → we send it to the HIBP API over an encrypted connection → HIBP returns a list of breach names and affected data types → we compute your Shadow Score based on severity, recency, and data sensitivity → results are displayed directly in your browser → nothing is stored anywhere.</p>
+    </div>
+
+    <p class="reveal">
+      The <strong>Shadow Score</strong> is our own threat-assessment layer on top of the raw breach data. A score of 0–25 means limited exposure. 26–50 means moderate risk from older or less critical breaches. 51–75 is high risk — passwords or phone numbers are in circulation. Above 75 is critical — multiple high-severity breaches with sensitive data actively traded.
+    </p>
+
+    <!-- SECTION 3 -->
+    <h2 class="reveal">Major Indian breaches you should know about</h2>
+    <p class="reveal">
+      If you've used any of the platforms below, there's a meaningful chance your data was exposed. These are some of the most significant Indian consumer breaches on record:
+    </p>
+
+    <div class="breach-timeline reveal" role="list">
+      <div class="bt-item" role="listitem">
+        <div class="bt-year">2019</div>
+        <div class="bt-info">
+          <div class="bt-name">JustDial <span class="bt-pill high">HIGH</span></div>
+          <div class="bt-desc">156 million user records exposed including names, phone numbers, emails, and location data. One of the largest Indian breaches by volume.</div>
+        </div>
+      </div>
+      <div class="bt-item" role="listitem">
+        <div class="bt-year">2020</div>
+        <div class="bt-info">
+          <div class="bt-name">BigBasket <span class="bt-pill crit">CRITICAL</span></div>
+          <div class="bt-desc">20 million users. Full profiles including dates of birth, hashed passwords, home addresses, and phone numbers sold on darknet markets.</div>
+        </div>
+      </div>
+      <div class="bt-item" role="listitem">
+        <div class="bt-year">2020</div>
+        <div class="bt-info">
+          <div class="bt-name">Unacademy <span class="bt-pill high">HIGH</span></div>
+          <div class="bt-desc">11 million student accounts. Usernames, emails, hashed passwords, and account activity were exposed and listed for sale.</div>
+        </div>
+      </div>
+      <div class="bt-item" role="listitem">
+        <div class="bt-year">2021</div>
+        <div class="bt-info">
+          <div class="bt-name">Domino's India <span class="bt-pill crit">CRITICAL</span></div>
+          <div class="bt-desc">18 million orders, 1TB of data. The most invasive Indian breach — included precise GPS coordinates of every order ever placed, effectively mapping users' home and workplace locations.</div>
+        </div>
+      </div>
+      <div class="bt-item" role="listitem">
+        <div class="bt-year">2021</div>
+        <div class="bt-info">
+          <div class="bt-name">MobiKwik <span class="bt-pill high">HIGH</span></div>
+          <div class="bt-desc">3.5 million users. KYC data including partial Aadhaar and PAN card information appeared in public paste sites — serious financial identity exposure.</div>
+        </div>
+      </div>
+      <div class="bt-item" role="listitem">
+        <div class="bt-year">2021</div>
+        <div class="bt-info">
+          <div class="bt-name">Air India <span class="bt-pill crit">CRITICAL</span></div>
+          <div class="bt-desc">4.5 million passengers affected. Passport numbers, credit card data, dates of birth, and contact information were compromised through a SITA server breach.</div>
+        </div>
+      </div>
+      <div class="bt-item" role="listitem">
+        <div class="bt-year">2022</div>
+        <div class="bt-info">
+          <div class="bt-name">Zomato <span class="bt-pill high">HIGH</span></div>
+          <div class="bt-desc">17 million users. Email addresses, hashed passwords, and delivery addresses. Many password hashes have since been cracked and circulated in credential stuffing lists.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4 -->
+    <h2 class="reveal">What happens to your data after a breach</h2>
+    <p class="reveal">
+      Most people assume a data breach is just an embarrassing moment for a company — a news story that blows over. The reality is more persistent. Once your data is in the wild, it tends to stay there and compound over time.
+    </p>
+    <p class="reveal">
+      <strong>Credential stuffing</strong> is one of the most common downstream effects. Attackers take leaked email-password combinations and systematically try them across hundreds of platforms. If you use the same password in multiple places — and most people do — a single breach can cascade into five or six compromised accounts.
+    </p>
+    <p class="reveal">
+      <strong>Targeted phishing</strong> becomes dramatically easier with breach data. An attacker who knows your name, employer, approximate location, and delivery address can craft messages that are almost indistinguishable from legitimate ones. The Domino's GPS data, for example, makes it trivial to write a message referencing your "recent order" to a specific address.
+    </p>
+    <p class="reveal">
+      <strong>SIM swapping and OTP fraud</strong> — endemic in India — are frequently enabled by breached phone numbers combined with social engineering of telecom support staff.
+    </p>
+    <p class="reveal">
+      The good news: most of these attacks are opportunistic, not targeted. Taking action within a reasonable window — changing passwords, enabling 2FA, locking your Aadhaar biometrics — significantly reduces your exposure even after a breach has occurred.
+    </p>
+
+    <!-- SECTION 5 -->
+    <h2 class="reveal">What we never do with your information</h2>
+
+    <div class="info-card jade reveal">
+      <div class="info-card-head">Our data commitment</div>
+      <p>We do not store email addresses. We do not store scan results. We do not build profiles. We do not use third-party analytics that track individuals. We do not sell data. We do not send marketing emails. The only external service your query touches is the HIBP API — a privacy-respecting service by design.</p>
+    </div>
+
+    <ul class="reveal">
+      <li>Your email is queried in real time and never written to any database</li>
+      <li>Paid reports are generated client-side — they never travel to our servers</li>
+      <li>Phone number checks use locally processed hashed datasets — your number is hashed in the browser and only the hash is checked</li>
+      <li>No cookies beyond what's essential for the payment flow</li>
+      <li>No advertising networks. No trackers. No remarketing pixels</li>
+    </ul>
+
+    <p class="reveal">
+      We charge for the detailed report — not because we want to monetise your data, but because the HIBP API has a cost, and we'd rather charge a transparent one-time fee than build a business model around your information. <strong>₹49 or ₹99, one time, no subscription.</strong> That's the whole deal.
+    </p>
+
+    <!-- SECTION 6 -->
+    <h2 class="reveal">Who we are</h2>
+    <p class="reveal">
+      Shadow Profile is built and maintained by <a href="https://www.google.com" target="_blank" rel="noopener">Venux Studio</a>, a small independent studio focused on building digital tools that are useful, honest, and well-made. We believe privacy tools should be accessible to everyone — not just people who know what a VPN is or can navigate a security whitepaper.
+    </p>
+    <p class="reveal">
+      India has a massive unmet need for consumer-facing privacy tools built with the Indian context in mind — Indian breach databases, Indian payment systems, Indian languages eventually. Shadow Profile is our starting point.
+    </p>
+    <p class="reveal">
+      We're not a cybersecurity firm. We're not selling enterprise software. We built a tool we'd want to use ourselves, priced it fairly, and made it free at the surface. If you have feedback, found a bug, or want to work with us — <a href="contact.html">reach out</a>.
+    </p>
+
+    <!-- FAQ -->
+    <h2 class="reveal">Common questions</h2>
+
+    <div class="reveal" id="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this.parentElement)" tabindex="0" role="button" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this.parentElement)}">
+          <span>Is my email address safe when I use this?</span>
+          <span class="faq-arrow" aria-hidden="true">▶</span>
+        </div>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">Yes. We never store, log, or share your email. It's used only to query the breach database in real time and discarded immediately. There's no account creation, no sign-in, no cookie tracking your query history.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this.parentElement)" tabindex="0" role="button" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this.parentElement)}">
+          <span>Where does the breach data come from?</span>
+          <span class="faq-arrow" aria-hidden="true">▶</span>
+        </div>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">Email breach data is sourced from the HaveIBeenPwned API — a globally trusted service that aggregates billions of records from thousands of documented breaches. Phone number checks use locally processed datasets built from publicly available Indian breach data. We do not scrape or buy data from any third party.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this.parentElement)" tabindex="0" role="button" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this.parentElement)}">
+          <span>My scan came back clean. Am I definitely safe?</span>
+          <span class="faq-arrow" aria-hidden="true">▶</span>
+        </div>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">A clean result means your email hasn't appeared in any breach we have on record — which covers thousands of publicly documented incidents. However, many breaches are never disclosed, take years to surface, or haven't been indexed yet. A clean scan is a good sign but not a guarantee. Basic hygiene — unique passwords, 2FA enabled — is always worthwhile regardless of your score.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this.parentElement)" tabindex="0" role="button" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this.parentElement)}">
+          <span>Why does the full report cost money?</span>
+          <span class="faq-arrow" aria-hidden="true">▶</span>
+        </div>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">The HIBP API that powers the email scan has a usage cost. Rather than monetise your data or show advertising, we charge a small one-time fee — ₹49 or ₹99 — for the detailed report. No subscription. No recurring charge. The free scan always remains free.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this.parentElement)" tabindex="0" role="button" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this.parentElement)}">
+          <span>What should I do if my email was breached?</span>
+          <span class="faq-arrow" aria-hidden="true">▶</span>
+        </div>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">First — don't panic. Then: change your password on the affected platform and anywhere you reused it. Enable two-factor authentication. Check active sessions on major accounts and revoke unfamiliar ones. If financial data was involved, notify your bank. Our paid report includes a step-by-step checklist tailored to the specific breaches in your scan.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this.parentElement)" tabindex="0" role="button" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this.parentElement)}">
+          <span>Can I check a phone number?</span>
+          <span class="faq-arrow" aria-hidden="true">▶</span>
+        </div>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">Yes — phone number checking is available in the ₹99 Full Shadow Report. No OTP required. No number stored. We hash your number locally and check it against our database of known Indian breach records. The result tells you which known breach databases your number appeared in.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-strip reveal">
+      <span class="cta-label">Free scan — takes 10 seconds</span>
+      <div class="cta-title">Check your exposure now.</div>
+      <p class="cta-sub">Your email address is either in a breach database or it isn't. Find out which — for free.</p>
+      <a href="index.html" class="cta-btn">Run My Free Scan →</a>
+    </div>
+
+  </div><!-- /article -->
+
+</div><!-- /page -->
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="footer-brand">© 2026 <a href="https://www.google.com" target="_blank" rel="noopener">VENUX STUDIO</a> — All rights reserved</div>
+  <div class="footer-r">
+    <a href="index.html" class="footer-link">Scan</a>
+    <a href="about.html" class="footer-link">About</a>
+    <a href="privacy-terms.html#privacy" class="footer-link">Privacy Policy</a>
+    <a href="privacy-terms.html#terms" class="footer-link">Terms of Use</a>
+    <a href="contact.html" class="footer-link">Contact</a>
+    <div class="footer-powered">Powered by <span>Razorpay</span></div>
+  </div>
+</footer>
+
+<script>
+'use strict';
+function toggleFaq(item){
+  const a = item.querySelector('.faq-a');
+  const q = item.querySelector('.faq-q');
+  const isOpen = item.classList.contains('open');
+  // close all
+  document.querySelectorAll('.faq-item.open').forEach(el=>{
+    el.classList.remove('open');
+    el.querySelector('.faq-a').style.maxHeight = '0';
+    el.querySelector('.faq-q').setAttribute('aria-expanded','false');
+  });
+  if(!isOpen){
+    item.classList.add('open');
+    a.style.maxHeight = a.scrollHeight + 'px';
+    q.setAttribute('aria-expanded','true');
+  }
+}
+
+// Scroll reveal
+(function(){
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }});
+  },{threshold:0.07});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+})();
+</script>
+</body>
+</html>
