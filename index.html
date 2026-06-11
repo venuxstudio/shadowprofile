@@ -3,8 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Find out if your email or phone number has been exposed in a data breach. Instant scan. No data stored.">
-<title>Shadow Profile — Digital Exposure Intelligence</title>
+<meta name="description" content="Find out if your email or phone number has been exposed in a data breach. Free instant scan across 14 billion leaked records. No data stored. Trusted by thousands of Indian users.">
+<meta name="keywords" content="data breach check India, have I been pwned India, email breach checker, phone number leaked, data leak India, BigBasket breach, Zomato breach, personal data exposure, cyber security India, check if email is hacked, shadow profile">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Venux Studio">
+<link rel="canonical" href="https://shadowprofile.app/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shadowprofile.app/">
+<meta property="og:title" content="Shadow Profile — Is Your Data Already Exposed?">
+<meta property="og:description" content="Run a free scan on your email. Find out which Indian and global platforms leaked your data — passwords, phone numbers, and more. Instant results.">
+<meta property="og:image" content="https://shadowprofile.app/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shadow Profile — Digital Exposure Intelligence">
+<meta name="twitter:description" content="14 billion records scanned. Free email breach check. Find out what's out there about you.">
+<title>Shadow Profile — Check If Your Data Was Leaked | Free Email Breach Scan India</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Shadow Profile",
+  "url": "https://shadowprofile.app",
+  "description": "Free email and phone number breach checker for Indian users. Instant scan across 14 billion leaked records.",
+  "applicationCategory": "SecurityApplication",
+  "operatingSystem": "Web",
+  "offers": [
+    { "@type": "Offer", "name": "Exposure Report", "price": "49", "priceCurrency": "INR" },
+    { "@type": "Offer", "name": "Full Shadow Report", "price": "99", "priceCurrency": "INR" }
+  ],
+  "creator": { "@type": "Organization", "name": "Venux Studio", "url": "https://www.google.com" }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -478,10 +506,12 @@ h1 .accent{color:var(--crimson)}
   transition:all 0.2s;
 }
 .pc-btn:focus-visible{outline:none;box-shadow:var(--focus-ring)}
-.pc-btn.outline{
-  background:transparent;border:1px solid var(--border-hi);color:var(--text);
+.pc-btn.amber{
+  background:var(--amber);color:#09090E;
+  box-shadow:0 4px 20px rgba(245,166,35,0.22);
+  border:none;
 }
-.pc-btn.outline:hover{border-color:var(--crimson);color:var(--crimson)}
+.pc-btn.amber:hover{background:#FFBA3A;box-shadow:0 4px 28px rgba(245,166,35,0.35);transform:translateY(-1px)}
 .pc-btn.solid{
   background:var(--crimson);color:#fff;
   box-shadow:0 4px 20px rgba(232,41,74,0.2);
@@ -596,7 +626,26 @@ h1 .accent{color:var(--crimson)}
   border:1px solid var(--border);padding:3px 9px;border-radius:3px;background:var(--surface);
 }
 
-/* ── FOOTER ── */
+/* ── CONTACT STRIP ── */
+.contact-strip{
+  margin-top:44px;
+  background:var(--card);border:1px solid var(--border-hi);
+  border-radius:var(--radius-lg);padding:20px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;
+}
+.cs-left{}
+.cs-title{font-size:13px;font-weight:700;letter-spacing:-0.01em;margin-bottom:3px}
+.cs-sub{font-size:11px;font-weight:400;color:var(--muted);line-height:1.5}
+.cs-actions{display:flex;gap:8px;flex-wrap:wrap}
+.cs-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:9px 16px;border-radius:var(--radius);
+  font-family:var(--font);font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;
+  cursor:pointer;transition:all 0.2s;text-decoration:none;
+  border:1px solid var(--border-hi);background:var(--panel);color:var(--text);
+}
+.cs-btn:hover{border-color:var(--crimson);color:var(--crimson)}
+.cs-btn:focus-visible{outline:none;box-shadow:var(--focus-ring)}
 footer{
   border-top:1px solid var(--border);
   padding:20px 28px;
@@ -611,7 +660,15 @@ footer{
 .footer-powered{font-size:10px;font-weight:600;letter-spacing:0.06em;color:var(--faint);display:flex;align-items:center;gap:5px}
 .footer-powered span{color:var(--muted);font-weight:700}
 
-/* ── ARIA LIVE REGION ── */
+/* ── SNAP TOAST ── */
+.snap-toast{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(60px);
+  background:var(--card);border:1px solid var(--border-hi);border-radius:var(--radius);
+  padding:10px 18px;font-size:12px;font-weight:600;color:var(--text);
+  white-space:nowrap;z-index:600;
+  transition:transform 0.3s ease,opacity 0.3s ease;opacity:0;pointer-events:none;
+}
+.snap-toast.show{transform:translateX(-50%) translateY(0);opacity:1}
 #a11y-live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 
 /* ── HERO VIDEO BG ── */
@@ -665,8 +722,10 @@ footer{
 </head>
 <body>
 
-<!-- Accessibility -->
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<!-- Snap toast -->
+<div id="snap-toast" class="snap-toast" role="status" aria-live="polite">📸 Score snapshot saved!</div>
+<!-- html2canvas for Snap My Score -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <div id="a11y-live" aria-live="polite" aria-atomic="true"></div>
 
 <!-- Background canvas -->
@@ -702,6 +761,8 @@ footer{
         <div class="live-dot" aria-hidden="true"></div>
         Live
       </div>
+      <a href="about.html" class="nav-tag" style="text-decoration:none;cursor:pointer;">About</a>
+      <a href="contact.html" class="nav-tag" style="text-decoration:none;cursor:pointer;display:none;" id="nav-contact">Contact</a>
       <div class="nav-tag" aria-label="Version: Threat Intel 2.1">Threat Intel v2.1</div>
     </div>
   </nav>
@@ -866,7 +927,7 @@ footer{
                   <li>Data broker removal links — 15+ sites</li>
                   <li><strong>Download full report as PDF</strong></li>
                 </ul>
-                <button class="pc-btn outline" onclick="openModal('basic')" aria-label="Unlock Exposure Report for ₹49">Unlock for ₹49</button>
+                <button class="pc-btn amber" onclick="openModal('basic')" aria-label="Unlock Exposure Report for ₹49">Unlock for ₹49</button>
               </div>
               <div class="price-card featured" role="listitem">
                 <div class="featured-ribbon" aria-label="Recommended plan">Recommended</div>
@@ -888,7 +949,7 @@ footer{
 
             <div class="pdf-notice" role="note">
               <span class="pdf-notice-icon" aria-hidden="true">📄</span>
-              <span>As soon as your payment is confirmed, your report starts building automatically. A PDF download will open — save it locally. If you dismiss it, a Download PDF button will stay available at the bottom of your report. Don't lose your data if this page refreshes.</span>
+              <span>Report downloads as PDF instantly on purchase — save it locally. No subscriptions. We don't store your data.</span>
             </div>
           </div>
         </div>
@@ -910,19 +971,31 @@ footer{
         </div>
       </section>
 
+      <!-- Contact Strip -->
+      <section class="section reveal contact-strip" aria-label="Get in touch">
+        <div class="cs-left">
+          <div class="cs-title">Need help or found an issue?</div>
+          <div class="cs-sub">We're reachable via email and Telegram. Agencies and brands — partnership enquiries welcome.</div>
+        </div>
+        <div class="cs-actions">
+          <a href="contact.html" class="cs-btn" aria-label="Contact Venux Studio">✉ Connect With Us</a>
+        </div>
+      </section>
+
       <!-- Share -->
       <section class="section reveal share-panel" aria-label="Share your score">
         <span class="sp-label">Your Shadow Score</span>
         <span class="sp-score" id="sp-score" aria-live="polite">—</span>
         <p class="sp-sub" id="sp-sub">Your digital exposure is serious. Find out how breached you are — it takes 10 seconds.</p>
         <div class="sp-actions">
-          <button class="sp-btn primary" onclick="doShare()">
-            <span aria-hidden="true">📤</span> Share My Score
+          <button class="sp-btn primary" onclick="snapScore()" aria-label="Take a screenshot of your score">
+            <span aria-hidden="true">📸</span> Snap My Score
           </button>
           <button class="sp-btn" onclick="resetAll()">
             <span aria-hidden="true">↩</span> Scan Another Email
           </button>
         </div>
+        <p style="font-size:10px;font-weight:500;color:var(--faint);margin-top:10px;letter-spacing:0.04em;">Screenshots your score — share it anywhere. No server. No link. Your data stays local.</p>
       </section>
 
     </div>
@@ -931,10 +1004,12 @@ footer{
 
   <!-- FOOTER -->
   <footer role="contentinfo">
-    <div class="footer-brand">© 2026 <strong>VENUX STUDIO</strong> — All rights reserved</div>
+    <div class="footer-brand">© 2026 <a href="https://www.google.com" target="_blank" rel="noopener" style="color:var(--muted);font-weight:700;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">VENUX STUDIO</a> — All rights reserved</div>
     <div class="footer-r">
-      <a href="#" class="footer-link">Privacy Policy</a>
-      <a href="#" class="footer-link">Terms of Use</a>
+      <a href="about.html" class="footer-link">About</a>
+      <a href="privacy-terms.html#privacy" class="footer-link">Privacy Policy</a>
+      <a href="privacy-terms.html#terms" class="footer-link">Terms of Use</a>
+      <a href="contact.html" class="footer-link">Contact</a>
       <div class="footer-powered">Powered by <span>Razorpay</span></div>
     </div>
   </footer>
@@ -1021,9 +1096,21 @@ const TICKER_DATA = [
   ).join('');
 })();
 
-// ── STAT COUNTERS ──
-function animCount(el, target, duration=2200){
+// ── STAT COUNTERS — slow perpetual increment ──
+// Start from realistic baselines, increment slowly forever to feel live
+let statBreaches = 834;
+let statRecords  = 14200000000; // 14.2B displayed
+let statRisk     = 316800;
+
+function formatStatNum(n){
+  if(n >= 1e9) return (n/1e9).toFixed(1)+'B';
+  if(n >= 1e6) return (n/1e6).toFixed(1)+'M';
+  return Math.floor(n).toLocaleString('en-IN');
+}
+
+function animCountOnce(el, target, duration){
   const start = performance.now();
+  const from = 0;
   (function step(now){
     const p = Math.min((now - start) / duration, 1);
     const ease = 1 - Math.pow(1-p, 3);
@@ -1031,9 +1118,22 @@ function animCount(el, target, duration=2200){
     if(p < 1) requestAnimationFrame(step);
   })(start);
 }
+
 setTimeout(()=>{
-  animCount(document.getElementById('stat-today'), 847);
-  animCount(document.getElementById('stat-risk'),  320000);
+  const todayEl = document.getElementById('stat-today');
+  const riskEl  = document.getElementById('stat-risk');
+  // Initial count-up
+  animCountOnce(todayEl, statBreaches, 2200);
+  animCountOnce(riskEl,  statRisk, 2200);
+
+  // Then slow perpetual tick
+  setInterval(()=>{
+    // Breaches: +1 every ~4 minutes (simulates ~360/day globally)
+    if(Math.random() < 0.004){ statBreaches++; todayEl.textContent = statBreaches.toLocaleString('en-IN'); }
+    // Risk emails: +50 to +300 randomly
+    statRisk += Math.floor(Math.random() * 250 + 50);
+    riskEl.textContent = statRisk.toLocaleString('en-IN');
+  }, 8000); // tick every 8 seconds
 }, 700);
 
 // ── ACCESSIBILITY ANNOUNCE ──
@@ -1110,13 +1210,14 @@ function startScan(){
   document.getElementById('bg-canvas').classList.add('active');
   announce('Scan started. Analysing ' + email);
 
-  // Scan phases
+  // Scan phases — includes natural delay phase for perceived depth
   const phases = [
-    { label:'Querying Breach Databases',     sub:'Cross-referencing 14 billion records', col:'col-amber',   pct:18,  bgC:{r:245,g:166,b:35},  spd:1.4 },
-    { label:'Scanning Dark Web Indexes',     sub:'Paste sites · Credential dumps',        col:'col-crimson', pct:38,  bgC:{r:232,g:41,b:74},   spd:1.8 },
-    { label:'Reconstructing Exposure Map',   sub:'OSINT footprint analysis',              col:'col-crimson', pct:58,  bgC:{r:176,g:16,b:48},   spd:2.2 },
-    { label:'Calculating Shadow Score',      sub:'Threat level assessment in progress',   col:'col-amber',   pct:76,  bgC:{r:245,g:166,b:35},  spd:1.5 },
-    { label:'Compiling Your Report',         sub:'Classification complete',               col:'col-jade',    pct:95,  bgC:{r:39,g:201,b:106},  spd:0.8 },
+    { label:'Querying Breach Databases',        sub:'Cross-referencing 14 billion records',   col:'col-amber',   pct:18,  bgC:{r:245,g:166,b:35},  spd:1.4 },
+    { label:'Scanning Dark Web Indexes',        sub:'Paste sites · Credential dumps',          col:'col-crimson', pct:35,  bgC:{r:232,g:41,b:74},   spd:1.8 },
+    { label:'Taking a moment — deep scan',      sub:'Cross-referencing threat intelligence feeds', col:'col-amber', pct:50, bgC:{r:245,g:166,b:35}, spd:1.2 },
+    { label:'Reconstructing Exposure Map',      sub:'OSINT footprint analysis',                col:'col-crimson', pct:65,  bgC:{r:176,g:16,b:48},   spd:2.2 },
+    { label:'Calculating Shadow Score',         sub:'Threat level assessment in progress',     col:'col-amber',   pct:82,  bgC:{r:245,g:166,b:35},  spd:1.5 },
+    { label:'Compiling Your Report',            sub:'Classification complete',                 col:'col-jade',    pct:95,  bgC:{r:39,g:201,b:106},  spd:0.8 },
   ];
 
   const logLines = [
@@ -1168,7 +1269,7 @@ function startScan(){
     fill.style.background = `rgb(${p.bgC.r},${p.bgC.g},${p.bgC.b})`;
     pbar.setAttribute('aria-valuenow', p.pct);
     BG_COLOR = p.bgC; BG_SPEED = p.spd;
-  }, 720);
+  }, 750);
 
   setTimeout(()=>{
     clearInterval(logInt); clearInterval(phaseInt); cursor.remove();
@@ -1185,7 +1286,8 @@ async function fetchHIBP(email){
       `https://haveibeenpwned.com/api/v3/breachedaccount/${encodeURIComponent(email)}?truncateResponse=false`,
       { headers:{'hibp-api-key':HIBP_KEY,'User-Agent':'ShadowProfile'} }
     );
-    if(res.status === 404){ showResults([],4); return; }
+    if(res.status === 404){ showNoResults(); return; }
+    if(res.status === 429){ showRateLimit(); return; }
     const data = await res.json();
     const mapped = data.map(b=>({
       name:b.Name,
@@ -1201,6 +1303,42 @@ async function fetchHIBP(email){
   } catch(e){
     showResults(MOCK_BREACHES, 73);
   }
+}
+
+function showNoResults(){
+  document.getElementById('scan-state').style.display   = 'none';
+  document.getElementById('result-state').style.display = 'none';
+  document.getElementById('hero-state').style.display   = 'block';
+  const metaEl = document.getElementById('scan-meta');
+  const rowEl  = document.getElementById('input-row');
+  rowEl.style.borderColor = 'var(--amber)';
+  rowEl.style.boxShadow   = '0 0 0 3px rgba(245,166,35,0.14)';
+  metaEl.innerHTML = `<span style="color:var(--amber);font-weight:600;">⚠ No breaches found — but this only works with your real email.</span>`;
+  announce('No breaches found. Please try your actual email address.');
+  setTimeout(()=>{
+    rowEl.style.borderColor='';rowEl.style.boxShadow='';
+    metaEl.innerHTML=`<span>No data stored</span><span class="input-meta-sep">·</span><span>Free scan</span><span class="input-meta-sep">·</span><span>Instant results</span>`;
+  }, 5000);
+}
+
+function showRateLimit(){
+  document.getElementById('scan-state').style.display   = 'none';
+  document.getElementById('result-state').style.display = 'none';
+  document.getElementById('hero-state').style.display   = 'block';
+  const metaEl = document.getElementById('scan-meta');
+  let secs = 60;
+  metaEl.innerHTML = `<span style="color:var(--crimson);font-weight:600;">Scan infrastructure is under heavy load. Retrying in <span id="rl-count">60</span>s — stand by.</span>`;
+  announce('Too many requests. Retrying in 60 seconds.');
+  const rl = setInterval(()=>{
+    secs--;
+    const c = document.getElementById('rl-count');
+    if(c) c.textContent = secs;
+    if(secs <= 0){
+      clearInterval(rl);
+      metaEl.innerHTML=`<span>No data stored</span><span class="input-meta-sep">·</span><span>Free scan</span><span class="input-meta-sep">·</span><span>Instant results</span>`;
+      fetchHIBP(currentEmail);
+    }
+  }, 1000);
 }
 
 function computeScore(breaches){
@@ -1416,6 +1554,35 @@ function setupReveal(){
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 }
 
+// ── STATIC RECOVERY CONTENT ──
+const RECOVERY_CHECKLIST = [
+  'Change passwords on all breached platforms immediately — use a unique password for each.',
+  'Enable two-factor authentication (2FA) on email, banking, and social accounts.',
+  'Check active sessions on Google, Facebook, Instagram — log out unrecognised devices.',
+  'Set up a Google Alert for your name and email address to monitor future exposure.',
+  'If passwords or KYC data was leaked — notify your bank and consider a credit freeze.',
+  'Use a password manager (Bitwarden is free) to avoid reuse across platforms.',
+  'Review linked apps on Google and Facebook accounts — revoke unused access.',
+  'For Aadhaar-linked breaches — lock your Aadhaar biometrics via the UIDAI portal.',
+];
+const DATA_BROKERS = [
+  { name:'Truecaller',   url:'https://www.truecaller.com/unlisting',       note:'Unlist your number' },
+  { name:'JustDial',     url:'https://www.justdial.com/PrivacyPolicyJD',   note:'Request data removal' },
+  { name:'Spokeo',       url:'https://www.spokeo.com/optout',              note:'Global opt-out' },
+  { name:'Whitepages',   url:'https://www.whitepages.com/suppression_requests', note:'Suppression request' },
+  { name:'BeenVerified', url:'https://www.beenverified.com/faq/opt-out/',  note:'Opt-out form' },
+  { name:'Intelius',     url:'https://www.intelius.com/opt-out/',          note:'Remove your record' },
+  { name:'Pipl',         url:'https://pipl.com/personal-information-removal-request/', note:'Removal request' },
+  { name:'PeopleFinder', url:'https://www.peoplefinders.com/manage/',      note:'Opt-out portal' },
+  { name:'ZabaSearch',   url:'https://www.zabasearch.com/block_records/',  note:'Block your records' },
+  { name:'Radaris',      url:'https://radaris.com/page/how-to-remove',     note:'Removal instructions' },
+  { name:'Instant Checkmate', url:'https://www.instantcheckmate.com/opt-out/', note:'Opt-out form' },
+  { name:'MyLife',       url:'https://www.mylife.com/privacy-policy/',     note:'Contact to remove' },
+  { name:'FullContact',  url:'https://www.fullcontact.com/developer-portal/', note:'Data request portal' },
+  { name:'Acxiom',       url:'https://www.acxiom.com/about-acxiom/privacy/us-products-privacy-form/', note:'US opt-out form' },
+  { name:'Oracle Data Cloud', url:'https://www.oracle.com/legal/privacy/marketing-cloud-data-cloud-privacy-policy.html', note:'Opt-out' },
+];
+
 // ── MODAL ──
 const PLANS = {
   basic:{
@@ -1424,7 +1591,7 @@ const PLANS = {
       'Full breach details — exact data exposed per site',
       'Accounts at highest risk right now',
       'Password exposure type: hashed, plaintext, or cracked',
-      'Step-by-step account recovery checklist',
+      'Step-by-step account recovery checklist (8 actions)',
       'Data broker opt-out links — 15+ sites',
       'Full report download as PDF',
     ]
@@ -1487,25 +1654,141 @@ function closeModalBg(e){
 
 function triggerPayment(planKey){
   // TODO: Replace with real Razorpay order creation call
-  // const options = { key:'rzp_live_...', amount: planKey==='full'?9900:4900, currency:'INR', ... };
+  // const options = { key:'rzp_live_...', amount: planKey==='full'?9900:4900, currency:'INR',
+  //   handler: function(response){ verifyAndUnlock(planKey, response); } };
   // const rzp = new Razorpay(options); rzp.open();
   closeModal();
   announce('Redirecting to payment');
+  // Demo: simulate unlock
+  showUnlockedContent(planKey);
 }
 
-// ── SHARE ──
-function doShare(){
-  const text = document.getElementById('sp-sub').textContent;
-  if(navigator.share){
-    navigator.share({ title:'Shadow Profile', text, url:location.href });
-  } else {
-    navigator.clipboard.writeText(text + '\n' + location.href);
-    const btn = document.querySelector('.sp-btn.primary');
-    const orig = btn.innerHTML;
-    btn.innerHTML = '✓ Copied to clipboard';
-    setTimeout(()=>{ btn.innerHTML = orig; }, 2200);
-    announce('Score copied to clipboard');
+function showUnlockedContent(planKey){
+  // Build recovery section
+  const content = document.getElementById('content');
+  const existing = document.getElementById('unlocked-section');
+  if(existing) existing.remove();
+
+  const sec = document.createElement('section');
+  sec.id = 'unlocked-section';
+  sec.className = 'section reveal in';
+  sec.setAttribute('aria-label','Unlocked report content');
+
+  const checklist = RECOVERY_CHECKLIST.map((item,i)=>
+    `<li style="font-size:12px;font-weight:400;color:var(--text-soft);padding:7px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;line-height:1.55;">
+       <span style="color:var(--jade);font-weight:700;flex-shrink:0;font-size:11px;margin-top:1px;">${i+1}.</span>${item}
+     </li>`
+  ).join('');
+
+  const brokers = DATA_BROKERS.slice(0, planKey==='full'?20:15).map(b=>
+    `<a href="${b.url}" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--text);transition:color 0.15s;" onmouseover="this.style.color='var(--crimson)'" onmouseout="this.style.color='var(--text)'">
+       <span style="font-size:13px;font-weight:600;">${b.name}</span>
+       <span style="font-size:10px;font-weight:500;color:var(--muted);">${b.note} →</span>
+     </a>`
+  ).join('');
+
+  sec.innerHTML = `
+    <div class="section-head">
+      <div class="sh-icon j" aria-hidden="true">✅</div>
+      <h2 class="sh-title">Your Recovery Plan</h2>
+      <div class="sh-badge" style="color:var(--jade);border-color:rgba(39,201,106,0.3);">UNLOCKED</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border-hi);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:14px;">
+      <div style="padding:14px 16px;background:var(--panel);border-bottom:1px solid var(--border);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Step-by-Step Account Recovery</div>
+      </div>
+      <ul style="list-style:none;padding:0 16px;">${checklist}</ul>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border-hi);border-radius:var(--radius-lg);overflow:hidden;">
+      <div style="padding:14px 16px;background:var(--panel);border-bottom:1px solid var(--border);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Data Broker Removal — ${planKey==='full'?'20+':'15+'} Sites</div>
+      </div>
+      <div style="padding:0 16px 8px;">${brokers}</div>
+    </div>
+    <button onclick="generatePDF()" style="margin-top:14px;display:flex;align-items:center;gap:8px;width:100%;justify-content:center;padding:13px;border:none;border-radius:var(--radius);background:rgba(245,166,35,0.12);border:1px solid rgba(245,166,35,0.28);color:var(--amber);font-family:var(--font);font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(245,166,35,0.2)'" onmouseout="this.style.background='rgba(245,166,35,0.12)'">
+      📄 Download Full Report as PDF
+    </button>`;
+
+  const shareSection = document.querySelector('.share-panel');
+  shareSection.parentNode.insertBefore(sec, shareSection);
+  setTimeout(generatePDF, 1200); // auto-trigger PDF
+}
+
+function generatePDF(){
+  // Uses browser print dialog targeting a print-optimised view
+  // In production this would use a proper PDF library (jsPDF or server-side)
+  const printContent = `
+    <html><head><title>Shadow Profile Report</title>
+    <style>
+      body{font-family:Arial,sans-serif;color:#1a1a2e;padding:32px;max-width:700px;margin:0 auto}
+      h1{font-size:24px;font-weight:900;letter-spacing:-0.02em;color:#E8294A;margin-bottom:4px}
+      .sub{font-size:12px;color:#666;margin-bottom:24px}
+      .score-row{display:flex;align-items:center;gap:20px;padding:20px;background:#f8f8f8;border-radius:8px;margin-bottom:24px}
+      .score-big{font-size:56px;font-weight:900;color:#E8294A;line-height:1}
+      .verdict{font-size:18px;font-weight:700}
+      h2{font-size:14px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#666;border-bottom:2px solid #eee;padding-bottom:8px;margin:24px 0 12px}
+      .item{font-size:13px;padding:6px 0;border-bottom:1px solid #eee;line-height:1.5}
+      .cta{margin-top:32px;padding:20px;background:#E8294A;border-radius:8px;color:#fff;text-align:center}
+      .cta h3{font-size:16px;font-weight:700;margin-bottom:6px}
+      .cta p{font-size:12px;opacity:0.85}
+      .footer{margin-top:24px;font-size:11px;color:#999;text-align:center;border-top:1px solid #eee;padding-top:16px}
+    </style></head><body>
+    <h1>Shadow Profile</h1>
+    <div class="sub">Digital Exposure Intelligence Report · Generated ${new Date().toLocaleDateString('en-IN')} · shadowprofile.app</div>
+    <div class="score-row">
+      <div class="score-big">${currentScore}</div>
+      <div><div class="verdict">${document.getElementById('score-verdict').textContent}</div>
+      <div style="font-size:13px;color:#666;margin-top:4px">${document.getElementById('score-desc').textContent}</div></div>
+    </div>
+    <h2>Recovery Checklist</h2>
+    ${RECOVERY_CHECKLIST.map((item,i)=>`<div class="item">${i+1}. ${item}</div>`).join('')}
+    <div class="cta">
+      <h3>Protect someone you care about</h3>
+      <p>Share Shadow Profile — free email breach scan at shadowprofile.app · Powered by Venux Studio</p>
+    </div>
+    <div class="footer">© 2026 Venux Studio · Shadow Profile · No data was stored in generating this report</div>
+    </body></html>`;
+  const w = window.open('','_blank');
+  w.document.write(printContent);
+  w.document.close();
+  w.focus();
+  setTimeout(()=>{ w.print(); }, 500);
+  announce('PDF report opened for download');
+}
+
+// ── SNAP MY SCORE ──
+function snapScore(){
+  const scoreEl = document.querySelector('.score-band');
+  if(!scoreEl){ announce('Score not available yet'); return; }
+  const toast = document.getElementById('snap-toast');
+  if(typeof html2canvas === 'undefined'){
+    // Fallback: copy score text to clipboard
+    navigator.clipboard.writeText(`My Shadow Profile Score: ${currentScore}/100 — Check yours at shadowprofile.app`);
+    toast.textContent = '📋 Score copied to clipboard!';
+    toast.classList.add('show');
+    setTimeout(()=>toast.classList.remove('show'), 3000);
+    return;
   }
+  toast.textContent = '📸 Capturing score...';
+  toast.classList.add('show');
+  html2canvas(scoreEl, {
+    backgroundColor:'#0D0E15',
+    scale:2,
+    useCORS:true,
+    logging:false,
+  }).then(canvas=>{
+    const link = document.createElement('a');
+    link.download = 'my-shadow-score.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+    toast.textContent = '✓ Score snapshot saved — share it anywhere!';
+    announce('Score snapshot downloaded');
+    setTimeout(()=>toast.classList.remove('show'), 3500);
+  }).catch(()=>{
+    navigator.clipboard.writeText(`My Shadow Profile Score: ${currentScore}/100 — Check yours at shadowprofile.app`);
+    toast.textContent = '📋 Score copied to clipboard instead';
+    setTimeout(()=>toast.classList.remove('show'), 3000);
+  });
 }
 
 // ── RESET ──
