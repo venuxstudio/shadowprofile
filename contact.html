@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Get in touch with the Shadow Profile team — Venux Studio. Report issues, ask questions, or explore partnership opportunities.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Venux Studio">
+<link rel="canonical" href="https://shadowprofile.online/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shadowprofile.online/contact.html">
+<meta property="og:title" content="Contact Shadow Profile — Venux Studio">
+<meta property="og:description" content="Reach the Shadow Profile team for support, partnerships, or general queries.">
+<title>Contact — Shadow Profile | Venux Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --base:#060608;
+  --surface:#0A0B10;
+  --card:#0F1018;
+  --panel:#141620;
+  --border:rgba(255,255,255,0.05);
+  --border-hi:rgba(255,255,255,0.09);
+  --text:#F0F2FA;
+  --text-soft:#B8BCCF;
+  --muted:#6B7090;
+  --faint:#2A2D3E;
+  --crimson:#E8294A;
+  --crimson-hi:#FF3D5C;
+  --jade:#22D06A;
+  --amber:#F5A623;
+  --focus-ring:0 0 0 3px rgba(232,41,74,0.32);
+  --radius:8px;
+  --radius-lg:12px;
+  --font:'Inter',sans-serif;
+  --font-display:'Space Grotesk',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--base);color:var(--text);
+  font-family:var(--font);font-weight:400;
+  min-height:100vh;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── NAV ── */
+nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 28px;height:56px;
+  border-bottom:1px solid var(--border);
+  background:rgba(6,6,8,0.92);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  position:sticky;top:0;z-index:300;
+}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--text)}
+.logo-mark{
+  width:28px;height:28px;border-radius:6px;
+  background:linear-gradient(135deg,var(--crimson),#B01030);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.logo-text{font-family:var(--font-display);font-weight:700;font-size:14px;letter-spacing:0.05em;color:var(--text)}
+.nav-r{display:flex;align-items:center;gap:10px}
+.nav-tag{
+  font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--muted);border:1px solid var(--border-hi);
+  padding:4px 11px;border-radius:var(--radius);background:var(--card);
+  text-decoration:none;transition:color 0.15s,border-color 0.15s;
+}
+.nav-tag:hover{color:var(--text);border-color:rgba(232,41,74,0.4)}
+.nav-tag.active{color:var(--text);border-color:rgba(232,41,74,0.5);background:rgba(232,41,74,0.06)}
+@media(max-width:500px){.nav-tag.hide-sm{display:none}}
+
+/* ── PAGE WRAP ── */
+.page{max-width:720px;margin:0 auto;padding:0 24px 100px}
+
+/* ── PAGE HERO ── */
+.page-hero{
+  padding:52px 0 44px;
+  border-bottom:1px solid var(--border);
+  margin-bottom:44px;
+}
+.page-eyebrow{
+  font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--crimson);margin-bottom:14px;display:flex;align-items:center;gap:8px;
+}
+.page-eyebrow::before{content:'';width:22px;height:1px;background:var(--crimson);opacity:0.5}
+h1.page-title{
+  font-family:var(--font-display);
+  font-size:clamp(26px,5vw,42px);font-weight:700;
+  line-height:1.08;letter-spacing:-0.02em;margin-bottom:14px;
+}
+.page-lead{
+  font-size:clamp(13px,1.8vw,15px);font-weight:400;
+  color:var(--text-soft);line-height:1.85;max-width:560px;
+}
+
+/* ── CONTACT CHANNELS ── */
+.channels-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;
+  margin-bottom:36px;
+}
+@media(max-width:520px){.channels-grid{grid-template-columns:1fr}}
+
+.channel-card{
+  background:var(--card);border:1px solid var(--border-hi);
+  border-radius:var(--radius-lg);padding:20px;
+  display:flex;flex-direction:column;gap:10px;
+  text-decoration:none;color:var(--text);
+  transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s;
+  position:relative;overflow:hidden;
+}
+.channel-card::before{
+  content:'';position:absolute;inset:0;opacity:0;
+  transition:opacity 0.25s;
+  background:radial-gradient(circle at 0% 0%,rgba(232,41,74,0.06),transparent 70%);
+}
+.channel-card:hover{border-color:rgba(232,41,74,0.3);transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,0.3)}
+.channel-card:hover::before{opacity:1}
+.channel-card.tg:hover{border-color:rgba(37,190,230,0.3)}
+.channel-card.tg::before{background:radial-gradient(circle at 0% 0%,rgba(37,190,230,0.06),transparent 70%)}
+
+.channel-icon{
+  width:38px;height:38px;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0;
+}
+.channel-icon.mail{background:rgba(232,41,74,0.1)}
+.channel-icon.tg{background:rgba(37,190,230,0.1)}
+
+.channel-label{
+  font-size:9px;font-weight:700;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--muted);
+}
+.channel-name{
+  font-family:var(--font-display);font-size:14px;font-weight:600;
+  letter-spacing:-0.01em;
+}
+.channel-desc{font-size:11.5px;color:var(--muted);line-height:1.55;margin-top:2px}
+.channel-arrow{
+  font-size:11px;color:var(--muted);margin-top:auto;
+  display:flex;align-items:center;gap:4px;font-weight:600;
+  transition:color 0.15s,gap 0.2s;
+}
+.channel-card:hover .channel-arrow{gap:8px;color:var(--text)}
+
+.tg-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:10px 16px;border-radius:var(--radius);
+  background:rgba(37,190,230,0.1);border:1px solid rgba(37,190,230,0.2);
+  color:#25BEE6;font-size:11px;font-weight:700;
+  letter-spacing:0.08em;text-transform:uppercase;
+  text-decoration:none;transition:all 0.2s;
+  margin-top:auto;
+}
+.tg-btn:hover{background:rgba(37,190,230,0.18);border-color:rgba(37,190,230,0.4);transform:translateY(-1px)}
+
+/* ── SECTION DIVIDER ── */
+.sec-divider{
+  display:flex;align-items:center;gap:12px;margin-bottom:24px;
+}
+.sec-divider-line{flex:1;height:1px;background:var(--border)}
+.sec-divider-label{
+  font-size:10px;font-weight:700;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--muted);white-space:nowrap;
+}
+
+/* ── FORM CARD ── */
+.form-card{
+  background:var(--card);border:1px solid var(--border-hi);
+  border-radius:var(--radius-lg);overflow:hidden;
+  margin-bottom:28px;
+}
+.form-card-header{
+  display:flex;align-items:center;gap:10px;
+  padding:16px 20px;background:var(--panel);border-bottom:1px solid var(--border);
+}
+.form-card-icon{font-size:16px}
+.form-card-title{
+  font-family:var(--font-display);font-size:14px;font-weight:600;flex:1;
+}
+.form-card-badge{
+  font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--jade);border:1px solid rgba(34,208,106,0.25);
+  padding:3px 8px;border-radius:4px;
+}
+.form-body{padding:24px 20px}
+
+/* ── FORM ELEMENTS ── */
+.field-row{
+  display:grid;grid-template-columns:1fr 1fr;gap:14px;
+  margin-bottom:14px;
+}
+@media(max-width:500px){.field-row{grid-template-columns:1fr}}
+
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.field-label{
+  font-size:10px;font-weight:700;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--muted);
+}
+.field-label span{color:var(--crimson);margin-left:2px}
+
+.field-input,
+.field-select,
+.field-textarea{
+  background:var(--surface);border:1px solid var(--border-hi);
+  border-radius:var(--radius);
+  padding:11px 14px;
+  font-family:var(--font);font-size:13px;font-weight:400;
+  color:var(--text);outline:none;
+  transition:border-color 0.2s,box-shadow 0.2s;
+  width:100%;
+}
+.field-input::placeholder,
+.field-textarea::placeholder{color:var(--faint)}
+.field-input:focus,
+.field-select:focus,
+.field-textarea:focus{
+  border-color:rgba(232,41,74,0.5);
+  box-shadow:0 0 0 3px rgba(232,41,74,0.08);
+}
+.field-input.error,
+.field-textarea.error{
+  border-color:var(--crimson);
+  box-shadow:0 0 0 3px rgba(232,41,74,0.1);
+}
+.field-select{
+  appearance:none;-webkit-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7090' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+  cursor:pointer;
+}
+.field-select option{background:var(--card);color:var(--text)}
+.field-textarea{
+  resize:vertical;min-height:120px;line-height:1.65;
+}
+.field-hint{font-size:10.5px;color:var(--muted);line-height:1.5;margin-top:-8px}
+.field-error-msg{font-size:10.5px;color:var(--crimson);display:none;margin-top:-8px}
+.field-error-msg.visible{display:block}
+
+/* CHAR COUNTER */
+.char-counter{
+  font-size:10px;color:var(--muted);text-align:right;
+  margin-top:-10px;margin-bottom:14px;transition:color 0.2s;
+}
+.char-counter.warn{color:var(--amber)}
+.char-counter.over{color:var(--crimson)}
+
+/* SUBMIT ROW */
+.submit-row{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;margin-top:6px;
+}
+.submit-note{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:5px}
+
+.submit-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 28px;border-radius:var(--radius);border:none;
+  background:var(--crimson);color:#fff;
+  font-family:var(--font);font-size:12px;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  cursor:pointer;transition:all 0.2s;
+  box-shadow:0 4px 16px rgba(232,41,74,0.2);
+  position:relative;overflow:hidden;
+}
+.submit-btn:hover{background:var(--crimson-hi);box-shadow:0 4px 24px rgba(232,41,74,0.32);transform:translateY(-1px)}
+.submit-btn:active{transform:translateY(0);box-shadow:none}
+.submit-btn:disabled{background:var(--faint);cursor:not-allowed;box-shadow:none;transform:none}
+.submit-btn .btn-spinner{
+  width:14px;height:14px;border:2px solid rgba(255,255,255,0.3);
+  border-top-color:#fff;border-radius:50%;
+  animation:spin 0.7s linear infinite;display:none;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.submit-btn.loading .btn-spinner{display:block}
+.submit-btn.loading .btn-label{display:none}
+
+/* ── SUCCESS STATE ── */
+.success-overlay{
+  display:none;padding:36px 20px;text-align:center;
+}
+.success-overlay.visible{display:flex;flex-direction:column;align-items:center;gap:12px}
+.success-icon-wrap{
+  width:60px;height:60px;border-radius:50%;
+  background:rgba(34,208,106,0.1);border:1px solid rgba(34,208,106,0.25);
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;
+  animation:popIn 0.45s cubic-bezier(0.16,1,0.3,1);
+}
+@keyframes popIn{from{transform:scale(0.6);opacity:0}to{transform:scale(1);opacity:1}}
+.success-title{
+  font-family:var(--font-display);font-size:18px;font-weight:700;
+  letter-spacing:-0.01em;color:var(--jade);
+}
+.success-sub{font-size:13px;color:var(--text-soft);line-height:1.7;max-width:380px}
+.success-eta{
+  font-size:11px;font-weight:600;letter-spacing:0.08em;
+  color:var(--muted);text-transform:uppercase;
+  background:var(--panel);border:1px solid var(--border-hi);
+  padding:5px 14px;border-radius:4px;
+}
+.success-reset{
+  font-size:11px;color:var(--muted);cursor:pointer;
+  text-decoration:underline;text-underline-offset:3px;
+  background:none;border:none;font-family:var(--font);
+  transition:color 0.15s;margin-top:4px;
+}
+.success-reset:hover{color:var(--text)}
+
+/* ── FAQ ACCORDION ── */
+.faq-list{margin-bottom:40px}
+.faq-item{
+  border-bottom:1px solid var(--border);
+}
+.faq-question{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 0;cursor:pointer;gap:12px;
+  list-style:none;transition:color 0.15s;
+  font-size:13.5px;font-weight:600;color:var(--text-soft);
+}
+.faq-question:hover{color:var(--text)}
+.faq-question::-webkit-details-marker{display:none}
+.faq-q-icon{
+  width:20px;height:20px;border-radius:50%;
+  background:var(--panel);border:1px solid var(--border-hi);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;font-size:11px;color:var(--muted);
+  transition:background 0.15s,transform 0.2s,color 0.15s;
+}
+details[open] .faq-q-icon{
+  background:rgba(232,41,74,0.1);border-color:rgba(232,41,74,0.3);
+  color:var(--crimson);transform:rotate(45deg);
+}
+.faq-answer{
+  font-size:13px;color:var(--text-soft);line-height:1.8;
+  padding-bottom:16px;
+}
+.faq-answer a{color:var(--crimson);text-decoration:none;border-bottom:1px solid rgba(232,41,74,0.3);transition:border-color 0.15s}
+.faq-answer a:hover{border-bottom-color:var(--crimson)}
+
+/* ── RESPONSE TIME STRIP ── */
+.response-strip{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;
+  margin-bottom:36px;
+}
+.rs-cell{background:var(--card);padding:16px 12px;text-align:center}
+.rs-val{
+  display:block;font-family:var(--font-display);
+  font-size:16px;font-weight:700;letter-spacing:-0.01em;
+  margin-bottom:3px;
+}
+.rs-label{font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)}
+@media(max-width:480px){.response-strip{grid-template-columns:1fr}}
+
+/* ── FOOTER ── */
+footer{
+  border-top:1px solid var(--border);padding:18px 28px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;margin-top:0;
+}
+.footer-brand{font-size:11px;font-weight:500;color:var(--muted)}
+.footer-brand strong{color:var(--text-soft)}
+.footer-r{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.footer-link{font-size:10px;font-weight:600;letter-spacing:0.05em;color:var(--muted);text-decoration:none;transition:color 0.15s}
+.footer-link:hover{color:var(--text)}
+
+/* ── REVEAL ANIMATION ── */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity 0.5s ease,transform 0.5s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ── LIVE INDICATOR ── */
+.live-pill{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:500;color:var(--jade);letter-spacing:0.04em}
+.live-dot{width:6px;height:6px;border-radius:50%;background:var(--jade);animation:livepulse 2.2s ease-in-out infinite}
+@keyframes livepulse{0%,100%{box-shadow:0 0 0 0 rgba(34,208,106,0.5)}60%{box-shadow:0 0 0 5px rgba(34,208,106,0)}}
+
+/* ── TOAST ── */
+.toast{
+  position:fixed;bottom:24px;left:50%;
+  transform:translateX(-50%) translateY(60px);
+  background:var(--card);border:1px solid var(--border-hi);
+  border-radius:var(--radius);padding:10px 20px;
+  font-size:12px;font-weight:600;color:var(--text);
+  white-space:nowrap;z-index:600;
+  transition:transform 0.3s ease,opacity 0.3s ease;opacity:0;pointer-events:none;
+}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+</style>
+</head>
+<body>
+
+<div class="toast" id="toast"></div>
+
+<nav role="banner">
+  <a class="logo" href="index.html" aria-label="Shadow Profile Home">
+    <div class="logo-mark" aria-hidden="true">
+      <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" width="14" height="14">
+        <path d="M7 1L1 4v6l6 3 6-3V4z" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <span class="logo-text">Shadow Profile</span>
+  </a>
+  <div class="nav-r">
+    <div class="live-pill"><div class="live-dot"></div>Live</div>
+    <a href="about.html" class="nav-tag hide-sm">About</a>
+    <a href="contact.html" class="nav-tag active">Contact</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- PAGE HERO -->
+  <header class="page-hero">
+    <div class="page-eyebrow">Get in Touch</div>
+    <h1 class="page-title">We're here<br>when you need us.</h1>
+    <p class="page-lead">Found a bug? Have a question about your report? Want to collaborate? We're a small team and we read every message — pick a channel and reach out.</p>
+  </header>
+
+  <!-- RESPONSE TIME STRIP -->
+  <div class="response-strip reveal" role="region" aria-label="Response times">
+    <div class="rs-cell">
+      <span class="rs-val" style="color:var(--jade)">~24h</span>
+      <span class="rs-label">Avg. Reply Time</span>
+    </div>
+    <div class="rs-cell">
+      <span class="rs-val" style="color:var(--amber)">Instant</span>
+      <span class="rs-label">Telegram Response</span>
+    </div>
+    <div class="rs-cell">
+      <span class="rs-val">Mon–Sat</span>
+      <span class="rs-label">Active Hours</span>
+    </div>
+  </div>
+
+  <!-- CHANNEL CARDS -->
+  <div class="channels-grid reveal">
+    <a href="mailto:venuxstudiox@gmail.com" class="channel-card" aria-label="Email us at venuxstudiox@gmail.com">
+      <div class="channel-icon mail">✉️</div>
+      <div>
+        <div class="channel-label">Email</div>
+        <div class="channel-name">venuxstudiox@gmail.com</div>
+        <div class="channel-desc">Best for detailed questions, report issues, or business enquiries. We respond within 24 hours.</div>
+      </div>
+      <div class="channel-arrow">Open email client <span>→</span></div>
+    </a>
+
+    <a href="https://t.me/venuxstudio" target="_blank" rel="noopener noreferrer" class="channel-card tg" aria-label="Message us on Telegram">
+      <div class="channel-icon tg">✈️</div>
+      <div>
+        <div class="channel-label">Telegram</div>
+        <div class="channel-name">t.me/venuxstudio</div>
+        <div class="channel-desc">Fastest way to reach us. Quick questions, breach alerts, or just a hello — we're usually online.</div>
+      </div>
+      <div class="tg-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M21 3L3 10l7 2.5L17 8l-4.5 7L15 21l6-18z" stroke="#25BEE6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Open Telegram
+      </div>
+    </a>
+  </div>
+
+  <!-- FORM DIVIDER -->
+  <div class="sec-divider reveal">
+    <div class="sec-divider-line"></div>
+    <div class="sec-divider-label">Or send a message directly</div>
+    <div class="sec-divider-line"></div>
+  </div>
+
+  <!-- CONTACT FORM -->
+  <div class="form-card reveal">
+    <div class="form-card-header">
+      <div class="form-card-icon">📬</div>
+      <div class="form-card-title">Send a Message</div>
+      <div class="form-card-badge">We read every one</div>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-body" id="form-body">
+      <div class="field-row">
+        <div class="field">
+          <label class="field-label" for="cf-name">Name<span>*</span></label>
+          <input class="field-input" id="cf-name" type="text" placeholder="Your name" autocomplete="given-name" maxlength="80">
+          <div class="field-error-msg" id="err-name">Please enter your name.</div>
+        </div>
+        <div class="field">
+          <label class="field-label" for="cf-email">Email<span>*</span></label>
+          <input class="field-input" id="cf-email" type="email" placeholder="you@email.com" autocomplete="email" maxlength="120">
+          <div class="field-error-msg" id="err-email">Please enter a valid email.</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="cf-subject">Topic<span>*</span></label>
+        <select class="field-input field-select" id="cf-subject">
+          <option value="" disabled selected>What's this about?</option>
+          <option value="Report Issue">Issue with my report</option>
+          <option value="Payment Help">Payment or billing query</option>
+          <option value="Data Breach Query">Question about a specific breach</option>
+          <option value="Partnership">Partnership / collaboration</option>
+          <option value="Privacy Request">Privacy or data removal request</option>
+          <option value="General">General enquiry</option>
+          <option value="Other">Something else</option>
+        </select>
+        <div class="field-error-msg" id="err-subject">Please select a topic.</div>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="cf-message">Message<span>*</span></label>
+        <textarea class="field-textarea" id="cf-message" placeholder="Describe your question or issue in as much detail as you like — we'll get back to you as soon as we can." maxlength="2000"></textarea>
+        <div class="field-error-msg" id="err-message">Please write a message (at least 10 characters).</div>
+      </div>
+      <div class="char-counter" id="char-counter">0 / 2000</div>
+
+      <div class="submit-row">
+        <div class="submit-note">
+          <span>🔒</span>
+          <span>Your details are used only to respond to you. Never shared.</span>
+        </div>
+        <button class="submit-btn" id="submit-btn" onclick="submitForm()">
+          <span class="btn-label">Send Message →</span>
+          <div class="btn-spinner"></div>
+        </button>
+      </div>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="success-overlay" id="success-overlay">
+      <div class="success-icon-wrap">✅</div>
+      <div class="success-title">Message received.</div>
+      <p class="success-sub">We've got your message and will get back to you within 24 hours. If it's urgent, ping us directly on Telegram for a faster reply.</p>
+      <div class="success-eta">⏱ Expected reply within 24 hours</div>
+      <button class="success-reset" onclick="resetForm()">Send another message</button>
+    </div>
+  </div>
+
+  <!-- FAQ ACCORDION -->
+  <section class="reveal" aria-label="Frequently asked questions">
+    <div class="sec-divider" style="margin-bottom:20px">
+      <div class="sec-divider-line"></div>
+      <div class="sec-divider-label">Common questions</div>
+      <div class="sec-divider-line"></div>
+    </div>
+
+    <div class="faq-list">
+
+      <details>
+        <summary class="faq-question">
+          I paid but haven't received anything. What should I do?
+          <div class="faq-q-icon" aria-hidden="true">+</div>
+        </summary>
+        <p class="faq-answer">Your paid report unlocks instantly in the same browser session after payment. If you've closed the tab, email us at <a href="mailto:venuxstudiox@gmail.com">venuxstudiox@gmail.com</a> with your payment reference and we'll sort it out promptly.</p>
+      </details>
+
+      <details>
+        <summary class="faq-question">
+          Is my email address safe when I use Shadow Profile?
+          <div class="faq-q-icon" aria-hidden="true">+</div>
+        </summary>
+        <p class="faq-answer">Yes. We never store, log, or share your email address. It's used only to query the XposedOrNot breach database in real time and is discarded immediately after. No accounts, no tracking.</p>
+      </details>
+
+      <details>
+        <summary class="faq-question">
+          Can I request removal of my data from breach records?
+          <div class="faq-q-icon" aria-hidden="true">+</div>
+        </summary>
+        <p class="faq-answer">Shadow Profile doesn't host breach data — we query the XposedOrNot API. To request removal from the underlying breach database, contact <a href="https://xposedornot.com" target="_blank" rel="noopener">XposedOrNot</a> directly. Our paid reports also include data broker opt-out links for 15–20 removal portals.</p>
+      </details>
+
+      <details>
+        <summary class="faq-question">
+          Do you offer partnerships, white-labelling, or API access?
+          <div class="faq-q-icon" aria-hidden="true">+</div>
+        </summary>
+        <p class="faq-answer">Yes — Venux Studio is open to partnerships, brand collaborations, and integration enquiries. Use the form above or email <a href="mailto:venuxstudiox@gmail.com">venuxstudiox@gmail.com</a> with "Partnership" as the subject.</p>
+      </details>
+
+      <details>
+        <summary class="faq-question">
+          My scan shows no breaches but I'm sure my data was leaked. Why?
+          <div class="faq-q-icon" aria-hidden="true">+</div>
+        </summary>
+        <p class="faq-answer">Our database covers thousands of publicly documented breaches. Many breaches are never disclosed, or take years to surface. A clean result means your email hasn't appeared in any breach we have on record — not that you're completely safe. Stay vigilant and use strong unique passwords.</p>
+      </details>
+
+    </div>
+  </section>
+
+</div><!-- /page -->
+
+<footer role="contentinfo">
+  <div class="footer-brand">© 2026 <strong>VENUX STUDIO</strong> — All rights reserved</div>
+  <div class="footer-r">
+    <a href="index.html" class="footer-link">Home</a>
+    <a href="about.html" class="footer-link">About</a>
+    <a href="privacy-terms.html#privacy" class="footer-link">Privacy Policy</a>
+    <a href="privacy-terms.html#terms" class="footer-link">Terms of Use</a>
+  </div>
+</footer>
+
+<script>
+'use strict';
+
+// ── CHAR COUNTER ──
+const msgArea = document.getElementById('cf-message');
+const counter = document.getElementById('char-counter');
+msgArea.addEventListener('input', () => {
+  const len = msgArea.value.length;
+  counter.textContent = len + ' / 2000';
+  counter.className = 'char-counter' + (len > 1900 ? ' over' : len > 1600 ? ' warn' : '');
+});
+
+// ── VALIDATION ──
+function validate() {
+  let ok = true;
+  const name    = document.getElementById('cf-name');
+  const email   = document.getElementById('cf-email');
+  const subject = document.getElementById('cf-subject');
+  const message = document.getElementById('cf-message');
+
+  const setErr = (field, errId, show) => {
+    field.classList.toggle('error', show);
+    const errEl = document.getElementById(errId);
+    errEl.classList.toggle('visible', show);
+    if (show) ok = false;
+  };
+
+  setErr(name,    'err-name',    !name.value.trim());
+  setErr(email,   'err-email',   !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()));
+  setErr(subject, 'err-subject', !subject.value);
+  setErr(message, 'err-message', message.value.trim().length < 10);
+
+  return ok;
+}
+
+// ── SUBMIT via Formspree ──
+// We use Formspree (free, no backend needed) to forward form data to venuxstudiox@gmail.com
+// If you want a different service, swap the action URL.
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xnjygbkv'; // Replace with your actual Formspree form ID
+
+async function submitForm() {
+  if (!validate()) return;
+
+  const btn = document.getElementById('submit-btn');
+  btn.classList.add('loading');
+  btn.disabled = true;
+
+  const name    = document.getElementById('cf-name').value.trim();
+  const email   = document.getElementById('cf-email').value.trim();
+  const subject = document.getElementById('cf-subject').value;
+  const message = document.getElementById('cf-message').value.trim();
+
+  const payload = { name, email, _subject: `[Shadow Profile] ${subject} — from ${name}`, message };
+
+  try {
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+
+    if (res.ok) {
+      showSuccess();
+    } else {
+      // Fallback: open mailto
+      fallbackMailto(name, email, subject, message);
+    }
+  } catch (e) {
+    // Network error — open mailto as fallback
+    fallbackMailto(name, email, subject, message);
+  } finally {
+    btn.classList.remove('loading');
+    btn.disabled = false;
+  }
+}
+
+function fallbackMailto(name, email, subject, message) {
+  const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+  const mailto = `mailto:venuxstudiox@gmail.com?subject=${encodeURIComponent('[Shadow Profile] ' + subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailto;
+  showSuccess();
+}
+
+function showSuccess() {
+  document.getElementById('form-body').style.display = 'none';
+  const overlay = document.getElementById('success-overlay');
+  overlay.classList.add('visible');
+  overlay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function resetForm() {
+  document.getElementById('cf-name').value     = '';
+  document.getElementById('cf-email').value    = '';
+  document.getElementById('cf-subject').value  = '';
+  document.getElementById('cf-message').value  = '';
+  counter.textContent = '0 / 2000';
+  counter.className = 'char-counter';
+  ['cf-name','cf-email','cf-subject','cf-message'].forEach(id => {
+    document.getElementById(id).classList.remove('error');
+  });
+  ['err-name','err-email','err-subject','err-message'].forEach(id => {
+    document.getElementById(id).classList.remove('visible');
+  });
+  document.getElementById('form-body').style.display = 'block';
+  document.getElementById('success-overlay').classList.remove('visible');
+}
+
+// ── TOAST ──
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// ── SCROLL REVEAL ──
+(function setupReveal() {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+})();
+
+// Clear errors on input
+['cf-name','cf-email','cf-message'].forEach(id => {
+  document.getElementById(id).addEventListener('input', function() {
+    this.classList.remove('error');
+    const errId = 'err-' + id.replace('cf-','');
+    const errEl = document.getElementById(errId);
+    if (errEl) errEl.classList.remove('visible');
+  });
+});
+document.getElementById('cf-subject').addEventListener('change', function() {
+  this.classList.remove('error');
+  document.getElementById('err-subject').classList.remove('visible');
+});
+</script>
+</body>
+</html>
