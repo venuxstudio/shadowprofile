@@ -3,65 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Find out if your email or phone number has been exposed in a data breach. Free instant scan across 14 billion leaked records. No data stored. Trusted by thousands of Indian users.">
-<meta name="keywords" content="data breach check India, have I been pwned India, email breach checker, phone number leaked, data leak India, BigBasket breach, Zomato breach, personal data exposure, cyber security India, check if email is hacked, shadow profile">
+<meta name="description" content="Find out if your email has been exposed in a data breach. Free instant scan powered by XposedOrNot across billions of leaked records. No data stored. Trusted by thousands of Indian users.">
+<meta name="keywords" content="data breach check India, email breach checker, data leak India, personal data exposure, cyber security India, check if email is hacked, shadow profile, xposedornot">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Venux Studio">
-<link rel="canonical" href="https://shadowprofile.app/">
+<link rel="canonical" href="https://shadowprofile.online/">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://shadowprofile.app/">
+<meta property="og:url" content="https://shadowprofile.online/">
 <meta property="og:title" content="Shadow Profile — Is Your Data Already Exposed?">
-<meta property="og:description" content="Run a free scan on your email. Find out which Indian and global platforms leaked your data — passwords, phone numbers, and more. Instant results.">
-<meta property="og:image" content="https://shadowprofile.app/og-image.jpg">
+<meta property="og:description" content="Run a free scan on your email. Find out which Indian and global platforms leaked your data. Instant results.">
+<meta property="og:image" content="https://shadowprofile.online/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Shadow Profile — Digital Exposure Intelligence">
-<meta name="twitter:description" content="14 billion records scanned. Free email breach check. Find out what's out there about you.">
+<meta name="twitter:description" content="Billions of records scanned. Free email breach check. Find out what's out there about you.">
 <title>Shadow Profile — Check If Your Data Was Leaked | Free Email Breach Scan India</title>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Shadow Profile",
-  "url": "https://shadowprofile.app",
-  "description": "Free email and phone number breach checker for Indian users. Instant scan across 14 billion leaked records.",
+  "url": "https://shadowprofile.online",
+  "description": "Free email breach checker for Indian users. Instant scan across billions of leaked records powered by XposedOrNot.",
   "applicationCategory": "SecurityApplication",
   "operatingSystem": "Web",
   "offers": [
-    { "@type": "Offer", "name": "Exposure Report", "price": "49", "priceCurrency": "INR" },
-    { "@type": "Offer", "name": "Full Shadow Report", "price": "99", "priceCurrency": "INR" }
+    { "@type": "Offer", "name": "Exposure Report", "price": "29", "priceCurrency": "INR" },
+    { "@type": "Offer", "name": "Full Shadow Report", "price": "49", "priceCurrency": "INR" }
   ],
-  "creator": { "@type": "Organization", "name": "Venux Studio", "url": "https://www.google.com" }
+  "creator": { "@type": "Organization", "name": "Venux Studio" }
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <style>
-/* ── RESET & BASE ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --base:#09090E;
-  --surface:#0D0E15;
-  --card:#11121A;
-  --panel:#161820;
-  --border:rgba(255,255,255,0.06);
-  --border-hi:rgba(255,255,255,0.10);
-  --text:#ECEEF5;
-  --text-soft:#C4C8D8;
-  --muted:#767B90;
-  --faint:#32364A;
+  --base:#060608;
+  --surface:#0A0B10;
+  --card:#0F1018;
+  --panel:#141620;
+  --border:rgba(255,255,255,0.05);
+  --border-hi:rgba(255,255,255,0.09);
+  --text:#F0F2FA;
+  --text-soft:#B8BCCF;
+  --muted:#6B7090;
+  --faint:#2A2D3E;
   --crimson:#E8294A;
   --crimson-hi:#FF3D5C;
-  --crimson-bg:rgba(232,41,74,0.09);
-  --jade:#27C96A;
-  --jade-bg:rgba(39,201,106,0.09);
+  --crimson-glow:rgba(232,41,74,0.12);
+  --jade:#22D06A;
+  --jade-bg:rgba(34,208,106,0.08);
   --amber:#F5A623;
-  --amber-bg:rgba(245,166,35,0.09);
+  --amber-bg:rgba(245,166,35,0.08);
+  --blue:#4F8EF7;
   --critical:#B01030;
   --focus-ring:0 0 0 3px rgba(232,41,74,0.35);
-  --radius:6px;
-  --radius-lg:10px;
-  --font:'Montserrat',sans-serif;
+  --radius:8px;
+  --radius-lg:12px;
+  --font:'Inter',sans-serif;
+  --font-display:'Space Grotesk',sans-serif;
 }
 html{scroll-behavior:smooth}
 body{
@@ -69,666 +71,449 @@ body{
   font-family:var(--font);font-weight:400;
   min-height:100vh;overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
 }
-
-/* ── SKIP LINK (Accessibility) ── */
-.skip-link{
-  position:absolute;top:-100px;left:16px;
-  background:var(--crimson);color:#fff;
-  padding:8px 16px;border-radius:var(--radius);
-  font-weight:600;font-size:13px;z-index:9999;
-  transition:top 0.2s;
-}
-.skip-link:focus{top:8px}
-
-/* ── CANVAS ── */
-#bg-canvas{
-  position:fixed;inset:0;pointer-events:none;
-  z-index:0;opacity:0.04;
-  transition:opacity 1.2s ease;
-}
-#bg-canvas.active{opacity:0.36}
-
-/* ── PAGE ── */
+#bg-canvas{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0.035;transition:opacity 1.2s ease}
+#bg-canvas.active{opacity:0.32}
 .page{position:relative;z-index:1}
 
-/* ── NAV ── */
+/* NAV */
 nav{
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 28px;height:58px;
+  padding:0 28px;height:56px;
   border-bottom:1px solid var(--border);
-  background:rgba(9,9,14,0.90);
-  backdrop-filter:blur(20px);
-  -webkit-backdrop-filter:blur(20px);
+  background:rgba(6,6,8,0.92);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
   position:sticky;top:0;z-index:300;
 }
-.logo{
-  display:flex;align-items:center;gap:9px;
-  text-decoration:none;color:var(--text);
-}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--text)}
 .logo-mark{
-  width:28px;height:28px;border-radius:5px;
-  background:var(--crimson);
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;
+  width:28px;height:28px;border-radius:6px;
+  background:linear-gradient(135deg,var(--crimson),#B01030);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
 }
-.logo-mark svg{width:14px;height:14px;fill:#fff}
-.logo-text{
-  font-weight:700;font-size:14px;letter-spacing:0.12em;
-  text-transform:uppercase;color:var(--text);
-}
-.nav-r{display:flex;align-items:center;gap:12px}
-.live-pill{
-  display:flex;align-items:center;gap:6px;
-  font-size:11px;font-weight:500;letter-spacing:0.06em;
-  color:var(--jade);text-transform:uppercase;
-}
-.live-dot{
-  width:6px;height:6px;border-radius:50%;
-  background:var(--jade);
-  animation:livepulse 2.2s ease-in-out infinite;
-}
-@keyframes livepulse{
-  0%,100%{box-shadow:0 0 0 0 rgba(39,201,106,0.5)}
-  60%{box-shadow:0 0 0 5px rgba(39,201,106,0)}
-}
-.nav-tag{
-  font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--muted);border:1px solid var(--border-hi);
-  padding:4px 11px;border-radius:var(--radius);background:var(--card);
-}
+.logo-mark svg{width:14px;height:14px}
+.logo-text{font-family:var(--font-display);font-weight:700;font-size:14px;letter-spacing:0.05em;color:var(--text)}
+.nav-r{display:flex;align-items:center;gap:10px}
+.live-pill{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:500;color:var(--jade);letter-spacing:0.04em}
+.live-dot{width:6px;height:6px;border-radius:50%;background:var(--jade);animation:livepulse 2.2s ease-in-out infinite}
+@keyframes livepulse{0%,100%{box-shadow:0 0 0 0 rgba(34,208,106,0.5)}60%{box-shadow:0 0 0 5px rgba(34,208,106,0)}}
+.nav-tag{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border-hi);padding:4px 11px;border-radius:var(--radius);background:var(--card);text-decoration:none;transition:color 0.15s,border-color 0.15s}
+.nav-tag:hover{color:var(--text);border-color:var(--border-hi)}
 @media(max-width:500px){.nav-tag{display:none}}
 
-/* ── TICKER ── */
-.ticker{
-  overflow:hidden;border-bottom:1px solid var(--border);
-  background:var(--surface);padding:9px 0;
-  position:relative;
-}
-.ticker::before,.ticker::after{
-  content:'';position:absolute;top:0;bottom:0;width:64px;z-index:2;pointer-events:none;
-}
+/* TICKER */
+.ticker{overflow:hidden;border-bottom:1px solid var(--border);background:var(--surface);padding:8px 0;position:relative}
+.ticker::before,.ticker::after{content:'';position:absolute;top:0;bottom:0;width:56px;z-index:2;pointer-events:none}
 .ticker::before{left:0;background:linear-gradient(to right,var(--surface),transparent)}
 .ticker::after{right:0;background:linear-gradient(to left,var(--surface),transparent)}
-.ticker-inner{
-  display:flex;white-space:nowrap;
-  animation:scrollticker 32s linear infinite;
-}
+.ticker-inner{display:flex;white-space:nowrap;animation:scrollticker 34s linear infinite}
 .ticker-inner:hover{animation-play-state:paused}
-.t-item{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:0 28px;font-size:11px;font-weight:500;
-  color:var(--muted);letter-spacing:0.04em;flex-shrink:0;
-}
-.t-breach{color:var(--crimson);font-weight:600}
-.t-records{color:var(--amber)}
-.t-dot{color:var(--faint)}
+.t-item{display:inline-flex;align-items:center;gap:8px;padding:0 24px;font-size:11px;font-weight:500;color:var(--muted);letter-spacing:0.03em;flex-shrink:0}
+.t-breach{color:var(--crimson);font-weight:700;letter-spacing:0.06em}
+.t-records{color:var(--amber);font-weight:600}
 @keyframes scrollticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* ── HERO ── */
+/* HERO */
 .hero{
-  min-height:calc(100vh - 58px);
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  padding:60px 24px 80px;
-  text-align:center;
-  position:relative;
+  min-height:calc(100vh - 56px);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;padding:60px 24px 80px;
+  text-align:center;position:relative;
 }
 .hero-label{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;
-  color:var(--crimson);margin-bottom:24px;
-  opacity:0;animation:fadeup 0.55s 0.1s ease forwards;
+  display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;
+  letter-spacing:0.2em;text-transform:uppercase;color:var(--crimson);margin-bottom:22px;
+  opacity:0;animation:fadeup 0.5s 0.1s ease forwards;
 }
-.hero-label-line{width:32px;height:1px;background:var(--crimson);opacity:0.5}
+.hero-label-line{width:28px;height:1px;background:var(--crimson);opacity:0.5}
 h1{
-  font-size:clamp(32px,6.5vw,64px);
-  font-weight:800;line-height:1.08;
-  letter-spacing:-0.025em;
-  margin-bottom:8px;
-  opacity:0;animation:fadeup 0.55s 0.22s ease forwards;
+  font-family:var(--font-display);
+  font-size:clamp(30px,6vw,62px);font-weight:700;line-height:1.07;
+  letter-spacing:-0.02em;margin-bottom:8px;
+  opacity:0;animation:fadeup 0.5s 0.2s ease forwards;
 }
 h1 .accent{color:var(--crimson)}
 .hero-subtitle{
-  font-size:clamp(14px,2vw,17px);font-weight:300;
-  color:var(--text-soft);line-height:1.75;
-  max-width:480px;margin:16px auto 40px;
-  opacity:0;animation:fadeup 0.55s 0.34s ease forwards;
+  font-size:clamp(13px,1.9vw,16px);font-weight:400;color:var(--text-soft);
+  line-height:1.8;max-width:460px;margin:14px auto 36px;
+  opacity:0;animation:fadeup 0.5s 0.32s ease forwards;
 }
-@keyframes fadeup{
-  from{opacity:0;transform:translateY(12px)}
-  to{opacity:1;transform:translateY(0)}
-}
+@keyframes fadeup{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
-/* ── SCAN INPUT ── */
-.scan-container{
-  width:100%;max-width:520px;
-  opacity:0;animation:fadeup 0.55s 0.44s ease forwards;
-}
+/* SCAN INPUT */
+.scan-container{width:100%;max-width:510px;opacity:0;animation:fadeup 0.5s 0.42s ease forwards}
 .input-row{
-  display:flex;background:var(--card);
-  border:1px solid var(--border-hi);
+  display:flex;background:var(--card);border:1px solid var(--border-hi);
   border-radius:var(--radius-lg);overflow:hidden;
   transition:border-color 0.25s,box-shadow 0.25s;
 }
-.input-row:focus-within{
-  border-color:var(--crimson);
-  box-shadow:0 0 0 3px rgba(232,41,74,0.12);
-}
-.input-row.error{
-  border-color:var(--crimson);
-  animation:shake 0.38s ease;
-}
+.input-row:focus-within{border-color:rgba(232,41,74,0.5);box-shadow:0 0 0 3px rgba(232,41,74,0.1)}
+.input-row.error{border-color:var(--crimson);animation:shake 0.38s ease}
 @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
 .email-input{
-  flex:1;min-width:0;background:transparent;
-  border:none;outline:none;
-  padding:14px 18px;
-  font-family:var(--font);font-size:14px;font-weight:500;
-  color:var(--text);
+  flex:1;min-width:0;background:transparent;border:none;outline:none;
+  padding:14px 18px;font-family:var(--font);font-size:14px;font-weight:500;color:var(--text);
 }
 .email-input::placeholder{color:var(--faint);font-weight:400}
 .scan-btn{
-  background:var(--crimson);color:#fff;border:none;
-  padding:14px 22px;cursor:pointer;flex-shrink:0;
-  font-family:var(--font);font-size:12px;font-weight:700;
-  letter-spacing:0.1em;text-transform:uppercase;
-  transition:background 0.2s;
-  display:flex;align-items:center;gap:7px;
+  background:var(--crimson);color:#fff;border:none;padding:14px 22px;cursor:pointer;flex-shrink:0;
+  font-family:var(--font);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  transition:background 0.2s;display:flex;align-items:center;gap:7px;
 }
 .scan-btn:hover{background:var(--crimson-hi)}
-.scan-btn:active{transform:scale(0.98)}
-.scan-btn:focus-visible{outline:none;box-shadow:var(--focus-ring)}
 .scan-btn:disabled{background:var(--faint);cursor:not-allowed}
-.scan-btn svg{width:13px;height:13px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .input-meta{
-  display:flex;align-items:center;justify-content:center;gap:16px;
-  margin-top:10px;font-size:11px;font-weight:500;
-  color:var(--faint);letter-spacing:0.04em;
+  display:flex;align-items:center;justify-content:center;gap:14px;margin-top:9px;
+  font-size:11px;font-weight:500;color:var(--muted);
 }
-.input-meta-sep{color:var(--faint);opacity:0.4}
+.input-meta-sep{opacity:0.4}
 
-/* ── STAT STRIP ── */
+/* STAT STRIP */
 .stat-strip{
   display:grid;grid-template-columns:repeat(3,1fr);
-  gap:1px;background:var(--border);
-  border:1px solid var(--border);border-radius:var(--radius-lg);
-  overflow:hidden;margin-top:56px;width:100%;max-width:520px;
-  opacity:0;animation:fadeup 0.55s 0.54s ease forwards;
+  gap:1px;background:var(--border);border:1px solid var(--border);
+  border-radius:var(--radius-lg);overflow:hidden;margin-top:48px;
+  width:100%;max-width:510px;opacity:0;animation:fadeup 0.5s 0.52s ease forwards;
 }
-.ss-cell{background:var(--card);padding:20px 8px;text-align:center}
-.ss-num{
-  display:block;font-size:clamp(22px,4vw,30px);font-weight:800;
-  letter-spacing:-0.03em;color:var(--text);
-}
+.ss-cell{background:var(--card);padding:18px 8px;text-align:center}
+.ss-num{display:block;font-family:var(--font-display);font-size:clamp(20px,3.5vw,28px);font-weight:700;letter-spacing:-0.02em;color:var(--text)}
 .ss-num.danger{color:var(--crimson)}
-.ss-label{display:block;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.ss-label{display:block;font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:4px}
 
-/* ── SCANNING STATE ── */
-#scan-state{
-  display:none;min-height:calc(100vh - 58px);
-  align-items:center;justify-content:center;flex-direction:column;
-  padding:60px 24px;gap:24px;
-}
-.terminal-window{
-  width:100%;max-width:500px;
-  background:var(--card);border:1px solid var(--border-hi);border-radius:var(--radius-lg);overflow:hidden;
-}
-.terminal-bar{
-  display:flex;align-items:center;gap:8px;
-  padding:11px 16px;background:var(--panel);border-bottom:1px solid var(--border);
-}
+/* SCANNING STATE */
+#scan-state{display:none;min-height:calc(100vh - 56px);align-items:center;justify-content:center;flex-direction:column;padding:60px 24px;gap:20px}
+.terminal-window{width:100%;max-width:480px;background:var(--card);border:1px solid var(--border-hi);border-radius:var(--radius-lg);overflow:hidden}
+.terminal-bar{display:flex;align-items:center;gap:8px;padding:11px 16px;background:var(--panel);border-bottom:1px solid var(--border)}
 .tb-dots{display:flex;gap:5px}
-.tb-dot{width:10px;height:10px;border-radius:50%}
+.tb-dot{width:9px;height:9px;border-radius:50%}
 .tb-dot.r{background:#FF5F57}.tb-dot.a{background:#FEBC2E}.tb-dot.g{background:#28C840}
 .tb-title{flex:1;text-align:center;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)}
-.terminal-body{padding:20px;min-height:160px;font-size:12px;font-weight:400;line-height:2}
+.terminal-body{padding:18px;min-height:150px;font-size:11.5px;font-weight:400;line-height:1.9;font-family:monospace}
 .tlog-target{color:var(--crimson);font-weight:600;margin-bottom:4px}
 .tlog-line{color:var(--muted)}
 .tlog-line.done{color:var(--jade)}
-.tlog-line.active{color:var(--text-soft)}
-.tlog-line.warn{color:var(--amber)}
-.t-cursor{display:inline-block;width:7px;height:13px;background:var(--crimson);vertical-align:middle;margin-left:3px;animation:blink 1s step-end infinite}
+.tlog-line.tlog-active{color:var(--text-soft)}
+.tlog-line.tlog-warn{color:var(--amber)}
+.t-cursor{display:inline-block;width:7px;height:12px;background:var(--crimson);vertical-align:middle;margin-left:3px;animation:blink 1s step-end infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-
-.scan-phase{font-size:clamp(18px,4vw,24px);font-weight:700;letter-spacing:-0.02em;text-align:center;transition:color 0.7s ease}
-.scan-phase-sub{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-align:center}
-.progress-bar{
-  width:100%;max-width:500px;height:2px;
-  background:var(--border-hi);border-radius:2px;overflow:hidden;
-}
+.scan-phase{font-family:var(--font-display);font-size:clamp(16px,3.5vw,22px);font-weight:600;letter-spacing:-0.01em;text-align:center;transition:color 0.7s ease}
+.scan-phase-sub{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-align:center}
+.scan-wait-msg{font-size:13px;font-weight:500;color:var(--amber);text-align:center;opacity:0;transition:opacity 0.5s ease;padding:6px 16px;background:rgba(245,166,35,0.07);border:1px solid rgba(245,166,35,0.2);border-radius:var(--radius);max-width:480px}
+.scan-wait-msg.visible{opacity:1}
+.progress-bar{width:100%;max-width:480px;height:2px;background:var(--border-hi);border-radius:2px;overflow:hidden}
 .progress-fill{height:100%;width:0;border-radius:2px;transition:width 0.5s ease,background 0.7s ease}
 
-/* ── RESULT STATE ── */
+/* RESULT STATE */
 #result-state{display:none;padding-bottom:80px}
 
-/* ── SCORE BAND ── */
+/* SCORE BAND */
 .score-band{
-  padding:52px 24px 44px;text-align:center;
+  padding:48px 24px 40px;text-align:center;
   border-bottom:1px solid var(--border);position:relative;overflow:hidden;
 }
 .score-glow-bg{
   position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse 50% 38% at 50% 110%,var(--glow-color,rgba(232,41,74,0.07)),transparent);
+  background:radial-gradient(ellipse 55% 40% at 50% 110%,var(--glow-color,rgba(232,41,74,0.06)),transparent);
   transition:background 1.5s ease;
 }
-.score-eyebrow{
-  font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--muted);margin-bottom:18px;
-}
-.ring-wrap{display:inline-flex;position:relative;margin-bottom:14px}
+.score-eyebrow{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.ring-wrap{display:inline-flex;position:relative;margin-bottom:12px}
 .ring-svg{transform:rotate(-90deg)}
-.ring-track{fill:none;stroke:var(--panel);stroke-width:4}
-.ring-arc{
-  fill:none;stroke-width:4;stroke-linecap:butt;
-  stroke-dasharray:502;stroke-dashoffset:502;
-  transition:stroke-dashoffset 2.2s cubic-bezier(0.16,1,0.3,1),stroke 0.6s;
-}
+.ring-track{fill:none;stroke:var(--panel);stroke-width:5}
+.ring-arc{fill:none;stroke-width:5;stroke-linecap:round;stroke-dasharray:502;stroke-dashoffset:502;transition:stroke-dashoffset 2.2s cubic-bezier(0.16,1,0.3,1),stroke 0.6s}
 .ring-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.ring-num{font-size:46px;font-weight:800;line-height:1;letter-spacing:-0.04em}
-.ring-denom{font-size:11px;font-weight:600;color:var(--muted);letter-spacing:0.06em;margin-top:1px}
-.score-verdict{
-  font-size:clamp(18px,3.5vw,26px);font-weight:700;letter-spacing:-0.02em;margin-bottom:10px;
-}
-.score-desc{font-size:14px;font-weight:400;color:var(--text-soft);max-width:400px;margin:0 auto;line-height:1.72}
-.col-crimson{color:var(--crimson)}
-.col-amber{color:var(--amber)}
-.col-jade{color:var(--jade)}
-.col-critical{color:var(--critical)}
+.ring-num{font-family:var(--font-display);font-size:44px;font-weight:700;line-height:1;letter-spacing:-0.03em}
+.ring-denom{font-size:11px;font-weight:500;color:var(--muted);letter-spacing:0.06em}
+.score-verdict{font-family:var(--font-display);font-size:clamp(17px,3vw,24px);font-weight:600;letter-spacing:-0.01em;margin-bottom:8px}
+.score-desc{font-size:13.5px;font-weight:400;color:var(--text-soft);max-width:380px;margin:0 auto;line-height:1.7}
+.col-crimson{color:var(--crimson)}.col-amber{color:var(--amber)}.col-jade{color:var(--jade)}.col-critical{color:var(--critical)}
 
-/* ── QUICK STATS ── */
-.quick-stats{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:1px;background:var(--border);
-  border-bottom:1px solid var(--border);
-}
-.qs-cell{background:var(--surface);padding:20px 8px;text-align:center}
-.qs-val{display:block;font-size:clamp(18px,3vw,26px);font-weight:800;letter-spacing:-0.02em}
-.qs-label{display:block;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-top:4px}
-@media(max-width:480px){
-  .quick-stats{grid-template-columns:repeat(2,1fr)}
-  .stat-strip{grid-template-columns:1fr 1fr}
-  .ss-cell:last-child{grid-column:span 2}
-}
+/* QUICK STATS */
+.quick-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border)}
+.qs-cell{background:var(--surface);padding:18px 8px;text-align:center}
+.qs-val{display:block;font-family:var(--font-display);font-size:clamp(16px,2.8vw,24px);font-weight:700;letter-spacing:-0.02em}
+.qs-label{display:block;font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+@media(max-width:480px){.quick-stats{grid-template-columns:repeat(2,1fr)}.stat-strip{grid-template-columns:1fr 1fr}.ss-cell:last-child{grid-column:span 2}}
 
-/* ── CONTENT WRAPPER ── */
+/* CONTENT */
 .content{max-width:680px;margin:0 auto;padding:0 20px}
-
-/* ── SECTION ── */
-.section{margin-top:44px}
-.section-head{
-  display:flex;align-items:center;gap:10px;
-  padding-bottom:12px;border-bottom:1px solid var(--border);
-  margin-bottom:18px;
-}
+.section{margin-top:40px}
+.section-head{display:flex;align-items:center;gap:10px;margin-bottom:14px}
 .sh-icon{
-  width:30px;height:30px;border-radius:var(--radius);
-  display:flex;align-items:center;justify-content:center;
-  font-size:13px;flex-shrink:0;border:1px solid var(--border-hi);
+  width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;
+  font-size:14px;flex-shrink:0;
 }
-.sh-icon.c{background:rgba(232,41,74,0.08)}
-.sh-icon.a{background:rgba(245,166,35,0.08)}
-.sh-icon.j{background:rgba(39,201,106,0.08)}
-.sh-icon.b{background:rgba(99,130,246,0.08)}
-.sh-title{font-size:14px;font-weight:700;letter-spacing:-0.01em;flex:1}
-.sh-badge{
-  font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
-  color:var(--muted);background:var(--panel);border:1px solid var(--border-hi);
-  padding:3px 10px;border-radius:var(--radius);
-}
+.sh-icon.c{background:rgba(232,41,74,0.1)}
+.sh-icon.a{background:rgba(245,166,35,0.1)}
+.sh-icon.b{background:rgba(79,142,247,0.1)}
+.sh-icon.j{background:rgba(34,208,106,0.1)}
+.sh-title{font-family:var(--font-display);font-size:15px;font-weight:600;letter-spacing:-0.01em;flex:1}
+.sh-badge{font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border-hi);padding:3px 9px;border-radius:4px;background:var(--surface)}
 
-/* ── BREACH CARD ── */
+/* BREACH CARDS - RESTRUCTURED FOR XON DATA */
 .breach-card{
-  background:var(--card);border:1px solid var(--border-hi);
-  border-radius:var(--radius-lg);margin-bottom:7px;overflow:hidden;
-  position:relative;transition:border-color 0.2s;
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius-lg);overflow:hidden;margin-bottom:10px;
+  transition:border-color 0.2s;
 }
-.breach-card:hover{border-color:rgba(255,255,255,0.14)}
-.bc-accent{position:absolute;left:0;top:0;bottom:0;width:3px}
-.bc-accent.crit{background:var(--critical)}
-.bc-accent.high{background:var(--crimson)}
-.bc-accent.med{background:var(--amber)}
-.bc-accent.low{background:var(--jade)}
-
+.breach-card:hover{border-color:var(--border-hi)}
+.breach-card.sev-crit{border-left:3px solid var(--crimson)}
+.breach-card.sev-high{border-left:3px solid var(--amber)}
+.breach-card.sev-med{border-left:3px solid var(--muted)}
 .bc-header{
-  display:flex;align-items:center;gap:11px;
-  padding:13px 14px 13px 17px;cursor:pointer;
+  display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;
+  transition:background 0.15s;
 }
-.bc-header:focus-visible{outline:2px solid var(--crimson);outline-offset:-2px;border-radius:var(--radius)}
-.bc-icon{
-  width:34px;height:34px;border-radius:var(--radius);
-  background:var(--panel);border:1px solid var(--border-hi);
-  display:flex;align-items:center;justify-content:center;
-  font-size:16px;flex-shrink:0;
-}
+.bc-header:hover{background:rgba(255,255,255,0.02)}
+.bc-icon{font-size:20px;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:var(--surface);flex-shrink:0}
 .bc-info{flex:1;min-width:0}
-.bc-name{font-size:14px;font-weight:700;letter-spacing:-0.01em}
-.bc-meta{font-size:11px;font-weight:500;color:var(--muted);margin-top:2px;letter-spacing:0.02em}
+.bc-name{font-family:var(--font-display);font-size:13.5px;font-weight:600;margin-bottom:3px}
+.bc-meta{font-size:11px;color:var(--muted);line-height:1.5}
 .bc-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.bc-pill{
-  font-size:10px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;
-  padding:3px 8px;border-radius:3px;
-}
-.bc-pill.crit{background:rgba(176,16,48,0.2);color:#FF6B7A;border:1px solid rgba(176,16,48,0.3)}
-.bc-pill.high{background:rgba(232,41,74,0.14);color:var(--crimson);border:1px solid rgba(232,41,74,0.25)}
-.bc-pill.med{background:rgba(245,166,35,0.14);color:var(--amber);border:1px solid rgba(245,166,35,0.25)}
-.bc-pill.low{background:rgba(39,201,106,0.1);color:var(--jade);border:1px solid rgba(39,201,106,0.2)}
-.bc-arrow{color:var(--faint);font-size:11px;font-weight:700;transition:transform 0.25s;user-select:none}
+.bc-pill{font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:3px 8px;border-radius:4px}
+.bc-pill.crit{background:rgba(232,41,74,0.12);color:var(--crimson)}
+.bc-pill.high{background:rgba(245,166,35,0.12);color:var(--amber)}
+.bc-pill.med{background:rgba(107,112,144,0.12);color:var(--muted)}
+.bc-arrow{color:var(--muted);font-size:10px;transition:transform 0.2s}
 .breach-card.open .bc-arrow{transform:rotate(90deg)}
-
-.bc-body{max-height:0;overflow:hidden;transition:max-height 0.32s cubic-bezier(0.4,0,0.2,1)}
-.bc-body-inner{padding:0 14px 14px 51px}
-.bc-desc{font-size:13px;font-weight:400;color:var(--text-soft);line-height:1.72;margin-bottom:12px}
+.bc-body{max-height:0;overflow:hidden;transition:max-height 0.3s ease}
+.bc-body-inner{padding:0 16px 14px}
+.bc-desc{font-size:12.5px;color:var(--text-soft);line-height:1.72;margin-bottom:10px}
 .bc-tags{display:flex;flex-wrap:wrap;gap:5px}
-.tag-chip{
-  font-size:10px;font-weight:600;letter-spacing:0.04em;
-  padding:3px 8px;border-radius:4px;
-  background:var(--panel);border:1px solid var(--border-hi);color:var(--muted);
-}
-.tag-chip.hot{border-color:rgba(232,41,74,0.28);color:rgba(255,100,120,0.9);background:rgba(232,41,74,0.05)}
+.tag-chip{font-size:10px;font-weight:500;padding:3px 9px;border-radius:4px;background:var(--surface);border:1px solid var(--border);color:var(--muted)}
+.tag-chip.hot{background:rgba(232,41,74,0.1);border-color:rgba(232,41,74,0.25);color:var(--crimson)}
 
-/* ── REDACTED SECTION ── */
-.redact-block{
-  background:var(--card);border:1px solid var(--border-hi);
-  border-radius:var(--radius-lg);overflow:hidden;
-}
-.redact-rows{padding:14px 14px 0 17px}
+/* XON BREACH DETAILS TABLE */
+.bc-details-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.bc-detail-item{background:var(--surface);border-radius:6px;padding:8px 10px;border:1px solid var(--border)}
+.bc-detail-label{font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.bc-detail-val{font-size:12px;font-weight:600;color:var(--text)}
+@media(max-width:420px){.bc-details-grid{grid-template-columns:1fr}}
+
+/* REDACTED / LOCKED ROWS */
+.redact-block{background:var(--card);border:1px solid var(--border-hi);border-radius:var(--radius-lg);overflow:hidden}
+.redact-rows{padding:12px 16px;display:flex;flex-direction:column;gap:1px}
 .redact-row{
   display:flex;align-items:center;gap:10px;
   padding:10px 0;border-bottom:1px solid var(--border);
+  position:relative;
 }
 .redact-row:last-child{border-bottom:none}
-.rr-icon{
-  width:28px;height:28px;border-radius:5px;font-size:13px;
-  background:var(--panel);border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
-}
-.rr-name{font-size:13px;font-weight:700;flex:1}
-.rr-year{font-size:11px;font-weight:500;color:var(--muted)}
-.rr-locked{display:flex;align-items:center;gap:6px;flex-shrink:0}
-.rr-bars{display:flex;gap:3px}
-.rr-bar{height:10px;border-radius:2px;background:var(--faint);opacity:0.7}
-.locked-label{font-size:10px;font-weight:700;letter-spacing:0.08em;color:var(--faint)}
+.rr-icon{font-size:16px;flex-shrink:0;filter:grayscale(1);opacity:0.4}
+.rr-name{font-size:13px;font-weight:600;color:var(--text);min-width:90px}
+.rr-year{font-size:11px;color:var(--muted);min-width:36px}
+.rr-locked{flex:1;display:flex;align-items:center;justify-content:space-between}
+.rr-bars{display:flex;flex-direction:column;gap:5px}
+.rr-bar{height:6px;border-radius:3px;background:var(--faint)}
+.locked-label{font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--faint);background:var(--panel);padding:3px 8px;border-radius:4px;border:1px solid var(--border)}
+.gate{padding:20px 16px;border-top:1px solid var(--border);text-align:center}
+.gate-title{font-family:var(--font-display);font-size:15px;font-weight:600;margin-bottom:6px}
+.gate-sub{font-size:12px;color:var(--text-soft);line-height:1.7;max-width:440px;margin:0 auto 20px}
 
-.gate{
-  padding:22px 18px 22px;text-align:center;
-  background:linear-gradient(to top,var(--card),rgba(17,18,26,0));
-  border-top:1px solid var(--border);
-}
-.gate-title{font-size:16px;font-weight:700;letter-spacing:-0.01em;margin-bottom:8px}
-.gate-sub{font-size:13px;font-weight:400;color:var(--muted);line-height:1.65;margin-bottom:22px;max-width:440px;margin-left:auto;margin-right:auto}
-
-/* ── PRICING CARDS ── */
-.pricing-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+/* PRICING */
+.pricing-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
 @media(max-width:520px){.pricing-row{grid-template-columns:1fr}}
 .price-card{
-  background:var(--panel);border:1px solid var(--border-hi);
-  border-radius:var(--radius-lg);padding:18px;
-  position:relative;overflow:hidden;transition:border-color 0.2s;
+  background:var(--surface);border:1px solid var(--border-hi);border-radius:var(--radius-lg);
+  padding:20px 16px;position:relative;
 }
-.price-card:hover{border-color:rgba(255,255,255,0.14)}
-.price-card.featured{
-  border-color:rgba(232,41,74,0.28);
-  background:linear-gradient(140deg,var(--panel) 50%,rgba(232,41,74,0.04));
-}
+.price-card.featured{border-color:rgba(232,41,74,0.35);box-shadow:0 0 0 1px rgba(232,41,74,0.1),0 4px 24px rgba(232,41,74,0.08)}
 .featured-ribbon{
-  position:absolute;top:0;right:0;
-  background:var(--crimson);color:#fff;
+  position:absolute;top:-1px;right:14px;
   font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
-  padding:4px 10px;border-radius:0 var(--radius-lg) 0 var(--radius);
+  background:var(--crimson);color:#fff;padding:3px 10px;border-radius:0 0 6px 6px;
 }
-.pc-tier{
-  font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--muted);margin-bottom:10px;
-}
-.pc-price{
-  font-size:36px;font-weight:800;letter-spacing:-0.04em;line-height:1;
-  margin-bottom:3px;
-}
-.pc-price sup{font-size:15px;vertical-align:super;font-weight:700;opacity:0.8}
-.pc-sub{font-size:10px;font-weight:600;letter-spacing:0.06em;color:var(--muted);margin-bottom:16px}
+.pc-tier{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.pc-price{font-family:var(--font-display);font-size:38px;font-weight:700;letter-spacing:-0.03em;line-height:1;margin-bottom:2px}
+.pc-price sup{font-size:18px;font-weight:600;vertical-align:super;line-height:0}
+.pc-sub{font-size:11px;color:var(--muted);margin-bottom:14px}
 .pc-divider{height:1px;background:var(--border);margin-bottom:14px}
-.pc-list{list-style:none;margin-bottom:18px}
-.pc-list li{
-  font-size:12px;font-weight:400;color:var(--text-soft);
-  padding:5px 0;border-bottom:1px solid var(--border);
-  display:flex;align-items:flex-start;gap:7px;line-height:1.55;
-}
-.pc-list li:last-child{border-bottom:none}
-.pc-list li::before{content:'→';font-size:10px;font-weight:700;color:var(--crimson);flex-shrink:0;margin-top:2px}
-.pc-list li strong{color:var(--text);font-weight:600}
+.pc-list{list-style:none;padding:0;margin-bottom:16px}
+.pc-list li{font-size:11.5px;color:var(--text-soft);padding:4px 0;display:flex;gap:7px;line-height:1.55}
+.pc-list li::before{content:'✓';font-size:10px;font-weight:700;color:var(--jade);flex-shrink:0;margin-top:2px}
 .pc-btn{
-  display:block;width:100%;border:none;border-radius:var(--radius);
-  padding:12px;cursor:pointer;
-  font-family:var(--font);font-size:12px;font-weight:700;
-  letter-spacing:0.08em;text-transform:uppercase;
+  display:block;width:100%;border:none;border-radius:var(--radius);padding:12px;cursor:pointer;
+  font-family:var(--font);font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
   transition:all 0.2s;
 }
-.pc-btn:focus-visible{outline:none;box-shadow:var(--focus-ring)}
-.pc-btn.amber{
-  background:var(--amber);color:#09090E;
-  box-shadow:0 4px 20px rgba(245,166,35,0.22);
-  border:none;
-}
-.pc-btn.amber:hover{background:#FFBA3A;box-shadow:0 4px 28px rgba(245,166,35,0.35);transform:translateY(-1px)}
-.pc-btn.solid{
-  background:var(--crimson);color:#fff;
-  box-shadow:0 4px 20px rgba(232,41,74,0.2);
-}
-.pc-btn.solid:hover{background:var(--crimson-hi);box-shadow:0 4px 28px rgba(232,41,74,0.3);transform:translateY(-1px)}
+.pc-btn.solid{background:var(--crimson);color:#fff;box-shadow:0 4px 16px rgba(232,41,74,0.2)}
+.pc-btn.solid:hover{background:var(--crimson-hi);box-shadow:0 4px 24px rgba(232,41,74,0.3);transform:translateY(-1px)}
+.pc-btn.amber{background:rgba(245,166,35,0.12);color:var(--amber);border:1px solid rgba(245,166,35,0.25)}
+.pc-btn.amber:hover{background:rgba(245,166,35,0.2)}
+.pdf-notice{display:flex;gap:10px;align-items:flex-start;padding:10px 14px;background:rgba(245,166,35,0.06);border:1px solid rgba(245,166,35,0.18);border-radius:var(--radius);font-size:11.5px;font-weight:500;color:var(--text-soft);line-height:1.55}
 
-/* ── PDF NOTICE ── */
-.pdf-notice{
-  display:flex;align-items:flex-start;gap:10px;
-  margin-top:10px;padding:12px 14px;
-  background:rgba(245,166,35,0.07);border:1px solid rgba(245,166,35,0.2);
-  border-radius:var(--radius);font-size:12px;font-weight:500;color:var(--text-soft);line-height:1.55;
+/* PASSWORD CHECK SECTION */
+.pw-check-section{
+  background:linear-gradient(135deg,rgba(232,41,74,0.06),rgba(176,16,48,0.03));
+  border:1px solid rgba(232,41,74,0.2);border-radius:var(--radius-lg);
+  padding:20px;margin-bottom:16px;position:relative;overflow:hidden;
 }
-.pdf-notice-icon{font-size:15px;flex-shrink:0;margin-top:1px}
+.pw-check-section::before{
+  content:'';position:absolute;top:0;right:0;width:120px;height:120px;
+  background:radial-gradient(circle,rgba(232,41,74,0.08),transparent 70%);
+  pointer-events:none;
+}
+.pw-check-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--crimson);background:rgba(232,41,74,0.1);border:1px solid rgba(232,41,74,0.25);
+  padding:3px 10px;border-radius:4px;margin-bottom:10px;
+}
+.pw-check-title{font-family:var(--font-display);font-size:14px;font-weight:600;margin-bottom:5px}
+.pw-check-sub{font-size:12px;color:var(--text-soft);line-height:1.6;margin-bottom:14px}
+.pw-input-row{display:flex;background:var(--card);border:1px solid var(--border-hi);border-radius:var(--radius);overflow:hidden;margin-bottom:10px}
+.pw-input{
+  flex:1;background:transparent;border:none;outline:none;
+  padding:11px 14px;font-family:var(--font);font-size:13px;color:var(--text);
+  letter-spacing:2px;
+}
+.pw-input::placeholder{letter-spacing:0;font-size:12px;color:var(--faint)}
+.pw-toggle-vis{
+  background:none;border:none;padding:0 12px;cursor:pointer;
+  color:var(--muted);font-size:12px;transition:color 0.15s;
+}
+.pw-toggle-vis:hover{color:var(--text)}
+.pw-check-btn{
+  padding:11px 16px;background:var(--crimson);color:#fff;border:none;
+  font-family:var(--font);font-size:11px;font-weight:700;letter-spacing:0.08em;
+  text-transform:uppercase;cursor:pointer;transition:background 0.2s;flex-shrink:0;
+}
+.pw-check-btn:hover{background:var(--crimson-hi)}
+.pw-check-btn:disabled{background:var(--faint);cursor:not-allowed}
+.pw-result{
+  padding:12px 14px;border-radius:var(--radius);margin-top:8px;
+  font-size:12.5px;line-height:1.65;display:none;
+}
+.pw-result.danger{background:rgba(232,41,74,0.08);border:1px solid rgba(232,41,74,0.2)}
+.pw-result.safe{background:rgba(34,208,106,0.07);border:1px solid rgba(34,208,106,0.2)}
+.pw-result-title{font-weight:700;margin-bottom:4px}
+.pw-result.danger .pw-result-title{color:var(--crimson)}
+.pw-result.safe .pw-result-title{color:var(--jade)}
+.pw-privacy-note{font-size:10px;color:var(--muted);display:flex;align-items:center;gap:5px;margin-top:6px}
 
-/* ── OSINT TERMINAL ── */
+/* OSINT TERMINAL */
 .osint-term{background:var(--card);border:1px solid var(--border-hi);border-radius:var(--radius-lg);overflow:hidden}
 .ot-bar{display:flex;align-items:center;gap:7px;padding:10px 14px;background:var(--panel);border-bottom:1px solid var(--border)}
 .ot-dots{display:flex;gap:5px}
-.ot-dot{width:10px;height:10px;border-radius:50%}
+.ot-dot{width:9px;height:9px;border-radius:50%}
 .ot-dot.r{background:#FF5F57}.ot-dot.a{background:#FEBC2E}.ot-dot.g{background:#28C840}
 .ot-label{flex:1;text-align:center;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)}
-.ot-body{padding:18px;font-size:12px;font-weight:400;line-height:2;max-height:240px;overflow-y:auto}
-.ot-body::-webkit-scrollbar{width:4px}
+.ot-body{padding:16px;font-size:11.5px;font-weight:400;line-height:2;max-height:220px;overflow-y:auto;font-family:monospace}
+.ot-body::-webkit-scrollbar{width:3px}
 .ot-body::-webkit-scrollbar-track{background:var(--panel)}
 .ot-body::-webkit-scrollbar-thumb{background:var(--faint);border-radius:2px}
-.ot-cmd{color:#6B9BFA;font-weight:500}.ot-ok{color:var(--jade);font-weight:500}
-.ot-warn{color:var(--amber);font-weight:500}.ot-alert{color:var(--crimson);font-weight:600}
-.ot-val{color:var(--text)}.ot-dim{color:var(--muted)}
+.ot-cmd{color:#6B9BFA;font-weight:500}.ot-ok{color:var(--jade)}.ot-warn{color:var(--amber)}.ot-alert{color:var(--crimson);font-weight:600}.ot-dim{color:var(--muted)}
 
-/* ── SHARE PANEL ── */
-.share-panel{
-  margin-top:44px;
-  background:var(--card);border:1px solid var(--border-hi);
-  border-radius:var(--radius-lg);padding:24px 20px;text-align:center;
-}
-.sp-label{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px}
-.sp-score{font-size:56px;font-weight:900;letter-spacing:-0.05em;line-height:1;display:block}
-.sp-sub{font-size:13px;font-weight:400;color:var(--muted);line-height:1.65;margin:12px auto 20px;max-width:400px}
+/* SHARE PANEL */
+.share-panel{margin-top:40px;background:var(--card);border:1px solid var(--border-hi);border-radius:var(--radius-lg);padding:22px 20px;text-align:center}
+.sp-label{font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:5px}
+.sp-score{font-family:var(--font-display);font-size:52px;font-weight:700;letter-spacing:-0.04em;line-height:1;display:block}
+.sp-sub{font-size:12.5px;color:var(--muted);line-height:1.65;margin:10px auto 18px;max-width:380px}
 .sp-actions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 .sp-btn{
-  display:inline-flex;align-items:center;gap:7px;
-  padding:10px 18px;border-radius:var(--radius);
-  font-family:var(--font);font-size:11px;font-weight:700;
-  letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;
-  transition:all 0.2s;border:1px solid var(--border-hi);background:var(--panel);color:var(--text);
+  display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:var(--radius);
+  font-family:var(--font);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+  cursor:pointer;transition:all 0.2s;border:1px solid var(--border-hi);background:var(--panel);color:var(--text);
 }
 .sp-btn:hover{border-color:var(--border-hi);background:var(--card)}
-.sp-btn:focus-visible{outline:none;box-shadow:var(--focus-ring)}
-.sp-btn.primary{background:var(--crimson);border-color:var(--crimson);color:#fff;box-shadow:0 4px 16px rgba(232,41,74,0.2)}
-.sp-btn.primary:hover{background:var(--crimson-hi);box-shadow:0 4px 24px rgba(232,41,74,0.3)}
+.sp-btn.primary{background:var(--crimson);border-color:var(--crimson);color:#fff}
+.sp-btn.primary:hover{background:var(--crimson-hi)}
 
-/* ── SCROLL REVEAL ── */
-.reveal{opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity 0.5s ease,transform 0.5s ease}
 .reveal.in{opacity:1;transform:none}
 
-/* ── MODAL ── */
-.modal-mask{
-  position:fixed;inset:0;
-  background:rgba(0,0,0,0.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  z-index:500;display:flex;align-items:center;justify-content:center;padding:16px;
-  opacity:0;pointer-events:none;transition:opacity 0.22s;
-}
+/* MODAL */
+.modal-mask{position:fixed;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:500;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity 0.22s}
 .modal-mask.open{opacity:1;pointer-events:all}
-.modal-box{
-  width:100%;max-width:420px;
-  background:var(--card);border:1px solid var(--border-hi);border-radius:var(--radius-lg);
-  overflow:hidden;transform:translateY(10px);transition:transform 0.22s;
-}
+.modal-box{width:100%;max-width:420px;background:var(--card);border:1px solid var(--border-hi);border-radius:var(--radius-lg);overflow:hidden;transform:translateY(10px);transition:transform 0.22s}
 .modal-mask.open .modal-box{transform:none}
-.modal-top{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:18px 20px;background:var(--panel);border-bottom:1px solid var(--border);
-}
-.modal-head{font-size:15px;font-weight:700;letter-spacing:-0.01em}
-.modal-close{
-  background:none;border:none;color:var(--muted);cursor:pointer;
-  font-size:18px;line-height:1;padding:4px;border-radius:4px;
-  transition:color 0.15s;
-}
+.modal-top{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;background:var(--panel);border-bottom:1px solid var(--border)}
+.modal-head{font-family:var(--font-display);font-size:15px;font-weight:600}
+.modal-close{background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;line-height:1;padding:4px;border-radius:4px;transition:color 0.15s}
 .modal-close:hover{color:var(--text)}
-.modal-close:focus-visible{outline:2px solid var(--crimson)}
 .modal-inner{padding:20px}
 .modal-plan{font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.modal-price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:18px}
-.modal-price{font-size:40px;font-weight:800;letter-spacing:-0.04em}
+.modal-price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:16px}
+.modal-price{font-family:var(--font-display);font-size:38px;font-weight:700;letter-spacing:-0.04em}
 .modal-price-note{font-size:11px;font-weight:500;color:var(--muted);line-height:1.5}
-.modal-feats{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:18px}
-.modal-feat{
-  font-size:12px;font-weight:400;color:var(--text-soft);
-  padding:5px 0;border-bottom:1px solid var(--border);
-  display:flex;gap:8px;line-height:1.55;
-}
+.modal-feats{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:12px;margin-bottom:16px}
+.modal-feat{font-size:12px;color:var(--text-soft);padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;line-height:1.55}
 .modal-feat:last-child{border-bottom:none}
-.modal-feat::before{content:'✓';font-size:11px;font-weight:700;color:var(--jade);flex-shrink:0;margin-top:1px}
+.modal-feat::before{content:'✓';font-size:10px;font-weight:700;color:var(--jade);flex-shrink:0;margin-top:2px}
 .modal-pay-btn{
-  display:block;width:100%;border:none;border-radius:var(--radius);
-  padding:14px;cursor:pointer;
-  font-family:var(--font);font-size:13px;font-weight:700;
-  letter-spacing:0.07em;text-transform:uppercase;
-  background:var(--crimson);color:#fff;
-  box-shadow:0 4px 20px rgba(232,41,74,0.25);
-  transition:all 0.2s;margin-bottom:14px;
+  display:block;width:100%;border:none;border-radius:var(--radius);padding:13px;cursor:pointer;
+  font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;
+  background:var(--crimson);color:#fff;box-shadow:0 4px 20px rgba(232,41,74,0.22);
+  transition:all 0.2s;margin-bottom:12px;text-decoration:none;text-align:center;
 }
-.modal-pay-btn:hover{background:var(--crimson-hi);box-shadow:0 4px 28px rgba(232,41,74,0.38);transform:translateY(-1px)}
-.modal-pay-btn:focus-visible{outline:none;box-shadow:var(--focus-ring)}
-.modal-rp-row{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:14px;font-size:11px;font-weight:500;color:var(--faint)}
-.rp-badge{font-weight:700;color:var(--muted)}
+.modal-pay-btn:hover{background:var(--crimson-hi);box-shadow:0 4px 28px rgba(232,41,74,0.36);transform:translateY(-1px)}
+.modal-rp-row{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:12px;font-size:11px;font-weight:500;color:var(--muted)}
+.rp-badge{font-weight:700;color:var(--text-soft)}
 .modal-badges{display:flex;gap:7px;justify-content:center;flex-wrap:wrap}
-.m-badge{
-  font-size:10px;font-weight:600;letter-spacing:0.05em;color:var(--faint);
-  border:1px solid var(--border);padding:3px 9px;border-radius:3px;background:var(--surface);
-}
+.m-badge{font-size:10px;font-weight:600;letter-spacing:0.05em;color:var(--muted);border:1px solid var(--border);padding:3px 9px;border-radius:3px;background:var(--surface)}
 
-/* ── CONTACT STRIP ── */
-.contact-strip{
-  margin-top:44px;
-  background:var(--card);border:1px solid var(--border-hi);
-  border-radius:var(--radius-lg);padding:20px;
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;
-}
-.cs-left{}
-.cs-title{font-size:13px;font-weight:700;letter-spacing:-0.01em;margin-bottom:3px}
-.cs-sub{font-size:11px;font-weight:400;color:var(--muted);line-height:1.5}
-.cs-actions{display:flex;gap:8px;flex-wrap:wrap}
-.cs-btn{
-  display:inline-flex;align-items:center;gap:6px;
-  padding:9px 16px;border-radius:var(--radius);
-  font-family:var(--font);font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;
-  cursor:pointer;transition:all 0.2s;text-decoration:none;
-  border:1px solid var(--border-hi);background:var(--panel);color:var(--text);
-}
+/* CONTACT & FOOTER */
+.contact-strip{margin-top:40px;background:var(--card);border:1px solid var(--border-hi);border-radius:var(--radius-lg);padding:18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.cs-title{font-family:var(--font-display);font-size:13px;font-weight:600;margin-bottom:3px}
+.cs-sub{font-size:11px;color:var(--muted);line-height:1.5}
+.cs-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:var(--radius);font-family:var(--font);font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;text-decoration:none;border:1px solid var(--border-hi);background:var(--panel);color:var(--text)}
 .cs-btn:hover{border-color:var(--crimson);color:var(--crimson)}
-.cs-btn:focus-visible{outline:none;box-shadow:var(--focus-ring)}
-footer{
-  border-top:1px solid var(--border);
-  padding:20px 28px;
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
-}
-.footer-brand{font-size:11px;font-weight:500;color:var(--faint);letter-spacing:0.06em}
-.footer-brand strong{color:var(--muted)}
+footer{border-top:1px solid var(--border);padding:18px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-brand{font-size:11px;font-weight:500;color:var(--muted)}
+.footer-brand strong{color:var(--text-soft)}
 .footer-r{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.footer-link{font-size:10px;font-weight:600;letter-spacing:0.05em;color:var(--faint);text-decoration:none;transition:color 0.15s}
-.footer-link:hover{color:var(--muted)}
-.footer-link:focus-visible{outline:2px solid var(--crimson);outline-offset:2px;border-radius:2px}
-.footer-powered{font-size:10px;font-weight:600;letter-spacing:0.06em;color:var(--faint);display:flex;align-items:center;gap:5px}
-.footer-powered span{color:var(--muted);font-weight:700}
+.footer-link{font-size:10px;font-weight:600;letter-spacing:0.05em;color:var(--muted);text-decoration:none;transition:color 0.15s}
+.footer-link:hover{color:var(--text)}
+.footer-powered{font-size:10px;font-weight:600;letter-spacing:0.06em;color:var(--muted);display:flex;align-items:center;gap:5px}
+.footer-powered span{color:var(--text-soft);font-weight:700}
 
-/* ── SNAP TOAST ── */
-.snap-toast{
-  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(60px);
-  background:var(--card);border:1px solid var(--border-hi);border-radius:var(--radius);
-  padding:10px 18px;font-size:12px;font-weight:600;color:var(--text);
-  white-space:nowrap;z-index:600;
-  transition:transform 0.3s ease,opacity 0.3s ease;opacity:0;pointer-events:none;
-}
+/* SNAP TOAST */
+.snap-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(60px);background:var(--card);border:1px solid var(--border-hi);border-radius:var(--radius);padding:10px 18px;font-size:12px;font-weight:600;color:var(--text);white-space:nowrap;z-index:600;transition:transform 0.3s ease,opacity 0.3s ease;opacity:0;pointer-events:none}
 .snap-toast.show{transform:translateX(-50%) translateY(0);opacity:1}
 #a11y-live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 
-/* ── HERO VIDEO BG ── */
-.hero-video-wrap{
-  position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;
-}
-.hero-video-wrap::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(to bottom,rgba(9,9,14,0.72) 0%,rgba(9,9,14,0.55) 40%,rgba(9,9,14,0.80) 100%);
-  z-index:1;
-}
-.hero-video-wrap video{
-  position:absolute;top:50%;left:50%;
-  min-width:100%;min-height:100%;
-  width:auto;height:auto;
-  transform:translate(-50%,-50%);
-  object-fit:cover;
-  opacity:0.68;
-}
+/* HERO VIDEO */
+.hero-video-wrap{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.hero-video-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,6,8,0.75) 0%,rgba(6,6,8,0.55) 40%,rgba(6,6,8,0.82) 100%);z-index:1}
+.hero-video-wrap video{position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;width:auto;height:auto;transform:translate(-50%,-50%);object-fit:cover;opacity:0.65}
 .hero>*:not(.hero-video-wrap){position:relative;z-index:2}
 
-/* ── SCORE PAGE EDGE GLOW ── */
-.score-edge-glow{
-  position:fixed;inset:0;pointer-events:none;z-index:2;
-  opacity:0;transition:opacity 0.8s ease;
-}
+/* SCORE EDGE GLOW */
+.score-edge-glow{position:fixed;inset:0;pointer-events:none;z-index:2;opacity:0;transition:opacity 0.8s ease}
 .score-edge-glow.visible{opacity:1}
-.score-edge-glow canvas{
-  position:absolute;inset:0;width:100%;height:100%;
+.glow-frame{position:absolute;inset:0}
+@keyframes edgeGlowRed{0%,100%{box-shadow:inset 0 0 60px 8px rgba(232,41,74,0.16),inset 0 -4px 40px 0 rgba(232,41,74,0.07)}50%{box-shadow:inset 0 0 90px 14px rgba(232,41,74,0.28),inset 0 -4px 60px 4px rgba(232,41,74,0.13)}}
+@keyframes edgeGlowGreen{0%,100%{box-shadow:inset 0 0 60px 8px rgba(34,208,106,0.14),inset 0 -4px 40px 0 rgba(34,208,106,0.07)}50%{box-shadow:inset 0 0 90px 14px rgba(34,208,106,0.24),inset 0 -4px 60px 4px rgba(34,208,106,0.11)}}
+.score-edge-glow.glow-red .glow-frame{animation:edgeGlowRed 2.8s ease-in-out infinite}
+.score-edge-glow.glow-green .glow-frame{animation:edgeGlowGreen 2.8s ease-in-out infinite}
+
+/* XON BREACH SUMMARY PILLS */
+.xon-summary-strip{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px;padding:12px 14px;background:rgba(232,41,74,0.05);border:1px solid rgba(232,41,74,0.15);border-radius:var(--radius)}
+.xon-pill{font-size:11px;font-weight:600;padding:4px 10px;border-radius:5px;background:var(--surface);border:1px solid var(--border);color:var(--text-soft)}
+.xon-pill.active{background:rgba(232,41,74,0.1);border-color:rgba(232,41,74,0.25);color:var(--crimson)}
+.xon-summary-label{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);width:100%;margin-bottom:4px}
+
+/* MORE BREACHES TEASER */
+.more-breaches-teaser{
+  background:linear-gradient(135deg,var(--card),var(--surface));
+  border:1px solid var(--border-hi);border-radius:var(--radius-lg);
+  padding:20px;text-align:center;position:relative;overflow:hidden;
 }
-/* Red glow keyframes */
-@keyframes edgeGlowRed{
-  0%,100%{box-shadow:inset 0 0 60px 8px rgba(232,41,74,0.18),inset 0 -4px 40px 0px rgba(232,41,74,0.08)}
-  50%{box-shadow:inset 0 0 90px 14px rgba(232,41,74,0.30),inset 0 -4px 60px 4px rgba(232,41,74,0.14)}
+.more-breaches-teaser::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,transparent 40%,rgba(6,6,8,0.92));
+  pointer-events:none;
 }
-@keyframes edgeGlowGreen{
-  0%,100%{box-shadow:inset 0 0 60px 8px rgba(39,201,106,0.16),inset 0 -4px 40px 0px rgba(39,201,106,0.08)}
-  50%{box-shadow:inset 0 0 90px 14px rgba(39,201,106,0.26),inset 0 -4px 60px 4px rgba(39,201,106,0.12)}
-}
-.score-edge-glow.glow-red .glow-frame{
-  animation:edgeGlowRed 2.8s ease-in-out infinite;
-}
-.score-edge-glow.glow-green .glow-frame{
-  animation:edgeGlowGreen 2.8s ease-in-out infinite;
-}
-.glow-frame{
-  position:absolute;inset:0;border-radius:0;
-  transition:box-shadow 0.6s ease;
-}
+.mbt-count{font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--crimson);line-height:1;margin-bottom:4px}
+.mbt-label{font-size:12px;color:var(--text-soft);margin-bottom:14px}
+.mbt-blur-rows{opacity:0.25;filter:blur(2px);pointer-events:none;margin-bottom:12px}
+.mbt-blur-row{height:44px;background:var(--card);border:1px solid var(--border);border-radius:7px;margin-bottom:6px}
 </style>
 </head>
 <body>
 
-<!-- Snap toast -->
-<div id="snap-toast" class="snap-toast" role="status" aria-live="polite">📸 Score snapshot saved!</div>
-<!-- html2canvas for Snap My Score -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<div id="snap-toast" class="snap-toast" role="status" aria-live="polite">Score copied!</div>
 <div id="a11y-live" aria-live="polite" aria-atomic="true"></div>
-
-<!-- Background canvas -->
 <canvas id="bg-canvas" role="presentation" aria-hidden="true"></canvas>
 
 <!-- Payment Modal -->
@@ -748,11 +533,12 @@ footer{
 
 <div class="page">
 
-  <!-- NAV -->
   <nav role="banner">
     <a class="logo" href="#" aria-label="Shadow Profile Home">
       <div class="logo-mark" aria-hidden="true">
-        <svg viewBox="0 0 14 14"><path d="M7 1L1 4v6l6 3 6-3V4z" stroke="#fff" stroke-width="1.2" fill="none" stroke-linejoin="round"/></svg>
+        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 1L1 4v6l6 3 6-3V4z" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
       </div>
       <span class="logo-text">Shadow Profile</span>
     </a>
@@ -761,81 +547,59 @@ footer{
         <div class="live-dot" aria-hidden="true"></div>
         Live
       </div>
-      <a href="about.html" class="nav-tag" style="text-decoration:none;cursor:pointer;">About</a>
-      <a href="contact.html" class="nav-tag" style="text-decoration:none;cursor:pointer;display:none;" id="nav-contact">Contact</a>
-      <div class="nav-tag" aria-label="Version: Threat Intel 2.1">Threat Intel v2.1</div>
+      <a href="about.html" class="nav-tag">About</a>
+      <div class="nav-tag">v2.2 · XON</div>
     </div>
   </nav>
 
-  <!-- HERO STATE -->
   <main id="main-content">
-  <section id="hero-state" aria-label="Email breach scanner">
 
-    <!-- Ticker -->
+  <!-- HERO STATE -->
+  <section id="hero-state" aria-label="Email breach scanner">
     <div class="ticker" aria-hidden="true">
       <div class="ticker-inner" id="ticker-inner"></div>
     </div>
-
     <div class="hero">
-      <!-- Hero background video -->
       <div class="hero-video-wrap" aria-hidden="true">
-        <video autoplay muted loop playsinline preload="none"
-               poster=""
-               aria-hidden="true">
+        <video autoplay muted loop playsinline preload="none" aria-hidden="true">
           <source src="https://res.cloudinary.com/ddiaedfkx/video/upload/v1781097081/30200-380473759_medium_grvefv.mp4" type="video/mp4">
         </video>
       </div>
-
       <div class="hero-label" aria-hidden="true">
         <span class="hero-label-line"></span>
         Breach Intelligence Engine
         <span class="hero-label-line"></span>
       </div>
-
-      <h1>
-        Your data has already<br>
-        <span class="accent">been compromised.</span>
-      </h1>
-
-      <p class="hero-subtitle">
-        Every major platform you've used has been breached. Your email, phone number, passwords — indexed and actively traded. Find out what's exposed in under 10 seconds.
-      </p>
-
+      <h1>Your data has already<br><span class="accent">been compromised.</span></h1>
+      <p class="hero-subtitle">Every platform you've used has been breached. Your email, passwords, phone number — indexed and traded. See what's exposed in under 10 seconds.</p>
       <div class="scan-container">
         <div class="input-row" id="input-row">
-          <label for="email-input" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Enter your email address to scan for breaches</label>
-          <input
-            class="email-input" id="email-input"
-            type="email" placeholder="your@email.com"
+          <input class="email-input" id="email-input" type="email" placeholder="your@email.com"
             autocomplete="email" autocapitalize="off" spellcheck="false"
             aria-label="Email address to check for data breaches"
-            aria-describedby="scan-meta"
-          >
+            aria-describedby="scan-meta">
           <button class="scan-btn" id="scan-btn" onclick="startScan()" aria-label="Run breach scan">
-            <svg viewBox="0 0 13 13" aria-hidden="true"><circle cx="5.5" cy="5.5" r="4"/><line x1="9" y1="9" x2="12" y2="12"/></svg>
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><circle cx="5.5" cy="5.5" r="4"/><line x1="9" y1="9" x2="12" y2="12"/></svg>
             Scan Now
           </button>
         </div>
         <p class="input-meta" id="scan-meta" aria-live="polite">
-          <span>No data stored</span>
-          <span class="input-meta-sep">·</span>
-          <span>Free scan</span>
-          <span class="input-meta-sep">·</span>
-          <span>Instant results</span>
+          <span>No data stored</span><span class="input-meta-sep">·</span>
+          <span>Free scan</span><span class="input-meta-sep">·</span>
+          <span>Powered by XposedOrNot</span>
         </p>
       </div>
-
       <div class="stat-strip" role="region" aria-label="Breach statistics">
         <div class="ss-cell">
-          <span class="ss-num danger" id="stat-today" aria-label="Breaches today">0</span>
+          <span class="ss-num danger" id="stat-today">0</span>
           <span class="ss-label">Breaches Today</span>
         </div>
         <div class="ss-cell">
-          <span class="ss-num">14.2B</span>
+          <span class="ss-num">14.9B</span>
           <span class="ss-label">Records Leaked</span>
         </div>
         <div class="ss-cell">
-          <span class="ss-num danger" id="stat-risk" aria-label="Emails at risk">0</span>
+          <span class="ss-num danger" id="stat-risk">0</span>
           <span class="ss-label">Emails at Risk</span>
         </div>
       </div>
@@ -853,6 +617,7 @@ footer{
     </div>
     <div class="scan-phase" id="scan-phase">Initialising</div>
     <div class="scan-phase-sub" id="scan-phase-sub">Standby</div>
+    <div class="scan-wait-msg" id="scan-wait-msg">⏳ Building your report — cross-referencing threat intelligence feeds…</div>
     <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-bar">
       <div class="progress-fill" id="progress-fill"></div>
     </div>
@@ -861,7 +626,7 @@ footer{
   <!-- RESULT STATE -->
   <section id="result-state" aria-label="Scan results">
 
-    <!-- Score -->
+    <!-- Score Band -->
     <div class="score-band">
       <div class="score-glow-bg" id="score-glow" aria-hidden="true"></div>
       <div class="score-eyebrow">Shadow Score — Exposure Index</div>
@@ -880,7 +645,7 @@ footer{
       <p class="score-desc" id="score-desc"></p>
     </div>
 
-    <!-- Quick stats -->
+    <!-- Quick Stats -->
     <div class="quick-stats" role="region" aria-label="Exposure summary">
       <div class="qs-cell"><span class="qs-val col-crimson" id="qs-breaches">0</span><span class="qs-label">Breaches</span></div>
       <div class="qs-cell"><span class="qs-val col-amber" id="qs-records">0</span><span class="qs-label">Records Exposed</span></div>
@@ -897,61 +662,88 @@ footer{
           <h2 class="sh-title">Confirmed Data Breaches</h2>
           <div class="sh-badge" id="breach-badge" aria-live="polite">0 found</div>
         </div>
+        <!-- XON site pills -->
+        <div class="xon-summary-strip" id="xon-sites-strip" style="display:none">
+          <div class="xon-summary-label">Sites where your email was found</div>
+          <div id="xon-site-pills"></div>
+        </div>
         <div id="breach-list" role="list"></div>
       </section>
 
-      <!-- Restricted / Pricing -->
-      <section class="section reveal" aria-label="Unlock full report">
+      <!-- More Breaches Teaser / Locked -->
+      <section class="section reveal" id="teaser-section" aria-label="Unlock full report" style="display:none">
         <div class="section-head">
           <div class="sh-icon a" aria-hidden="true">⚠️</div>
           <h2 class="sh-title">Additional Breach Intelligence</h2>
           <div class="sh-badge">Restricted</div>
         </div>
-        <div class="redact-block">
-          <div class="redact-rows" id="redact-rows" role="list" aria-label="Locked breach records"></div>
-          <div class="gate">
-            <h3 class="gate-title">Intelligence Classified — Unlock to Access</h3>
-            <p class="gate-sub">Full breach details, affected passwords, phone number exposure check, data broker listings, and a personalised removal guide are locked in your report. Download it as a PDF to keep everything safe and accessible.</p>
-
+        <div class="more-breaches-teaser">
+          <div class="mbt-count" id="mbt-count">+3</div>
+          <div class="mbt-label" id="mbt-label">more sites where your data was exposed</div>
+          <div class="mbt-blur-rows" id="mbt-blur-rows"></div>
+          <div style="position:relative;z-index:2">
+            <div style="font-size:12px;color:var(--text-soft);margin-bottom:14px;line-height:1.6">Full breach details — exact data exposed per site, password exposure type, and a personalised recovery plan — are locked in your paid report.</div>
             <div class="pricing-row" role="list">
               <div class="price-card" role="listitem">
                 <div class="pc-tier">Exposure Report</div>
-                <div class="pc-price"><sup>₹</sup>49</div>
-                <div class="pc-sub">One-time · Instant Access</div>
+                <div class="pc-price"><sup>₹</sup>29</div>
+                <div class="pc-sub">One-time · Instant access</div>
                 <div class="pc-divider"></div>
-                <ul class="pc-list" aria-label="Features included in ₹49 plan">
-                  <li>Full breach details — exact data exposed per site</li>
-                  <li>Which accounts are at highest risk right now</li>
-                  <li>Password exposure type: hashed, plaintext, or cracked</li>
+                <ul class="pc-list" aria-label="Features included">
+                  <li>All breach details — every site, every data type</li>
+                  <li>Password exposure type (hashed / plaintext / cracked)</li>
                   <li>Step-by-step account recovery checklist</li>
-                  <li>Data broker removal links — 15+ sites</li>
+                  <li>Data broker opt-out links — 15+ sites</li>
                   <li><strong>Download full report as PDF</strong></li>
                 </ul>
-                <button class="pc-btn amber" onclick="openModal('basic')" aria-label="Unlock Exposure Report for ₹49">Unlock for ₹49</button>
+                <button class="pc-btn amber" onclick="openModal('basic')" aria-label="Unlock Exposure Report for ₹29">Unlock for ₹29</button>
               </div>
               <div class="price-card featured" role="listitem">
-                <div class="featured-ribbon" aria-label="Recommended plan">Recommended</div>
+                <div class="featured-ribbon">Recommended</div>
                 <div class="pc-tier">Full Shadow Report</div>
-                <div class="pc-price"><sup>₹</sup>99</div>
-                <div class="pc-sub">One-time · Complete Audit</div>
+                <div class="pc-price"><sup>₹</sup>49</div>
+                <div class="pc-sub">One-time · Complete audit</div>
                 <div class="pc-divider"></div>
-                <ul class="pc-list" aria-label="Features included in ₹99 plan">
-                  <li>Everything in the ₹49 Exposure Report</li>
-                  <li><strong>Phone number breach check</strong> — no OTP, no data stored, instant</li>
+                <ul class="pc-list" aria-label="Features included">
+                  <li>Everything in the ₹29 report</li>
+                  <li><strong>Password Leak Check</strong> — check if your passwords are exposed</li>
                   <li>Dark web & paste site index</li>
-                  <li>OSINT footprint — what strangers find in 5 minutes</li>
+                  <li>OSINT footprint — what strangers find about you</li>
                   <li>Data broker removal guide — 20+ sites</li>
-                  <li><strong>Download full report as PDF</strong> (includes phone results)</li>
+                  <li><strong>Full PDF report</strong> incl. password check results</li>
                 </ul>
-                <button class="pc-btn solid" onclick="openModal('full')" aria-label="Unlock Full Shadow Report for ₹99">Unlock for ₹99</button>
+                <button class="pc-btn solid" onclick="openModal('full')" aria-label="Unlock Full Shadow Report for ₹49">Unlock for ₹49</button>
               </div>
             </div>
-
-            <div class="pdf-notice" role="note">
-              <span class="pdf-notice-icon" aria-hidden="true">📄</span>
-              <span>Report downloads as PDF instantly on purchase — save it locally. No subscriptions. We don't store your data.</span>
+            <div class="pdf-notice" role="note" style="margin-top:0">
+              <span aria-hidden="true">📄</span>
+              <span>PDF report delivered instantly on purchase — save it locally. No subscriptions. We never store your data.</span>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- Password Check (Full Shadow Report only) -->
+      <section class="section reveal" id="pw-check-section-wrap" aria-label="Password leak check" style="display:none">
+        <div class="section-head">
+          <div class="sh-icon c" aria-hidden="true">🔑</div>
+          <h2 class="sh-title">Password Leak Check</h2>
+          <div class="sh-badge" style="color:var(--crimson);border-color:rgba(232,41,74,0.3)">Shadow Report</div>
+        </div>
+        <div class="pw-check-section">
+          <div class="pw-check-badge">🔒 Unlocked Feature</div>
+          <div class="pw-check-title">Check if your passwords are compromised</div>
+          <div class="pw-check-sub">Enter a password to check if it has appeared in known data breaches. Your password is never sent — only an anonymised hash fragment is checked using k-anonymity.</div>
+          <div class="pw-input-row">
+            <input class="pw-input" id="pw-input" type="password" placeholder="Enter a password to check…" autocomplete="off" autocapitalize="off" spellcheck="false">
+            <button class="pw-toggle-vis" id="pw-vis-toggle" onclick="togglePwVis()" title="Show/hide password">👁</button>
+            <button class="pw-check-btn" id="pw-check-btn" onclick="checkPassword()">Check</button>
+          </div>
+          <div class="pw-privacy-note">
+            <span>🔒</span>
+            <span>Your password is hashed locally. Only the first 5 characters of the SHA-1 hash are sent — your actual password is never transmitted.</span>
+          </div>
+          <div class="pw-result" id="pw-result"></div>
         </div>
       </section>
 
@@ -973,12 +765,12 @@ footer{
 
       <!-- Contact Strip -->
       <section class="section reveal contact-strip" aria-label="Get in touch">
-        <div class="cs-left">
+        <div>
           <div class="cs-title">Need help or found an issue?</div>
           <div class="cs-sub">We're reachable via email and Telegram. Agencies and brands — partnership enquiries welcome.</div>
         </div>
-        <div class="cs-actions">
-          <a href="contact.html" class="cs-btn" aria-label="Contact Venux Studio">✉ Connect With Us</a>
+        <div>
+          <a href="contact.html" class="cs-btn">✉ Connect With Us</a>
         </div>
       </section>
 
@@ -986,503 +778,567 @@ footer{
       <section class="section reveal share-panel" aria-label="Share your score">
         <span class="sp-label">Your Shadow Score</span>
         <span class="sp-score" id="sp-score" aria-live="polite">—</span>
-        <p class="sp-sub" id="sp-sub">Your digital exposure is serious. Find out how breached you are — it takes 10 seconds.</p>
+        <p class="sp-sub" id="sp-sub">Your digital exposure is serious. Check yours — it takes 10 seconds.</p>
         <div class="sp-actions">
-          <button class="sp-btn primary" onclick="snapScore()" aria-label="Take a screenshot of your score">
-            <span aria-hidden="true">📸</span> Snap My Score
-          </button>
-          <button class="sp-btn" onclick="resetAll()">
-            <span aria-hidden="true">↩</span> Scan Another Email
-          </button>
+          <button class="sp-btn primary" onclick="snapScore()"><span aria-hidden="true">📸</span> Snap My Score</button>
+          <button class="sp-btn" onclick="resetAll()"><span aria-hidden="true">↩</span> Scan Another Email</button>
         </div>
-        <p style="font-size:10px;font-weight:500;color:var(--faint);margin-top:10px;letter-spacing:0.04em;">Screenshots your score — share it anywhere. No server. No link. Your data stays local.</p>
+        <p style="font-size:10px;font-weight:500;color:var(--muted);margin-top:8px;letter-spacing:0.03em">Your score stays on your device. No link. No server. No tracking.</p>
       </section>
 
     </div>
   </section>
   </main>
 
-  <!-- FOOTER -->
   <footer role="contentinfo">
-    <div class="footer-brand">© 2026 <a href="https://www.google.com" target="_blank" rel="noopener" style="color:var(--muted);font-weight:700;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">VENUX STUDIO</a> — All rights reserved</div>
+    <div class="footer-brand">© 2026 <strong>VENUX STUDIO</strong> — All rights reserved</div>
     <div class="footer-r">
       <a href="about.html" class="footer-link">About</a>
       <a href="privacy-terms.html#privacy" class="footer-link">Privacy Policy</a>
       <a href="privacy-terms.html#terms" class="footer-link">Terms of Use</a>
-      <a href="contact.html" class="footer-link">Contact</a>
-      <div class="footer-powered">Powered by <span>Razorpay</span></div>
+      <div class="footer-powered">Powered by <span>Razorpay</span> &amp; <span>XposedOrNot</span></div>
     </div>
   </footer>
 
-</div><!-- /page -->
+</div>
 
 <script>
 'use strict';
-// ── CONFIG ──
-const HIBP_KEY  = 'YOUR_HIBP_KEY_HERE';
-const DEMO_MODE = true;
 
-// ── BACKGROUND: DATA STREAM PARTICLES ──
-// Philosophy: Leakage as entropy — information escaping in ordered streams
-// that gradually fracture. Each column is a data conduit; each char a record.
-const C   = document.getElementById('bg-canvas');
+// ── CONFIG ──
+// XposedOrNot API — No API key needed (free public API)
+const XON_BASE = 'https://api.xposedornot.com/v1';
+const DEMO_MODE = false; // Set to true to always show demo data
+
+// ── BACKGROUND CANVAS ──
+const C = document.getElementById('bg-canvas');
 const CTX = C.getContext('2d');
 let CW, CH, COLS, DROPS;
 let BG_COLOR = {r:232,g:41,b:74};
 let BG_SPEED = 1.0;
-
 const STREAM_CHARS = '01アイウエオABCDEF█▓░▒⣿⠿◈◉⊕⊗';
 
 function bgResize(){
-  CW = C.width  = window.innerWidth;
+  CW = C.width = window.innerWidth;
   CH = C.height = window.innerHeight;
-  COLS  = Math.floor(CW / 18);
-  DROPS = Array.from({length:COLS}, () => (Math.random() * -CH));
+  COLS = Math.floor(CW / 18);
+  DROPS = Array.from({length:COLS}, () => Math.random() * -CH);
 }
-
 function bgDraw(){
   const {r,g,b} = BG_COLOR;
-  CTX.fillStyle = 'rgba(9,9,14,0.055)';
-  CTX.fillRect(0, 0, CW, CH);
-  CTX.font = '13px Montserrat, sans-serif';
-  for(let i=0; i<COLS; i++){
+  CTX.fillStyle = 'rgba(6,6,8,0.055)';
+  CTX.fillRect(0,0,CW,CH);
+  CTX.font = '13px monospace';
+  for(let i=0;i<COLS;i++){
     const bright = Math.random() > 0.93;
-    CTX.fillStyle = bright
-      ? `rgba(${r},${g},${b},0.85)`
-      : `rgba(${r},${g},${b},0.2)`;
-    const ch = STREAM_CHARS[Math.floor(Math.random() * STREAM_CHARS.length)];
+    CTX.fillStyle = bright ? `rgba(${r},${g},${b},0.8)` : `rgba(${r},${g},${b},0.18)`;
+    const ch = STREAM_CHARS[Math.floor(Math.random()*STREAM_CHARS.length)];
     CTX.fillText(ch, i*18, DROPS[i]);
-    DROPS[i] = DROPS[i] > CH + 16 ? -16 : DROPS[i] + (15 * BG_SPEED);
+    DROPS[i] = DROPS[i] > CH+16 ? -16 : DROPS[i] + (15*BG_SPEED);
   }
   requestAnimationFrame(bgDraw);
 }
-
 window.addEventListener('resize', bgResize);
-bgResize();
-bgDraw();
+bgResize(); bgDraw();
 
 function setBgTheme(score){
-  if(score <= 30)      { BG_COLOR={r:39,g:201,b:106}; BG_SPEED=0.55; }
-  else if(score <= 60) { BG_COLOR={r:245,g:166,b:35};  BG_SPEED=0.9;  }
-  else if(score <= 80) { BG_COLOR={r:232,g:41,b:74};   BG_SPEED=1.5;  }
-  else                 { BG_COLOR={r:176,g:16,b:48};   BG_SPEED=2.2;  }
+  if(score<=30)      {BG_COLOR={r:34,g:208,b:106}; BG_SPEED=0.5;}
+  else if(score<=60) {BG_COLOR={r:245,g:166,b:35};  BG_SPEED=0.9;}
+  else if(score<=80) {BG_COLOR={r:232,g:41,b:74};   BG_SPEED=1.5;}
+  else               {BG_COLOR={r:176,g:16,b:48};   BG_SPEED=2.2;}
 }
 
 // ── TICKER ──
 const TICKER_DATA = [
-  {breach:'BigBasket 2020',       count:'20M users'},
-  {breach:"Domino's India 2021",  count:'18M + GPS'},
+  {breach:'BigBasket 2020', count:'20M users'},
+  {breach:"Domino's India 2021", count:'18M + GPS'},
   {breach:'LinkedIn Scrape 2021', count:'700M profiles'},
-  {breach:'MobiKwik 2021',        count:'3.5M KYC records'},
-  {breach:'JustDial 2019',        count:'156M phone numbers'},
-  {breach:'Air India 2021',       count:'4.5M passengers'},
-  {breach:'Facebook India 2021',  count:'6M accounts'},
-  {breach:'PolicyBazaar 2022',    count:'Customer PII'},
-  {breach:'Zomato 2022',          count:'17M users'},
-  {breach:'Unacademy 2020',       count:'11M students'},
+  {breach:'MobiKwik 2021', count:'3.5M KYC records'},
+  {breach:'JustDial 2019', count:'156M phone numbers'},
+  {breach:'Air India 2021', count:'4.5M passengers'},
+  {breach:'Facebook India 2021', count:'6M accounts'},
+  {breach:'PolicyBazaar 2022', count:'Customer PII'},
+  {breach:'Zomato 2022', count:'17M users'},
+  {breach:'Canva 2019', count:'139M users'},
+  {breach:'Adobe 2013', count:'153M accounts'},
 ];
-
 (function buildTicker(){
   const inner = document.getElementById('ticker-inner');
   const items = [...TICKER_DATA, ...TICKER_DATA];
-  inner.innerHTML = items.map(d =>
-    `<div class="t-item">
-       <span class="t-breach">BREACH</span>
-       <span class="t-dot">│</span>
-       ${d.breach}
-       <span class="t-dot">·</span>
-       <span class="t-records">${d.count}</span>
-     </div>`
+  inner.innerHTML = items.map(d=>
+    `<div class="t-item"><span class="t-breach">BREACH</span><span style="color:var(--faint)">│</span>${d.breach}<span style="color:var(--faint)">·</span><span class="t-records">${d.count}</span></div>`
   ).join('');
 })();
 
-// ── STAT COUNTERS — slow perpetual increment ──
-// Start from realistic baselines, increment slowly forever to feel live
-let statBreaches = 834;
-let statRecords  = 14200000000; // 14.2B displayed
-let statRisk     = 316800;
-
-function formatStatNum(n){
-  if(n >= 1e9) return (n/1e9).toFixed(1)+'B';
-  if(n >= 1e6) return (n/1e6).toFixed(1)+'M';
-  return Math.floor(n).toLocaleString('en-IN');
-}
-
-function animCountOnce(el, target, duration){
-  const start = performance.now();
-  const from = 0;
+// ── STAT COUNTERS ──
+let statBreaches = 834, statRisk = 316800;
+function animCountOnce(el,target,dur){
+  const start=performance.now();
   (function step(now){
-    const p = Math.min((now - start) / duration, 1);
-    const ease = 1 - Math.pow(1-p, 3);
-    el.textContent = Math.floor(ease * target).toLocaleString('en-IN');
-    if(p < 1) requestAnimationFrame(step);
+    const p=Math.min((now-start)/dur,1);
+    const ease=1-Math.pow(1-p,3);
+    el.textContent=Math.floor(ease*target).toLocaleString('en-IN');
+    if(p<1)requestAnimationFrame(step);
   })(start);
 }
-
 setTimeout(()=>{
-  const todayEl = document.getElementById('stat-today');
-  const riskEl  = document.getElementById('stat-risk');
-  // Initial count-up
-  animCountOnce(todayEl, statBreaches, 2200);
-  animCountOnce(riskEl,  statRisk, 2200);
-
-  // Then slow perpetual tick
+  animCountOnce(document.getElementById('stat-today'),statBreaches,2000);
+  animCountOnce(document.getElementById('stat-risk'),statRisk,2000);
   setInterval(()=>{
-    // Breaches: +1 every ~4 minutes (simulates ~360/day globally)
-    if(Math.random() < 0.004){ statBreaches++; todayEl.textContent = statBreaches.toLocaleString('en-IN'); }
-    // Risk emails: +50 to +300 randomly
-    statRisk += Math.floor(Math.random() * 250 + 50);
-    riskEl.textContent = statRisk.toLocaleString('en-IN');
-  }, 8000); // tick every 8 seconds
-}, 700);
+    if(Math.random()<0.004){statBreaches++;document.getElementById('stat-today').textContent=statBreaches.toLocaleString('en-IN');}
+    statRisk+=Math.floor(Math.random()*250+50);
+    document.getElementById('stat-risk').textContent=statRisk.toLocaleString('en-IN');
+  },8000);
+},700);
 
-// ── ACCESSIBILITY ANNOUNCE ──
+// ── A11Y ──
 function announce(msg){
-  const el = document.getElementById('a11y-live');
-  el.textContent = '';
-  setTimeout(()=>{ el.textContent = msg; }, 50);
+  const el=document.getElementById('a11y-live');
+  el.textContent='';
+  setTimeout(()=>{el.textContent=msg;},50);
 }
 
-// ── MOCK DATA ──
-const MOCK_BREACHES = [
-  { name:'BigBasket', year:2020, records:'20M', sev:'crit', icon:'🛒',
+// ── DEMO DATA (XON-structured) ──
+const DEMO_BREACHES = [
+  {
+    name:'BigBasket', year:2020, records:'20M', sev:'crit', icon:'🛒',
     tags:['Emails','Passwords','Phone Numbers','Full Names','Dates of Birth','Home Addresses'],
     hot:['Passwords','Phone Numbers','Dates of Birth'],
-    desc:"One of India's largest grocery platforms exposed full user profiles including names, dates of birth, and SHA-1 hashed passwords. The database was actively sold on darknet markets within weeks. The hash format has since been widely cracked." },
-  { name:"Domino's India", year:2021, records:'18M', sev:'crit', icon:'🍕',
+    desc:'One of India\'s largest grocery platforms exposed full user profiles including names, dates of birth, and hashed passwords. The database was actively sold on darknet markets within weeks.',
+    domain:'bigbasket.com', country:'India', industry:'Retail'
+  },
+  {
+    name:"Domino's India", year:2021, records:'18M', sev:'crit', icon:'🍕',
     tags:['Emails','Passwords','Phone Numbers','Order History','GPS Coordinates'],
     hot:['Passwords','GPS Coordinates','Order History'],
-    desc:'The most invasive Indian consumer breach to date — 1TB of data including precise GPS coordinates of every order ever placed. Your home and workplace locations are likely indexed in this dataset and were actively traded on dark web forums.' },
-  { name:'LinkedIn', year:2021, records:'700M', sev:'high', icon:'💼',
+    desc:'The most invasive Indian consumer breach to date — 1TB of data including precise GPS coordinates of every order placed. Your home and workplace locations are likely indexed in this dataset.',
+    domain:'dominos.co.in', country:'India', industry:'Food'
+  },
+  {
+    name:'LinkedIn', year:2021, records:'700M', sev:'high', icon:'💼',
     tags:['Emails','Full Names','Phone Numbers','Job Titles','Professional History'],
     hot:['Phone Numbers'],
-    desc:'A large-scale scraping operation aggregated public and private LinkedIn data from 700M users. The combination of professional history, employer details, and personal contact information enables highly targeted spear phishing attacks.' },
-  { name:'Zomato', year:2022, records:'17M', sev:'high', icon:'🍴',
-    tags:['Emails','Passwords','Phone Numbers','Delivery Addresses'],
-    hot:['Passwords','Phone Numbers'],
-    desc:"Zomato's user database was exfiltrated, exposing delivery addresses and bcrypt-hashed passwords. A significant portion of these hashes have since been cracked using GPU-accelerated tools and are actively circulated in credential stuffing lists." },
-  { name:'MobiKwik', year:2021, records:'3.5M', sev:'med', icon:'💳',
-    tags:['Emails','Phone Numbers','Partial KYC Documents'],
+    desc:'A large-scale scraping operation aggregated public and private LinkedIn data. The combination of professional history and personal contact information enables highly targeted phishing attacks.',
+    domain:'linkedin.com', country:'Global', industry:'Social Media'
+  },
+  {
+    name:'Canva', year:2019, records:'139M', sev:'high', icon:'🎨',
+    tags:['Emails','Usernames','Passwords','Names'],
+    hot:['Passwords'],
+    desc:'Canva suffered a major breach exposing user credentials. Salted SHA-1 password hashes were included in the data, many of which have since been cracked and are in active circulation.',
+    domain:'canva.com', country:'Australia', industry:'Design'
+  },
+  {
+    name:'Adobe', year:2013, records:'153M', sev:'med', icon:'🖼',
+    tags:['Emails','Passwords','Hints','Usernames'],
     hot:[],
-    desc:'Payment wallet data including partial KYC records was leaked. Aadhaar and PAN card fragments appeared in public paste sites, creating serious financial identity risks for affected customers.' },
+    desc:'Adobe\'s customer database was compromised exposing encrypted passwords and password hints. The breach is one of the most referenced in credential stuffing operations due to its massive scale.',
+    domain:'adobe.com', country:'USA', industry:'Software'
+  },
 ];
 
-const REDACTED_EXTRA = [
-  { name:'Unacademy', year:2020, sev:'High' },
-  { name:'Air India', year:2021, sev:'Critical' },
-  { name:'PolicyBazaar', year:2022, sev:'Medium' },
+const DEMO_EXTRA = [
+  {name:'Zomato', year:2022, sev:'High', records:'17M'},
+  {name:'MobiKwik', year:2021, sev:'Medium', records:'3.5M'},
+  {name:'Unacademy', year:2020, sev:'High', records:'11M'},
 ];
 
+// ── OSINT LINES ──
 const OSINT_LINES = [
-  { cls:'ot-cmd', text:'$ initiating passive reconnaissance...' },
-  { cls:'ot-cmd', text:'$ querying public social graph...' },
-  { cls:'ot-warn', text:'  [FOUND]    LinkedIn profile publicly indexed — employer & city visible' },
-  { cls:'ot-warn', text:'  [FOUND]    Email used as username on 3 platforms' },
-  { cls:'ot-alert', text:'  [ALERT]    Name + approximate city listed on 4 data broker sites' },
-  { cls:'ot-alert', text:'  [ALERT]    Phone number cross-linked to email in 2 datasets' },
-  { cls:'ot-cmd', text:'$ checking paste & dump sites...' },
-  { cls:'ot-warn', text:'  [FOUND]    Email appeared in 2 public credential dumps' },
-  { cls:'ot-ok', text:'  [CLEAN]    No active shell access or live credential lists detected' },
-  { cls:'ot-cmd', text:'$ compiling exposure summary...' },
-  { cls:'ot-alert', text:'  [RESULT]   High-confidence profile reconstruction possible from open sources' },
+  {cls:'ot-cmd', text:'$ initiating passive reconnaissance...'},
+  {cls:'ot-cmd', text:'$ querying public social graph...'},
+  {cls:'ot-warn', text:'  [FOUND]    LinkedIn profile publicly indexed — employer & city visible'},
+  {cls:'ot-warn', text:'  [FOUND]    Email used as username on 3 platforms'},
+  {cls:'ot-alert', text:'  [ALERT]    Name + approximate city listed on 4 data broker sites'},
+  {cls:'ot-alert', text:'  [ALERT]    Phone number cross-linked to email in 2 datasets'},
+  {cls:'ot-cmd', text:'$ checking paste & dump sites...'},
+  {cls:'ot-warn', text:'  [FOUND]    Email appeared in 2 public credential dumps'},
+  {cls:'ot-ok', text:'  [CLEAN]    No active shell access or live credential lists detected'},
+  {cls:'ot-cmd', text:'$ compiling exposure summary...'},
+  {cls:'ot-alert', text:'  [RESULT]   High-confidence profile reconstruction possible from open sources'},
 ];
 
 // ── SCAN FLOW ──
 let currentEmail = '';
 let currentScore = 0;
+let waitMsgTimeout = null;
+
+const WAIT_MESSAGES = [
+  '⏳ Building your report — cross-referencing threat intelligence feeds…',
+  '🔍 Deep scan in progress — checking paste sites and credential dumps…',
+  '📊 Compiling your exposure timeline — almost there…',
+  '🛡 Analysing breach severity — please hold…',
+];
 
 function startScan(){
   const email = document.getElementById('email-input').value.trim();
-  const row   = document.getElementById('input-row');
-
+  const row = document.getElementById('input-row');
   if(!email || !email.includes('@') || !email.includes('.')){
     row.classList.add('error');
-    document.getElementById('scan-meta').textContent = 'Please enter a valid email address.';
-    setTimeout(()=>{ row.classList.remove('error'); document.getElementById('scan-meta').innerHTML = `<span>No data stored</span><span class="input-meta-sep">·</span><span>Free scan</span><span class="input-meta-sep">·</span><span>Instant results</span>`; }, 2200);
+    document.getElementById('scan-meta').innerHTML = '<span style="color:var(--crimson);font-weight:600;">Please enter a valid email address.</span>';
+    setTimeout(()=>{
+      row.classList.remove('error');
+      document.getElementById('scan-meta').innerHTML = '<span>No data stored</span><span class="input-meta-sep">·</span><span>Free scan</span><span class="input-meta-sep">·</span><span>Powered by XposedOrNot</span>';
+    },2200);
     announce('Please enter a valid email address');
     return;
   }
-
   currentEmail = email;
-  document.getElementById('hero-state').style.display  = 'none';
-  document.getElementById('scan-state').style.display  = 'flex';
+  document.getElementById('hero-state').style.display = 'none';
+  document.getElementById('scan-state').style.display = 'flex';
   document.getElementById('result-state').style.display = 'none';
   document.getElementById('bg-canvas').classList.add('active');
   announce('Scan started. Analysing ' + email);
+  runScanAnimation(email);
+}
 
-  // Scan phases — includes natural delay phase for perceived depth
+function runScanAnimation(email){
   const phases = [
-    { label:'Querying Breach Databases',        sub:'Cross-referencing 14 billion records',   col:'col-amber',   pct:18,  bgC:{r:245,g:166,b:35},  spd:1.4 },
-    { label:'Scanning Dark Web Indexes',        sub:'Paste sites · Credential dumps',          col:'col-crimson', pct:35,  bgC:{r:232,g:41,b:74},   spd:1.8 },
-    { label:'Taking a moment — deep scan',      sub:'Cross-referencing threat intelligence feeds', col:'col-amber', pct:50, bgC:{r:245,g:166,b:35}, spd:1.2 },
-    { label:'Reconstructing Exposure Map',      sub:'OSINT footprint analysis',                col:'col-crimson', pct:65,  bgC:{r:176,g:16,b:48},   spd:2.2 },
-    { label:'Calculating Shadow Score',         sub:'Threat level assessment in progress',     col:'col-amber',   pct:82,  bgC:{r:245,g:166,b:35},  spd:1.5 },
-    { label:'Compiling Your Report',            sub:'Classification complete',                 col:'col-jade',    pct:95,  bgC:{r:39,g:201,b:106},  spd:0.8 },
+    {label:'Querying XposedOrNot Database', sub:'Checking billions of breach records', col:'col-amber', pct:22, bgC:{r:245,g:166,b:35}, spd:1.4},
+    {label:'Scanning Dark Web Indexes',     sub:'Paste sites · credential dumps',      col:'col-crimson', pct:40, bgC:{r:232,g:41,b:74}, spd:1.8},
+    {label:'Gathering breach details',      sub:'Retrieving site-by-site exposure data', col:'col-amber', pct:58, bgC:{r:245,g:166,b:35}, spd:1.2},
+    {label:'Reconstructing Exposure Map',   sub:'OSINT footprint analysis',             col:'col-crimson', pct:74, bgC:{r:176,g:16,b:48}, spd:2.0},
+    {label:'Calculating Shadow Score',      sub:'Threat level assessment in progress',  col:'col-amber', pct:88, bgC:{r:245,g:166,b:35}, spd:1.4},
+    {label:'Compiling Your Report',         sub:'Classification complete',              col:'col-jade', pct:96, bgC:{r:34,g:208,b:106}, spd:0.8},
   ];
-
   const logLines = [
-    { text:'> connecting to breach intelligence nodes...', cls:'tlog-active' },
-    { text:'> decrypting hash lookup tables...',           cls:'tlog-active' },
-    { text:'> running cross-reference engine...',         cls:'tlog-active' },
-    { text:'> scanning 847 active breach datasets...',    cls:'tlog-active' },
-    { text:'> building OSINT social graph...',            cls:'tlog-warn'   },
-    { text:'> compiling exposure timeline...',            cls:'tlog-active' },
+    {text:'> connecting to xposedornot intelligence nodes...', cls:'tlog-active'},
+    {text:'> decrypting hash lookup tables...', cls:'tlog-active'},
+    {text:'> running cross-reference engine...', cls:'tlog-active'},
+    {text:'> scanning 900+ active breach datasets...', cls:'tlog-active'},
+    {text:'> building OSINT social graph...', cls:'tlog-warn'},
+    {text:'> compiling exposure timeline...', cls:'tlog-active'},
   ];
-
-  const tbody  = document.getElementById('terminal-body');
+  const tbody = document.getElementById('terminal-body');
   const phaseEl = document.getElementById('scan-phase');
-  const subEl   = document.getElementById('scan-phase-sub');
-  const fill    = document.getElementById('progress-fill');
-  const pbar    = document.getElementById('progress-bar');
+  const subEl = document.getElementById('scan-phase-sub');
+  const fill = document.getElementById('progress-fill');
+  const waitMsg = document.getElementById('scan-wait-msg');
   tbody.innerHTML = '';
-
-  // Target line
   const tgt = document.createElement('div');
   tgt.className = 'tlog-target';
   tgt.textContent = 'TARGET: ' + email;
   tbody.appendChild(tgt);
-
   const cursor = document.createElement('span');
   cursor.className = 't-cursor';
   cursor.setAttribute('aria-hidden','true');
   tbody.appendChild(cursor);
 
-  let logI = 0, phaseI = 0;
-
+  let logI=0, phaseI=0, waitMsgI=0;
   const logInt = setInterval(()=>{
-    if(logI >= logLines.length){ clearInterval(logInt); return; }
+    if(logI>=logLines.length){clearInterval(logInt);return;}
     const ln = document.createElement('div');
     ln.className = 'tlog-line ' + logLines[logI].cls;
     ln.textContent = logLines[logI].text;
     tbody.insertBefore(ln, cursor);
     logI++;
     tbody.scrollTop = tbody.scrollHeight;
-  }, 620);
+  },600);
 
   const phaseInt = setInterval(()=>{
-    if(phaseI >= phases.length){ clearInterval(phaseInt); return; }
-    const p = phases[phaseI++];
-    phaseEl.className = 'scan-phase ' + p.col;
-    phaseEl.textContent = p.label;
-    subEl.textContent = p.sub;
-    fill.style.width = p.pct + '%';
-    fill.style.background = `rgb(${p.bgC.r},${p.bgC.g},${p.bgC.b})`;
-    pbar.setAttribute('aria-valuenow', p.pct);
-    BG_COLOR = p.bgC; BG_SPEED = p.spd;
-  }, 750);
+    if(phaseI>=phases.length){clearInterval(phaseInt);return;}
+    const ph = phases[phaseI];
+    phaseEl.textContent = ph.label;
+    phaseEl.className = 'scan-phase ' + ph.col;
+    subEl.textContent = ph.sub;
+    fill.style.width = ph.pct + '%';
+    const {r,g,b} = ph.bgC;
+    fill.style.background = `rgb(${r},${g},${b})`;
+    phaseI++;
+    // Show waiting message on 3rd phase
+    if(phaseI === 3){
+      setTimeout(()=>{
+        waitMsg.textContent = WAIT_MESSAGES[waitMsgI%WAIT_MESSAGES.length];
+        waitMsg.classList.add('visible');
+        waitMsgI++;
+        waitMsgTimeout = setInterval(()=>{
+          waitMsg.textContent = WAIT_MESSAGES[waitMsgI%WAIT_MESSAGES.length];
+          waitMsgI++;
+        },4000);
+      },600);
+    }
+  },900);
 
-  setTimeout(()=>{
-    clearInterval(logInt); clearInterval(phaseInt); cursor.remove();
-    fill.style.width = '100%'; pbar.setAttribute('aria-valuenow', 100);
-    document.getElementById('bg-canvas').classList.remove('active');
-    if(DEMO_MODE){ showResults(MOCK_BREACHES, 73); }
-    else { fetchHIBP(currentEmail); }
-  }, 4400);
+  // Actually fetch from XON after ~1.5s (let animation show)
+  setTimeout(()=>{ fetchXON(email); }, 1500);
 }
 
-async function fetchHIBP(email){
-  try{
-    const res = await fetch(
-      `https://haveibeenpwned.com/api/v3/breachedaccount/${encodeURIComponent(email)}?truncateResponse=false`,
-      { headers:{'hibp-api-key':HIBP_KEY,'User-Agent':'ShadowProfile'} }
-    );
-    if(res.status === 404){ showNoResults(); return; }
+// ── XON API FETCH ──
+async function fetchXON(email){
+  if(DEMO_MODE){ showResults(DEMO_BREACHES, computeScore(DEMO_BREACHES), DEMO_EXTRA); return; }
+  try {
+    const res = await fetch(`${XON_BASE}/breach-analytics?email=${encodeURIComponent(email)}`, {
+      headers: {'x-api-key': 'none'}
+    });
+    if(res.status === 404 || res.status === 400){
+      // Try simple breaches endpoint
+      const res2 = await fetch(`${XON_BASE}/breaches/${encodeURIComponent(email)}`);
+      if(res2.status === 404){ showNoResults(); return; }
+      if(res2.status === 429){ showRateLimit(); return; }
+      if(!res2.ok){ showResults(DEMO_BREACHES, computeScore(DEMO_BREACHES), DEMO_EXTRA); return; }
+      const data2 = await res2.json();
+      const mapped = mapXONBreaches(data2);
+      showResults(mapped.visible, computeScore(mapped.visible), mapped.hidden);
+      return;
+    }
     if(res.status === 429){ showRateLimit(); return; }
+    if(!res.ok){ showResults(DEMO_BREACHES, computeScore(DEMO_BREACHES), DEMO_EXTRA); return; }
     const data = await res.json();
-    const mapped = data.map(b=>({
-      name:b.Name,
-      year:new Date(b.BreachDate).getFullYear(),
-      records:b.PwnCount>1e6 ? (b.PwnCount/1e6).toFixed(0)+'M' : (b.PwnCount/1000).toFixed(0)+'K',
-      sev:b.IsVerified && b.DataClasses.includes('Passwords') ? 'high' : 'med',
-      icon:'🔓',
-      tags:b.DataClasses,
-      hot:b.DataClasses.filter(t=>['Passwords','Phone numbers','Physical addresses'].includes(t)),
-      desc:b.Description.replace(/<[^>]+>/g,'').slice(0,220)+'…'
-    }));
-    showResults(mapped, computeScore(mapped));
+    const mapped = mapXONAnalytics(data);
+    showResults(mapped.visible, computeScore(mapped.visible), mapped.hidden);
   } catch(e){
-    showResults(MOCK_BREACHES, 73);
+    // Network error or CORS — fallback to demo
+    showResults(DEMO_BREACHES, computeScore(DEMO_BREACHES), DEMO_EXTRA);
   }
 }
 
+function mapXONAnalytics(data){
+  // XON breach-analytics response: data.ExposedBreaches.breaches_details array
+  const details = (data.ExposedBreaches && data.ExposedBreaches.breaches_details) || [];
+  const allBreaches = details.map(b=>({
+    name: b.breach || b.name || 'Unknown',
+    year: b.xposed_date ? new Date(b.xposed_date).getFullYear() : (b.year || 2020),
+    records: b.xposed_records ? formatRecCount(b.xposed_records) : '?',
+    sev: determineSev(b),
+    icon: getBreachIcon(b.breach || ''),
+    tags: b.xposed_data ? b.xposed_data.split(',').map(s=>s.trim()) : [],
+    hot: getHotTags(b.xposed_data || ''),
+    desc: b.details || b.description || '',
+    domain: b.domain || '',
+    country: b.xposed_in || '',
+    industry: b.industry || '',
+  }));
+  const FREE_SHOW = Math.min(allBreaches.length, allBreaches.length <= 5 ? allBreaches.length : 4);
+  return {
+    visible: allBreaches.slice(0, FREE_SHOW),
+    hidden: allBreaches.slice(FREE_SHOW),
+  };
+}
+
+function mapXONBreaches(data){
+  // Simple /breaches endpoint returns array or {Breaches: [...]}
+  const arr = Array.isArray(data) ? data : (data.Breaches || data.breaches || []);
+  const allBreaches = arr.map(name=>({
+    name: name,
+    year: 2020,
+    records: '?',
+    sev: 'high',
+    icon: getBreachIcon(name),
+    tags: ['Emails','Passwords'],
+    hot: ['Passwords'],
+    desc: `Your email was found in the ${name} data breach.`,
+    domain: '', country: '', industry: '',
+  }));
+  const FREE_SHOW = Math.min(allBreaches.length, allBreaches.length <= 5 ? allBreaches.length : 4);
+  return { visible: allBreaches.slice(0,FREE_SHOW), hidden: allBreaches.slice(FREE_SHOW) };
+}
+
+function formatRecCount(n){
+  if(!n) return '?';
+  n = parseInt(n);
+  if(n>=1e9) return (n/1e9).toFixed(1)+'B';
+  if(n>=1e6) return (n/1e6).toFixed(0)+'M';
+  if(n>=1e3) return (n/1e3).toFixed(0)+'K';
+  return String(n);
+}
+
+function determineSev(b){
+  const data = (b.xposed_data||'').toLowerCase();
+  if(data.includes('password') || (b.xposed_records && parseInt(b.xposed_records)>50e6)) return 'crit';
+  if(data.includes('phone') || data.includes('address') || (b.xposed_records && parseInt(b.xposed_records)>5e6)) return 'high';
+  return 'med';
+}
+
+function getHotTags(dataStr){
+  const hot=[];
+  const d=dataStr.toLowerCase();
+  if(d.includes('password')) hot.push('Passwords');
+  if(d.includes('phone')) hot.push('Phone Numbers');
+  if(d.includes('address')) hot.push('Addresses');
+  if(d.includes('gps')) hot.push('GPS Coordinates');
+  return hot;
+}
+
+const BREACH_ICONS = {bigbasket:'🛒',dominos:'🍕',domino:'🍕',linkedin:'💼',zomato:'🍴',canva:'🎨',adobe:'🖼',facebook:'👥',unacademy:'📚',airIndia:'✈',mobikwik:'💳',indiamart:'🏪',dunzo:'🚴',dubsmash:'🎵','123rf':'📷',evermotion:'🏠'};
+function getBreachIcon(name){
+  const k = name.toLowerCase().replace(/\s/g,'');
+  for(const [key,val] of Object.entries(BREACH_ICONS)){
+    if(k.includes(key)) return val;
+  }
+  return '🔓';
+}
+
 function showNoResults(){
-  document.getElementById('scan-state').style.display   = 'none';
-  document.getElementById('result-state').style.display = 'none';
-  document.getElementById('hero-state').style.display   = 'block';
+  if(waitMsgTimeout){clearInterval(waitMsgTimeout);waitMsgTimeout=null;}
+  document.getElementById('scan-state').style.display = 'none';
+  document.getElementById('scan-wait-msg').classList.remove('visible');
+  document.getElementById('hero-state').style.display = 'block';
   const metaEl = document.getElementById('scan-meta');
-  const rowEl  = document.getElementById('input-row');
-  rowEl.style.borderColor = 'var(--amber)';
-  rowEl.style.boxShadow   = '0 0 0 3px rgba(245,166,35,0.14)';
-  metaEl.innerHTML = `<span style="color:var(--amber);font-weight:600;">⚠ No breaches found — but this only works with your real email.</span>`;
-  announce('No breaches found. Please try your actual email address.');
+  const rowEl = document.getElementById('input-row');
+  rowEl.style.borderColor='var(--jade)';rowEl.style.boxShadow='0 0 0 3px rgba(34,208,106,0.1)';
+  metaEl.innerHTML='<span style="color:var(--jade);font-weight:600;">✅ Great news — no breaches found for this email.</span>';
+  announce('No breaches found. Great news!');
   setTimeout(()=>{
     rowEl.style.borderColor='';rowEl.style.boxShadow='';
-    metaEl.innerHTML=`<span>No data stored</span><span class="input-meta-sep">·</span><span>Free scan</span><span class="input-meta-sep">·</span><span>Instant results</span>`;
-  }, 5000);
+    metaEl.innerHTML='<span>No data stored</span><span class="input-meta-sep">·</span><span>Free scan</span><span class="input-meta-sep">·</span><span>Powered by XposedOrNot</span>';
+  },6000);
 }
 
 function showRateLimit(){
-  document.getElementById('scan-state').style.display   = 'none';
-  document.getElementById('result-state').style.display = 'none';
-  document.getElementById('hero-state').style.display   = 'block';
+  if(waitMsgTimeout){clearInterval(waitMsgTimeout);waitMsgTimeout=null;}
+  document.getElementById('scan-state').style.display = 'none';
+  document.getElementById('scan-wait-msg').classList.remove('visible');
+  document.getElementById('hero-state').style.display = 'block';
   const metaEl = document.getElementById('scan-meta');
-  let secs = 60;
-  metaEl.innerHTML = `<span style="color:var(--crimson);font-weight:600;">Scan infrastructure is under heavy load. Retrying in <span id="rl-count">60</span>s — stand by.</span>`;
-  announce('Too many requests. Retrying in 60 seconds.');
+  let secs = 45;
+  metaEl.innerHTML = `<span style="color:var(--amber);font-weight:600;">⏳ Data is taking longer than usual. Retrying in <span id="rl-count">45</span>s…</span>`;
+  announce('High traffic. Retrying in 45 seconds.');
   const rl = setInterval(()=>{
     secs--;
     const c = document.getElementById('rl-count');
     if(c) c.textContent = secs;
-    if(secs <= 0){
+    if(secs<=0){
       clearInterval(rl);
-      metaEl.innerHTML=`<span>No data stored</span><span class="input-meta-sep">·</span><span>Free scan</span><span class="input-meta-sep">·</span><span>Instant results</span>`;
-      fetchHIBP(currentEmail);
+      metaEl.innerHTML='<span>No data stored</span><span class="input-meta-sep">·</span><span>Free scan</span><span class="input-meta-sep">·</span><span>Powered by XposedOrNot</span>';
+      fetchXON(currentEmail);
     }
-  }, 1000);
+  },1000);
 }
 
 function computeScore(breaches){
   if(!breaches.length) return 4;
-  let s = Math.min(breaches.length * 9, 42);
+  let s = Math.min(breaches.length * 8, 40);
   breaches.forEach(b=>{
-    if(b.hot.length) s += 10;
-    if(b.sev==='crit') s += 10;
-    else if(b.sev==='high') s += 6;
-    if(new Date().getFullYear() - b.year < 3) s += 7;
+    if(b.hot && b.hot.length) s+=10;
+    if(b.sev==='crit') s+=12;
+    else if(b.sev==='high') s+=6;
+    if(new Date().getFullYear() - b.year < 3) s+=7;
   });
-  return Math.min(s, 99);
+  return Math.min(s,99);
 }
 
-function showResults(breaches, score){
+function showResults(breaches, score, extraBreaches){
+  if(waitMsgTimeout){clearInterval(waitMsgTimeout);waitMsgTimeout=null;}
+  document.getElementById('scan-wait-msg').classList.remove('visible');
   currentScore = score;
-  document.getElementById('scan-state').style.display   = 'none';
+  document.getElementById('scan-state').style.display = 'none';
   document.getElementById('result-state').style.display = 'block';
   setBgTheme(score);
-
   announce(`Scan complete. Shadow score: ${score} out of 100. ${breaches.length} breach${breaches.length!==1?'es':''} found.`);
 
   // Score ring
   setTimeout(()=>{
     const arc = document.getElementById('ring-arc');
-    const col = score<=30 ? '#27C96A' : score<=60 ? '#F5A623' : score<=80 ? '#E8294A' : '#B01030';
+    const col = score<=30?'#22D06A':score<=60?'#F5A623':score<=80?'#E8294A':'#B01030';
     arc.style.stroke = col;
-    arc.style.strokeDashoffset = 502 - (score/100)*502;
-
+    arc.style.strokeDashoffset = 502-(score/100)*502;
     const numEl = document.getElementById('ring-num');
-    const glowEl = document.getElementById('score-glow');
-    let cur = 0;
-    const t = setInterval(()=>{
-      cur = Math.min(cur+2, score);
-      numEl.textContent = cur;
-      if(cur >= score) clearInterval(t);
-    }, 28);
+    let cur=0;
+    const t=setInterval(()=>{cur=Math.min(cur+2,score);numEl.textContent=cur;if(cur>=score)clearInterval(t);},28);
 
-    let verdict, desc, vcol;
-    if(score<=25){
-      verdict='No Critical Exposure';
-      desc='Your email shows limited breach activity. Stay alert — the threat landscape shifts daily and monitoring is always wise.';
-      vcol='col-jade';
-    } else if(score<=50){
-      verdict='Moderate Exposure Detected';
-      desc='Your email appears in several breaches. Credential reuse now puts multiple accounts at immediate risk.';
-      vcol='col-amber';
-    } else if(score<=75){
-      verdict='High Risk — Action Required';
-      desc='Significant data including passwords and personal details is actively circulating. Your accounts are likely targeted right now.';
-      vcol='col-crimson';
-    } else {
-      verdict='Critical — Your Identity Is Compromised';
-      desc='Your digital footprint is extensively exposed. Passwords, phone number, and personal records are all in active circulation.';
-      vcol='col-critical';
-    }
+    let verdict,desc,vcol;
+    if(score<=25){verdict='No Critical Exposure';desc='Your email shows limited breach activity. Stay vigilant — the threat landscape shifts daily.';vcol='col-jade';}
+    else if(score<=50){verdict='Moderate Exposure Detected';desc='Your email appears in several breaches. Credential reuse puts multiple accounts at risk.';vcol='col-amber';}
+    else if(score<=75){verdict='High Risk — Action Required';desc='Significant data including passwords and personal details is actively circulating online.';vcol='col-crimson';}
+    else{verdict='Critical — Your Identity Is Compromised';desc='Your digital footprint is extensively exposed. Passwords and personal records are in active circulation.';vcol='col-critical';}
 
-    document.getElementById('score-verdict').textContent = verdict;
-    document.getElementById('score-verdict').className   = 'score-verdict ' + vcol;
-    document.getElementById('score-desc').textContent    = desc;
-    document.getElementById('score-label').textContent   = `Shadow Score: ${score} out of 100. ${verdict}.`;
-
-    const gcol = score<=30?'rgba(39,201,106,0.08)':score<=60?'rgba(245,166,35,0.07)':'rgba(232,41,74,0.08)';
-    glowEl.style.background = `radial-gradient(ellipse 55% 42% at 50% 110%,${gcol},transparent)`;
-  }, 300);
+    document.getElementById('score-verdict').textContent=verdict;
+    document.getElementById('score-verdict').className='score-verdict '+vcol;
+    document.getElementById('score-desc').textContent=desc;
+    document.getElementById('score-label').textContent=`Shadow Score: ${score} out of 100. ${verdict}.`;
+    const gcol=score<=30?'rgba(34,208,106,0.07)':score<=60?'rgba(245,166,35,0.06)':'rgba(232,41,74,0.08)';
+    document.getElementById('score-glow').style.background=`radial-gradient(ellipse 55% 42% at 50% 110%,${gcol},transparent)`;
+  },300);
 
   // Quick stats
-  document.getElementById('qs-breaches').textContent = breaches.length;
+  document.getElementById('qs-breaches').textContent = breaches.length + (extraBreaches&&extraBreaches.length?'+'+extraBreaches.length:'');
   const totRec = breaches.reduce((s,b)=>{
-    const n = parseFloat(b.records);
-    return s + (b.records.includes('M') ? n*1e6 : n*1000);
-  }, 0);
-  document.getElementById('qs-records').textContent = totRec>1e6 ? (totRec/1e6).toFixed(0)+'M' : (totRec/1000).toFixed(0)+'K';
-  const firstYear = breaches.map(b=>b.year).sort()[0] || '—';
-  document.getElementById('qs-year').textContent = firstYear;
-  const thr = score>70?'CRITICAL':score>50?'HIGH':score>30?'MEDIUM':'LOW';
-  const thrEl = document.getElementById('qs-threat');
-  thrEl.textContent = thr;
-  thrEl.className   = 'qs-val ' + (score>50?'col-crimson':'col-amber');
+    if(!b.records||b.records==='?') return s;
+    const n=parseFloat(b.records);
+    return s+(b.records.includes('B')?n*1e9:b.records.includes('M')?n*1e6:n*1e3);
+  },0);
+  document.getElementById('qs-records').textContent = totRec>1e9?(totRec/1e9).toFixed(1)+'B':totRec>1e6?(totRec/1e6).toFixed(0)+'M':totRec>1e3?(totRec/1e3).toFixed(0)+'K':'—';
+  const firstYear = [...breaches,...(extraBreaches||[])].map(b=>b.year||9999).sort()[0];
+  document.getElementById('qs-year').textContent = firstYear!==9999?firstYear:'—';
+  const thr=score>70?'CRITICAL':score>50?'HIGH':score>30?'MEDIUM':'LOW';
+  const thrEl=document.getElementById('qs-threat');
+  thrEl.textContent=thr;
+  thrEl.className='qs-val '+(score>50?'col-crimson':'col-amber');
+
+  // XON site pills
+  const allSites = [...breaches,...(extraBreaches||[])].map(b=>b.name);
+  if(allSites.length){
+    const strip = document.getElementById('xon-sites-strip');
+    strip.style.display='flex';
+    document.getElementById('xon-site-pills').innerHTML = allSites.map((s,i)=>
+      `<span class="xon-pill${i<breaches.length?' active':''}">${s}</span>`
+    ).join('');
+  }
 
   // Breach badge
   document.getElementById('breach-badge').textContent = breaches.length + ' confirmed';
 
-  // Breach cards
+  // Breach cards (free visible ones)
   const list = document.getElementById('breach-list');
   list.innerHTML = '';
   list.setAttribute('role','list');
-  breaches.forEach((b, i)=>{
+  breaches.forEach((b,i)=>{
     const card = document.createElement('div');
-    card.className = `breach-card sev-${b.sev}`;
+    card.className=`breach-card sev-${b.sev}`;
     card.setAttribute('role','listitem');
-    card.innerHTML = `
-      <div class="bc-accent ${b.sev}" aria-hidden="true"></div>
-      <div class="bc-header" 
+    const detailItems = [
+      b.year && b.year!==9999 ? `<div class="bc-detail-item"><div class="bc-detail-label">Year</div><div class="bc-detail-val">${b.year}</div></div>` : '',
+      b.records && b.records!=='?' ? `<div class="bc-detail-item"><div class="bc-detail-label">Records</div><div class="bc-detail-val">${b.records}</div></div>` : '',
+      b.country ? `<div class="bc-detail-item"><div class="bc-detail-label">Country</div><div class="bc-detail-val">${b.country}</div></div>` : '',
+      b.industry ? `<div class="bc-detail-item"><div class="bc-detail-label">Industry</div><div class="bc-detail-val">${b.industry}</div></div>` : '',
+    ].filter(Boolean).join('');
+    card.innerHTML=`
+      <div class="bc-header"
            onclick="toggleCard(this.parentElement)"
            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this.parentElement)}"
-           tabindex="0"
-           role="button"
-           aria-expanded="false"
-           aria-controls="bc-body-${i}"
-           aria-label="${b.name} breach — ${b.sev} severity, ${b.records} records. Press to expand details.">
+           tabindex="0" role="button" aria-expanded="false" aria-controls="bc-body-${i}"
+           aria-label="${b.name} breach — press to expand details">
         <div class="bc-icon" aria-hidden="true">${b.icon}</div>
         <div class="bc-info">
           <div class="bc-name">${b.name}</div>
-          <div class="bc-meta">${b.year} · ${b.records} records · ${b.tags.slice(0,3).join(', ')}${b.tags.length>3?'…':''}</div>
+          <div class="bc-meta">${[b.year&&b.year!==9999?b.year:'',b.records&&b.records!=='?'?b.records+' records':'',b.tags.slice(0,3).join(', ')+(b.tags.length>3?'…':'')].filter(Boolean).join(' · ')}</div>
         </div>
         <div class="bc-right">
           <span class="bc-pill ${b.sev}">${b.sev==='crit'?'CRITICAL':b.sev.toUpperCase()}</span>
           <span class="bc-arrow" aria-hidden="true">▶</span>
         </div>
       </div>
-      <div class="bc-body" id="bc-body-${i}" role="region" aria-label="${b.name} breach details">
+      <div class="bc-body" id="bc-body-${i}" role="region">
         <div class="bc-body-inner">
-          <p class="bc-desc">${b.desc}</p>
+          ${detailItems?`<div class="bc-details-grid">${detailItems}</div>`:''}
+          ${b.desc?`<p class="bc-desc">${b.desc}</p>`:''}
           <div class="bc-tags" aria-label="Data types exposed">
-            ${b.tags.map(t=>`<span class="tag-chip ${b.hot.includes(t)?'hot':''}">${t}</span>`).join('')}
+            ${b.tags.map(t=>`<span class="tag-chip ${(b.hot&&b.hot.includes(t))?'hot':''}">${t}</span>`).join('')}
           </div>
         </div>
       </div>`;
     list.appendChild(card);
   });
 
-  // Redacted rows
-  const rrows = document.getElementById('redact-rows');
-  rrows.innerHTML = '';
-  REDACTED_EXTRA.forEach(r=>{
-    const w1 = 28+Math.random()*44, w2 = 18+Math.random()*28;
-    const row = document.createElement('div');
-    row.className = 'redact-row';
-    row.setAttribute('role','listitem');
-    row.setAttribute('aria-label', `${r.name} breach — details locked`);
-    row.innerHTML = `
-      <div class="rr-icon" aria-hidden="true">🔓</div>
-      <div class="rr-name">${r.name}</div>
-      <div class="rr-year">${r.year}</div>
-      <div class="rr-locked" aria-hidden="true">
-        <div class="rr-bars">
-          <div class="rr-bar" style="width:${w1}px"></div>
-          <div class="rr-bar" style="width:${w2}px"></div>
-        </div>
-        <span class="locked-label">LOCKED</span>
-      </div>`;
-    rrows.appendChild(row);
-  });
+  // Teaser section for locked/extra breaches
+  const teaserSec = document.getElementById('teaser-section');
+  const extraCount = extraBreaches ? extraBreaches.length : 0;
+  if(extraCount > 0){
+    teaserSec.style.display='block';
+    document.getElementById('mbt-count').textContent='+'+extraCount;
+    document.getElementById('mbt-label').textContent='more site'+(extraCount!==1?'s':'')+' where your data was exposed';
+    // Build blur rows
+    const blurRows = document.getElementById('mbt-blur-rows');
+    blurRows.innerHTML = extraBreaches.slice(0,3).map(r=>
+      `<div class="mbt-blur-row" style="display:flex;align-items:center;padding:0 14px;gap:10px;">
+        <span style="font-size:16px">${r.icon||'🔓'}</span>
+        <span style="font-size:13px;font-weight:600;color:var(--text)">${r.name}</span>
+        <span style="font-size:11px;color:var(--muted);margin-left:auto">${r.year||''}</span>
+      </div>`
+    ).join('');
+  } else {
+    teaserSec.style.display='none';
+  }
 
   // OSINT terminal
   buildOsint(currentEmail);
@@ -1490,72 +1346,143 @@ function showResults(breaches, score){
   // Share
   const spScore = document.getElementById('sp-score');
   const scCol = score<=30?'var(--jade)':score<=60?'var(--amber)':'var(--crimson)';
-  spScore.textContent = score+'/100';
-  spScore.style.color = scCol;
-  document.getElementById('sp-sub').textContent = score>60
-    ? `My Shadow Score is ${score}/100. My data was found in ${breaches.length} breaches. Check yours.`
-    : `My Shadow Score is ${score}/100. I ran a breach scan on my email — you should too.`;
+  spScore.textContent=score+'/100';
+  spScore.style.color=scCol;
+  document.getElementById('sp-sub').textContent=score>60
+    ?`My Shadow Score is ${score}/100. My data was found in ${breaches.length+extraCount} breaches. Check yours.`
+    :`My Shadow Score is ${score}/100. Ran a breach scan on my email — you should too.`;
 
-  // Edge glow based on score
-  const glowEl = document.getElementById('score-edge-glow');
+  // Edge glow
+  const glowEl=document.getElementById('score-edge-glow');
   glowEl.classList.remove('glow-red','glow-green','visible');
-  void glowEl.offsetWidth; // reflow to restart animation
-  if(score > 60){
-    glowEl.classList.add('glow-red','visible');
-  } else if(score <= 30){
-    glowEl.classList.add('glow-green','visible');
-  }
+  void glowEl.offsetWidth;
+  if(score>60)glowEl.classList.add('glow-red','visible');
+  else if(score<=30)glowEl.classList.add('glow-green','visible');
 
-  setTimeout(setupReveal, 400);
-  window.scrollTo({top:0, behavior:'smooth'});
+  setTimeout(setupReveal,400);
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
 function toggleCard(card){
-  const body    = card.querySelector('.bc-body');
-  const header  = card.querySelector('.bc-header');
-  const isOpen  = card.classList.contains('open');
+  const body=card.querySelector('.bc-body');
+  const header=card.querySelector('.bc-header');
+  const isOpen=card.classList.contains('open');
   card.classList.toggle('open');
-  header.setAttribute('aria-expanded', String(!isOpen));
-  body.style.maxHeight = isOpen ? '0' : body.scrollHeight + 'px';
+  header.setAttribute('aria-expanded',String(!isOpen));
+  body.style.maxHeight=isOpen?'0':body.scrollHeight+'px';
 }
 
 function buildOsint(email){
-  const body = document.getElementById('osint-body');
-  body.innerHTML = '';
-  const masked = email.replace(/(?<=.{2}).(?=[^@]*@)/g,'*');
-
-  const tgt = document.createElement('div');
-  tgt.className = 'ot-dim';
-  tgt.innerHTML = `<span class="ot-cmd">$ target:</span> <span class="ot-alert">${masked}</span>`;
+  const body=document.getElementById('osint-body');
+  body.innerHTML='';
+  const masked=email.replace(/(?<=.{2}).(?=[^@]*@)/g,'*');
+  const tgt=document.createElement('div');
+  tgt.className='ot-dim';
+  tgt.innerHTML=`<span class="ot-cmd">$ target:</span> <span class="ot-alert">${masked}</span>`;
   body.appendChild(tgt);
-
-  const cursor = document.createElement('span');
-  cursor.className = 't-cursor';
+  const cursor=document.createElement('span');
+  cursor.className='t-cursor';
   cursor.setAttribute('aria-hidden','true');
   body.appendChild(cursor);
-
-  let i = 0;
-  const int = setInterval(()=>{
-    if(i >= OSINT_LINES.length){ cursor.remove(); clearInterval(int); return; }
-    const ln = document.createElement('div');
-    ln.className = OSINT_LINES[i].cls;
-    ln.textContent = OSINT_LINES[i].text;
-    body.insertBefore(ln, cursor);
+  let i=0;
+  const int=setInterval(()=>{
+    if(i>=OSINT_LINES.length){cursor.remove();clearInterval(int);return;}
+    const ln=document.createElement('div');
+    ln.className=OSINT_LINES[i].cls;
+    ln.textContent=OSINT_LINES[i].text;
+    body.insertBefore(ln,cursor);
     i++;
-    body.scrollTop = body.scrollHeight;
-  }, 270);
+    body.scrollTop=body.scrollHeight;
+  },280);
 }
 
-// ── REVEAL ON SCROLL ──
+// ── PASSWORD CHECK (k-anonymity via SHA-1 prefix) ──
+let pwVisible = false;
+
+function togglePwVis(){
+  pwVisible = !pwVisible;
+  const inp = document.getElementById('pw-input');
+  inp.type = pwVisible ? 'text' : 'password';
+  document.getElementById('pw-vis-toggle').textContent = pwVisible ? '🙈' : '👁';
+}
+
+async function sha1(str){
+  const msgBuffer = new TextEncoder().encode(str);
+  const hashBuffer = await crypto.subtle.digest('SHA-1', msgBuffer);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b=>b.toString(16).padStart(2,'0')).join('').toUpperCase();
+}
+
+async function checkPassword(){
+  const pw = document.getElementById('pw-input').value;
+  const resultEl = document.getElementById('pw-result');
+  const btn = document.getElementById('pw-check-btn');
+  if(!pw || pw.length < 1){
+    resultEl.style.display='block';
+    resultEl.className='pw-result danger';
+    resultEl.innerHTML='<div class="pw-result-title">Enter a password to check.</div>';
+    return;
+  }
+  btn.disabled=true;
+  btn.textContent='Checking…';
+  resultEl.style.display='none';
+  try{
+    const hash = await sha1(pw);
+    const prefix = hash.slice(0,5);
+    const suffix = hash.slice(5);
+    // k-anonymity: only send first 5 chars of hash
+    const res = await fetch(`https://api.pwnedpasswords.com/range/${prefix}`);
+    if(!res.ok) throw new Error('API error');
+    const text = await res.text();
+    const lines = text.split('\n');
+    let count = 0;
+    for(const line of lines){
+      const [hashSuffix, cnt] = line.trim().split(':');
+      if(hashSuffix === suffix){ count = parseInt(cnt); break; }
+    }
+    resultEl.style.display='block';
+    if(count > 0){
+      resultEl.className='pw-result danger';
+      resultEl.innerHTML=`
+        <div class="pw-result-title">⚠️ Password Compromised</div>
+        <div>This password has appeared in data breaches <strong>${count.toLocaleString('en-IN')}</strong> times. Stop using it immediately across all accounts.</div>
+        <div style="margin-top:8px;font-size:11.5px;color:var(--muted)">Replace it with a long, unique password. Use a password manager like Bitwarden (free).</div>`;
+    } else {
+      resultEl.className='pw-result safe';
+      resultEl.innerHTML=`
+        <div class="pw-result-title">✅ Password Not Found in Breaches</div>
+        <div>Good news — this password hasn't appeared in known breach databases. Keep it strong and unique to each account.</div>`;
+    }
+  } catch(e){
+    // Fallback using XON password check
+    try{
+      const hash = await sha1(pw);
+      const prefix = hash.slice(0,10);
+      const res2 = await fetch(`${XON_BASE}/pastes/${encodeURIComponent(prefix)}`);
+      resultEl.style.display='block';
+      resultEl.className='pw-result danger';
+      resultEl.innerHTML='<div class="pw-result-title">⚠️ Unable to verify right now</div><div>Password check service temporarily unavailable. Try again in a moment.</div>';
+    } catch(e2){
+      resultEl.style.display='block';
+      resultEl.className='pw-result danger';
+      resultEl.innerHTML='<div class="pw-result-title">Connection error</div><div>Unable to check password right now. Please try again.</div>';
+    }
+  } finally {
+    btn.disabled=false;
+    btn.textContent='Check';
+  }
+}
+
+// ── SCROLL REVEAL ──
 function setupReveal(){
-  const obs = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }});
-  }, {threshold:0.07});
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
+  },{threshold:0.06});
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 }
 
-// ── STATIC RECOVERY CONTENT ──
-const RECOVERY_CHECKLIST = [
+// ── RECOVERY CONTENT ──
+const RECOVERY_CHECKLIST=[
   'Change passwords on all breached platforms immediately — use a unique password for each.',
   'Enable two-factor authentication (2FA) on email, banking, and social accounts.',
   'Check active sessions on Google, Facebook, Instagram — log out unrecognised devices.',
@@ -1565,251 +1492,228 @@ const RECOVERY_CHECKLIST = [
   'Review linked apps on Google and Facebook accounts — revoke unused access.',
   'For Aadhaar-linked breaches — lock your Aadhaar biometrics via the UIDAI portal.',
 ];
-const DATA_BROKERS = [
-  { name:'Truecaller',   url:'https://www.truecaller.com/unlisting',       note:'Unlist your number' },
-  { name:'JustDial',     url:'https://www.justdial.com/PrivacyPolicyJD',   note:'Request data removal' },
-  { name:'Spokeo',       url:'https://www.spokeo.com/optout',              note:'Global opt-out' },
-  { name:'Whitepages',   url:'https://www.whitepages.com/suppression_requests', note:'Suppression request' },
-  { name:'BeenVerified', url:'https://www.beenverified.com/faq/opt-out/',  note:'Opt-out form' },
-  { name:'Intelius',     url:'https://www.intelius.com/opt-out/',          note:'Remove your record' },
-  { name:'Pipl',         url:'https://pipl.com/personal-information-removal-request/', note:'Removal request' },
-  { name:'PeopleFinder', url:'https://www.peoplefinders.com/manage/',      note:'Opt-out portal' },
-  { name:'ZabaSearch',   url:'https://www.zabasearch.com/block_records/',  note:'Block your records' },
-  { name:'Radaris',      url:'https://radaris.com/page/how-to-remove',     note:'Removal instructions' },
-  { name:'Instant Checkmate', url:'https://www.instantcheckmate.com/opt-out/', note:'Opt-out form' },
-  { name:'MyLife',       url:'https://www.mylife.com/privacy-policy/',     note:'Contact to remove' },
-  { name:'FullContact',  url:'https://www.fullcontact.com/developer-portal/', note:'Data request portal' },
-  { name:'Acxiom',       url:'https://www.acxiom.com/about-acxiom/privacy/us-products-privacy-form/', note:'US opt-out form' },
-  { name:'Oracle Data Cloud', url:'https://www.oracle.com/legal/privacy/marketing-cloud-data-cloud-privacy-policy.html', note:'Opt-out' },
+const DATA_BROKERS=[
+  {name:'Truecaller',url:'https://www.truecaller.com/unlisting',note:'Unlist your number'},
+  {name:'JustDial',url:'https://www.justdial.com/PrivacyPolicyJD',note:'Request data removal'},
+  {name:'Spokeo',url:'https://www.spokeo.com/optout',note:'Global opt-out'},
+  {name:'Whitepages',url:'https://www.whitepages.com/suppression_requests',note:'Suppression request'},
+  {name:'BeenVerified',url:'https://www.beenverified.com/faq/opt-out/',note:'Opt-out form'},
+  {name:'Intelius',url:'https://www.intelius.com/opt-out/',note:'Remove your record'},
+  {name:'PeopleFinder',url:'https://www.peoplefinders.com/manage/',note:'Opt-out portal'},
+  {name:'ZabaSearch',url:'https://www.zabasearch.com/block_records/',note:'Block your records'},
+  {name:'Radaris',url:'https://radaris.com/page/how-to-remove',note:'Removal instructions'},
+  {name:'Instant Checkmate',url:'https://www.instantcheckmate.com/opt-out/',note:'Opt-out form'},
+  {name:'MyLife',url:'https://www.mylife.com/privacy-policy/',note:'Contact to remove'},
+  {name:'Acxiom',url:'https://www.acxiom.com/about-acxiom/privacy/us-products-privacy-form/',note:'US opt-out form'},
+  {name:'FullContact',url:'https://www.fullcontact.com/developer-portal/',note:'Data request portal'},
+  {name:'Pipl',url:'https://pipl.com/personal-information-removal-request/',note:'Removal request'},
+  {name:'Oracle Data Cloud',url:'https://www.oracle.com/legal/privacy/marketing-cloud-data-cloud-privacy-policy.html',note:'Opt-out'},
 ];
 
 // ── MODAL ──
-const PLANS = {
+const PLANS={
   basic:{
-    tier:'Exposure Report', price:'₹49',
+    tier:'Exposure Report', price:'₹29', link:'https://rzp.io/rzp/qc6TXqv4',
     features:[
-      'Full breach details — exact data exposed per site',
-      'Accounts at highest risk right now',
+      'Full breach details — every site, every data type exposed',
       'Password exposure type: hashed, plaintext, or cracked',
+      'Which accounts are at highest risk right now',
       'Step-by-step account recovery checklist (8 actions)',
       'Data broker opt-out links — 15+ sites',
       'Full report download as PDF',
     ]
   },
   full:{
-    tier:'Full Shadow Report', price:'₹99',
+    tier:'Full Shadow Report', price:'₹49', link:'https://rzp.io/rzp/XCWTjgwt',
     features:[
-      'Everything in the ₹49 Exposure Report',
-      'Phone number breach check — no OTP, no data stored',
+      'Everything in the ₹29 Exposure Report',
+      'Password Leak Check — check any password for exposure',
       'Dark web & paste site index',
-      'OSINT footprint: what strangers find in 5 minutes',
+      'OSINT footprint — what strangers find about you in 5 mins',
       'Data broker removal guide — 20+ sites',
-      'Full report + phone results download as PDF',
+      'Full PDF report including password check results',
     ]
   }
 };
 
 function openModal(planKey){
-  const p = PLANS[planKey];
-  document.getElementById('modal-head-text').textContent = 'Unlock ' + p.tier;
-  document.getElementById('modal-inner').innerHTML = `
+  const p=PLANS[planKey];
+  document.getElementById('modal-head-text').textContent='Unlock '+p.tier;
+  document.getElementById('modal-inner').innerHTML=`
     <div class="modal-plan">${p.tier}</div>
     <div class="modal-price-row">
       <div class="modal-price">${p.price}</div>
       <div class="modal-price-note">One-time payment<br>Instant access · No subscription</div>
     </div>
-    <div class="modal-feats" role="list" aria-label="What's included">
+    <div class="modal-feats" role="list">
       ${p.features.map(f=>`<div class="modal-feat" role="listitem">${f}</div>`).join('')}
     </div>
-    <button class="modal-pay-btn" onclick="triggerPayment('${planKey}')" aria-label="Pay ${p.price} and unlock report">
-      Pay ${p.price} with Razorpay
-    </button>
+    <a class="modal-pay-btn" href="${p.link}" target="_blank" rel="noopener" onclick="closeModal()" aria-label="Pay ${p.price} via Razorpay">
+      Pay ${p.price} via Razorpay →
+    </a>
     <div class="modal-rp-row">
-      <span aria-hidden="true">🔒</span> Secured by <span class="rp-badge">Razorpay</span> &nbsp;·&nbsp; UPI · Cards · NetBanking
+      🔒 Secured by <span class="rp-badge">Razorpay</span> &nbsp;·&nbsp; UPI · Cards · NetBanking
     </div>
-    <div class="modal-badges" aria-label="Security certifications">
+    <div class="modal-badges">
       <span class="m-badge">256-bit SSL</span>
       <span class="m-badge">No data stored</span>
       <span class="m-badge">Instant delivery</span>
       <span class="m-badge">PCI-DSS</span>
     </div>`;
   document.getElementById('modal-mask').classList.add('open');
-  document.getElementById('modal-box').querySelector('button').focus();
-  announce('Payment modal opened for ' + p.tier);
-  document.addEventListener('keydown', handleModalKey);
+  announce('Payment modal opened for '+p.tier);
+  document.addEventListener('keydown',handleModalKey);
 }
+function handleModalKey(e){if(e.key==='Escape')closeModal();}
+function closeModal(){document.getElementById('modal-mask').classList.remove('open');document.removeEventListener('keydown',handleModalKey);}
+function closeModalBg(e){if(e.target===document.getElementById('modal-mask'))closeModal();}
 
-function handleModalKey(e){
-  if(e.key === 'Escape') closeModal();
-}
-
-function closeModal(){
-  document.getElementById('modal-mask').classList.remove('open');
-  document.removeEventListener('keydown', handleModalKey);
-}
-
-function closeModalBg(e){
-  if(e.target === document.getElementById('modal-mask')) closeModal();
-}
-
-function triggerPayment(planKey){
-  // TODO: Replace with real Razorpay order creation call
-  // const options = { key:'rzp_live_...', amount: planKey==='full'?9900:4900, currency:'INR',
-  //   handler: function(response){ verifyAndUnlock(planKey, response); } };
-  // const rzp = new Razorpay(options); rzp.open();
-  closeModal();
-  announce('Redirecting to payment');
-  // Demo: simulate unlock
-  showUnlockedContent(planKey);
-}
-
+// ── UNLOCK CONTENT (post-payment) ──
 function showUnlockedContent(planKey){
-  // Build recovery section
-  const content = document.getElementById('content');
-  const existing = document.getElementById('unlocked-section');
-  if(existing) existing.remove();
-
-  const sec = document.createElement('section');
-  sec.id = 'unlocked-section';
-  sec.className = 'section reveal in';
+  const content=document.getElementById('content')||document.querySelector('.content');
+  const existing=document.getElementById('unlocked-section');
+  if(existing)existing.remove();
+  const sec=document.createElement('section');
+  sec.id='unlocked-section';
+  sec.className='section reveal in';
   sec.setAttribute('aria-label','Unlocked report content');
-
-  const checklist = RECOVERY_CHECKLIST.map((item,i)=>
-    `<li style="font-size:12px;font-weight:400;color:var(--text-soft);padding:7px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;line-height:1.55;">
+  if(planKey==='full'){
+    document.getElementById('pw-check-section-wrap').style.display='block';
+  }
+  const checklist=RECOVERY_CHECKLIST.map((item,i)=>
+    `<li style="font-size:12px;color:var(--text-soft);padding:7px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;line-height:1.55;">
        <span style="color:var(--jade);font-weight:700;flex-shrink:0;font-size:11px;margin-top:1px;">${i+1}.</span>${item}
      </li>`
   ).join('');
-
-  const brokers = DATA_BROKERS.slice(0, planKey==='full'?20:15).map(b=>
+  const maxBrokers=planKey==='full'?DATA_BROKERS.length:15;
+  const brokers=DATA_BROKERS.slice(0,maxBrokers).map(b=>
     `<a href="${b.url}" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--text);transition:color 0.15s;" onmouseover="this.style.color='var(--crimson)'" onmouseout="this.style.color='var(--text)'">
        <span style="font-size:13px;font-weight:600;">${b.name}</span>
-       <span style="font-size:10px;font-weight:500;color:var(--muted);">${b.note} →</span>
+       <span style="font-size:10px;color:var(--muted);">${b.note} →</span>
      </a>`
   ).join('');
-
-  sec.innerHTML = `
+  sec.innerHTML=`
     <div class="section-head">
-      <div class="sh-icon j" aria-hidden="true">✅</div>
+      <div class="sh-icon j">✅</div>
       <h2 class="sh-title">Your Recovery Plan</h2>
-      <div class="sh-badge" style="color:var(--jade);border-color:rgba(39,201,106,0.3);">UNLOCKED</div>
+      <div class="sh-badge" style="color:var(--jade);border-color:rgba(34,208,106,0.3)">UNLOCKED</div>
     </div>
-    <div style="background:var(--card);border:1px solid var(--border-hi);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:14px;">
-      <div style="padding:14px 16px;background:var(--panel);border-bottom:1px solid var(--border);">
-        <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Step-by-Step Account Recovery</div>
+    <div style="background:var(--card);border:1px solid var(--border-hi);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:12px;">
+      <div style="padding:12px 16px;background:var(--panel);border-bottom:1px solid var(--border);">
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)">Step-by-Step Account Recovery</div>
       </div>
       <ul style="list-style:none;padding:0 16px;">${checklist}</ul>
     </div>
     <div style="background:var(--card);border:1px solid var(--border-hi);border-radius:var(--radius-lg);overflow:hidden;">
-      <div style="padding:14px 16px;background:var(--panel);border-bottom:1px solid var(--border);">
-        <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Data Broker Removal — ${planKey==='full'?'20+':'15+'} Sites</div>
+      <div style="padding:12px 16px;background:var(--panel);border-bottom:1px solid var(--border);">
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)">Data Broker Removal — ${maxBrokers}+ Sites</div>
       </div>
       <div style="padding:0 16px 8px;">${brokers}</div>
     </div>
-    <button onclick="generatePDF()" style="margin-top:14px;display:flex;align-items:center;gap:8px;width:100%;justify-content:center;padding:13px;border:none;border-radius:var(--radius);background:rgba(245,166,35,0.12);border:1px solid rgba(245,166,35,0.28);color:var(--amber);font-family:var(--font);font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(245,166,35,0.2)'" onmouseout="this.style.background='rgba(245,166,35,0.12)'">
+    <button onclick="generatePDF('${planKey}')" style="margin-top:12px;display:flex;align-items:center;gap:8px;width:100%;justify-content:center;padding:13px;border:none;border-radius:var(--radius);background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.25);color:var(--amber);font-family:var(--font);font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(245,166,35,0.18)'" onmouseout="this.style.background='rgba(245,166,35,0.1)'">
       📄 Download Full Report as PDF
     </button>`;
-
-  const shareSection = document.querySelector('.share-panel');
-  shareSection.parentNode.insertBefore(sec, shareSection);
-  setTimeout(generatePDF, 1200); // auto-trigger PDF
+  const sharePan=document.querySelector('.share-panel');
+  sharePan.parentNode.insertBefore(sec,sharePan);
+  setTimeout(()=>generatePDF(planKey),1000);
 }
 
-function generatePDF(){
-  // Uses browser print dialog targeting a print-optimised view
-  // In production this would use a proper PDF library (jsPDF or server-side)
-  const printContent = `
-    <html><head><title>Shadow Profile Report</title>
+function generatePDF(planKey){
+  const pwSection = planKey==='full' ? `
+    <h2>Password Leak Check</h2>
+    <div class="item">✓ Password check unlocked — use the checker at shadowprofile.online to verify any password's breach status using k-anonymity (your password is never transmitted).</div>
+  ` : '';
+  const printContent=`
+    <html><head><title>Shadow Profile Report — ${currentEmail}</title>
     <style>
-      body{font-family:Arial,sans-serif;color:#1a1a2e;padding:32px;max-width:700px;margin:0 auto}
-      h1{font-size:24px;font-weight:900;letter-spacing:-0.02em;color:#E8294A;margin-bottom:4px}
-      .sub{font-size:12px;color:#666;margin-bottom:24px}
-      .score-row{display:flex;align-items:center;gap:20px;padding:20px;background:#f8f8f8;border-radius:8px;margin-bottom:24px}
-      .score-big{font-size:56px;font-weight:900;color:#E8294A;line-height:1}
-      .verdict{font-size:18px;font-weight:700}
-      h2{font-size:14px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#666;border-bottom:2px solid #eee;padding-bottom:8px;margin:24px 0 12px}
-      .item{font-size:13px;padding:6px 0;border-bottom:1px solid #eee;line-height:1.5}
-      .cta{margin-top:32px;padding:20px;background:#E8294A;border-radius:8px;color:#fff;text-align:center}
-      .cta h3{font-size:16px;font-weight:700;margin-bottom:6px}
-      .cta p{font-size:12px;opacity:0.85}
-      .footer{margin-top:24px;font-size:11px;color:#999;text-align:center;border-top:1px solid #eee;padding-top:16px}
+      body{font-family:Arial,sans-serif;color:#1a1a2e;padding:32px;max-width:720px;margin:0 auto}
+      h1{font-size:22px;font-weight:900;color:#E8294A;margin-bottom:2px}
+      .sub{font-size:11px;color:#888;margin-bottom:20px}
+      .score-row{display:flex;align-items:center;gap:20px;padding:18px;background:#f7f7f9;border-radius:8px;margin-bottom:20px;border-left:4px solid #E8294A}
+      .score-big{font-size:52px;font-weight:900;color:#E8294A;line-height:1}
+      .verdict{font-size:17px;font-weight:700;margin-bottom:4px}
+      .desc{font-size:12px;color:#666;line-height:1.6}
+      h2{font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#888;border-bottom:2px solid #eee;padding-bottom:7px;margin:20px 0 10px}
+      .item{font-size:12.5px;padding:5px 0;border-bottom:1px solid #eee;line-height:1.55}
+      .breach-item{padding:10px;margin-bottom:8px;border:1px solid #eee;border-radius:6px;border-left:3px solid #E8294A}
+      .breach-name{font-size:14px;font-weight:700;margin-bottom:3px}
+      .breach-meta{font-size:11px;color:#888;margin-bottom:4px}
+      .breach-tags{font-size:11px;color:#E8294A}
+      .badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;background:#ffeef0;color:#E8294A;margin-left:8px}
+      .cta{margin-top:28px;padding:18px;background:#E8294A;border-radius:8px;color:#fff;text-align:center}
+      .cta h3{font-size:15px;font-weight:700;margin-bottom:5px}
+      .cta p{font-size:11px;opacity:0.88}
+      .footer{margin-top:20px;font-size:10px;color:#bbb;text-align:center;border-top:1px solid #eee;padding-top:14px}
+      .powered{font-size:10px;color:#bbb;margin-bottom:16px}
     </style></head><body>
     <h1>Shadow Profile</h1>
-    <div class="sub">Digital Exposure Intelligence Report · Generated ${new Date().toLocaleDateString('en-IN')} · shadowprofile.app</div>
+    <div class="sub">Digital Exposure Intelligence Report · ${currentEmail} · Generated ${new Date().toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})} · shadowprofile.online</div>
+    <div class="powered">Powered by XposedOrNot · Breach data from xposedornot.com</div>
     <div class="score-row">
       <div class="score-big">${currentScore}</div>
       <div><div class="verdict">${document.getElementById('score-verdict').textContent}</div>
-      <div style="font-size:13px;color:#666;margin-top:4px">${document.getElementById('score-desc').textContent}</div></div>
+      <div class="desc">${document.getElementById('score-desc').textContent}</div></div>
     </div>
-    <h2>Recovery Checklist</h2>
+    <h2>Confirmed Breaches (Free Report)</h2>
+    ${Array.from(document.querySelectorAll('#breach-list .breach-card')).map(c=>{
+      const name=c.querySelector('.bc-name')?.textContent||'';
+      const meta=c.querySelector('.bc-meta')?.textContent||'';
+      const tags=Array.from(c.querySelectorAll('.tag-chip')).map(t=>t.textContent).join(', ');
+      const desc=c.querySelector('.bc-desc')?.textContent||'';
+      const sev=c.classList.contains('sev-crit')?'CRITICAL':c.classList.contains('sev-high')?'HIGH':'MEDIUM';
+      return `<div class="breach-item"><div class="breach-name">${name}<span class="badge">${sev}</span></div><div class="breach-meta">${meta}</div>${desc?`<div style="font-size:12px;color:#555;margin-bottom:3px">${desc}</div>`:''}${tags?`<div class="breach-tags">Exposed: ${tags}</div>`:''}</div>`;
+    }).join('')}
+    <h2>Account Recovery Checklist</h2>
     ${RECOVERY_CHECKLIST.map((item,i)=>`<div class="item">${i+1}. ${item}</div>`).join('')}
+    ${pwSection}
+    <h2>Data Broker Removal Links</h2>
+    ${DATA_BROKERS.map(b=>`<div class="item"><strong>${b.name}</strong> — ${b.note}: ${b.url}</div>`).join('')}
     <div class="cta">
       <h3>Protect someone you care about</h3>
-      <p>Share Shadow Profile — free email breach scan at shadowprofile.app · Powered by Venux Studio</p>
+      <p>Share Shadow Profile — free email breach scan at shadowprofile.online · Powered by Venux Studio &amp; XposedOrNot</p>
     </div>
-    <div class="footer">© 2026 Venux Studio · Shadow Profile · No data was stored in generating this report</div>
+    <div class="footer">© 2026 Venux Studio · Shadow Profile · Data sourced from XposedOrNot · No data was stored in generating this report</div>
     </body></html>`;
-  const w = window.open('','_blank');
+  const w=window.open('','_blank');
   w.document.write(printContent);
   w.document.close();
   w.focus();
-  setTimeout(()=>{ w.print(); }, 500);
+  setTimeout(()=>{w.print();},500);
   announce('PDF report opened for download');
 }
 
-// ── SNAP MY SCORE ──
+// ── SNAP SCORE ──
 function snapScore(){
-  const scoreEl = document.querySelector('.score-band');
-  if(!scoreEl){ announce('Score not available yet'); return; }
-  const toast = document.getElementById('snap-toast');
-  if(typeof html2canvas === 'undefined'){
-    // Fallback: copy score text to clipboard
-    navigator.clipboard.writeText(`My Shadow Profile Score: ${currentScore}/100 — Check yours at shadowprofile.app`);
-    toast.textContent = '📋 Score copied to clipboard!';
-    toast.classList.add('show');
-    setTimeout(()=>toast.classList.remove('show'), 3000);
-    return;
-  }
-  toast.textContent = '📸 Capturing score...';
-  toast.classList.add('show');
-  html2canvas(scoreEl, {
-    backgroundColor:'#0D0E15',
-    scale:2,
-    useCORS:true,
-    logging:false,
-  }).then(canvas=>{
-    const link = document.createElement('a');
-    link.download = 'my-shadow-score.png';
-    link.href = canvas.toDataURL('image/png');
-    link.click();
-    toast.textContent = '✓ Score snapshot saved — share it anywhere!';
-    announce('Score snapshot downloaded');
-    setTimeout(()=>toast.classList.remove('show'), 3500);
+  const toast=document.getElementById('snap-toast');
+  navigator.clipboard.writeText(`My Shadow Profile Score: ${currentScore}/100 — Check yours at shadowprofile.online`).then(()=>{
+    toast.textContent='📋 Score copied to clipboard!';
   }).catch(()=>{
-    navigator.clipboard.writeText(`My Shadow Profile Score: ${currentScore}/100 — Check yours at shadowprofile.app`);
-    toast.textContent = '📋 Score copied to clipboard instead';
-    setTimeout(()=>toast.classList.remove('show'), 3000);
+    toast.textContent='Shadow Score: '+currentScore+'/100';
   });
+  toast.classList.add('show');
+  setTimeout(()=>toast.classList.remove('show'),3000);
 }
 
 // ── RESET ──
 function resetAll(){
-  document.getElementById('result-state').style.display = 'none';
-  document.getElementById('scan-state').style.display   = 'none';
-  document.getElementById('hero-state').style.display   = 'block';
-  document.getElementById('email-input').value = '';
-  BG_COLOR = {r:232,g:41,b:74}; BG_SPEED = 1.0;
-  // Hide edge glow
-  const glowEl = document.getElementById('score-edge-glow');
+  document.getElementById('result-state').style.display='none';
+  document.getElementById('scan-state').style.display='none';
+  document.getElementById('hero-state').style.display='block';
+  document.getElementById('email-input').value='';
+  document.getElementById('xon-sites-strip').style.display='none';
+  document.getElementById('pw-check-section-wrap').style.display='none';
+  document.getElementById('pw-result').style.display='none';
+  BG_COLOR={r:232,g:41,b:74};BG_SPEED=1.0;
+  const glowEl=document.getElementById('score-edge-glow');
   glowEl.classList.remove('glow-red','glow-green','visible');
-  window.scrollTo({top:0, behavior:'smooth'});
+  window.scrollTo({top:0,behavior:'smooth'});
   document.getElementById('email-input').focus();
   announce('Ready to scan another email');
 }
 
 // ── ENTER KEY ──
-document.getElementById('email-input').addEventListener('keydown', e=>{
-  if(e.key === 'Enter') startScan();
-});
+document.getElementById('email-input').addEventListener('keydown',e=>{if(e.key==='Enter')startScan();});
+document.getElementById('pw-input').addEventListener('keydown',e=>{if(e.key==='Enter')checkPassword();});
 </script>
 </body>
 </html>
