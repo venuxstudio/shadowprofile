@@ -37,6 +37,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -390,6 +391,41 @@ h1 .accent{color:var(--crimson)}
 .pw-result.safe .pw-result-title{color:var(--jade)}
 .pw-privacy-note{font-size:10px;color:var(--muted);display:flex;align-items:center;gap:5px;margin-top:6px}
 
+/* INFOGRAPHIC SECTION */
+.infographic-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:0}
+@media(max-width:500px){.infographic-grid{grid-template-columns:1fr}}
+.info-card{background:var(--card);border:1px solid var(--border-hi);border-radius:var(--radius-lg);padding:16px;overflow:hidden}
+.info-card-title{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.info-card-title-icon{font-size:12px}
+/* Data type bars */
+.dt-row{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.dt-row:last-child{margin-bottom:0}
+.dt-name{font-size:11px;font-weight:500;color:var(--text-soft);width:90px;flex-shrink:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dt-bar-bg{flex:1;height:7px;background:var(--surface);border-radius:4px;overflow:hidden}
+.dt-bar-fill{height:100%;border-radius:4px;transition:width 1s cubic-bezier(0.16,1,0.3,1)}
+.dt-count{font-size:10px;font-weight:700;color:var(--muted);min-width:14px;text-align:right}
+/* Year chart */
+.year-chart{display:flex;align-items:flex-end;gap:5px;height:60px;padding-bottom:2px}
+.yc-col{display:flex;flex-direction:column;align-items:center;gap:3px;flex:1}
+.yc-bar{width:100%;border-radius:3px 3px 0 0;min-height:3px;transition:height 0.9s cubic-bezier(0.16,1,0.3,1)}
+.yc-lbl{font-size:9px;font-weight:600;color:var(--muted);letter-spacing:0.02em}
+/* Risk rings */
+.risk-summary{display:flex;flex-direction:column;gap:8px}
+.risk-item-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.risk-item-label{font-size:11px;font-weight:500;color:var(--text-soft);display:flex;align-items:center;gap:6px}
+.risk-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.risk-bar-bg{flex:1;height:6px;background:var(--surface);border-radius:3px;overflow:hidden}
+.risk-bar-fill{height:100%;border-radius:3px;transition:width 0.9s cubic-bezier(0.16,1,0.3,1)}
+.risk-count{font-size:11px;font-weight:700;min-width:20px;text-align:right}
+/* Score summary card */
+.score-summary-card{background:var(--card);border:1px solid var(--border-hi);border-radius:var(--radius-lg);padding:14px 16px;display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.ssc-ring{flex-shrink:0;position:relative}
+.ssc-val{font-family:var(--font-display);font-size:13px;font-weight:700;position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.ssc-info{flex:1}
+.ssc-label{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.ssc-verdict{font-family:var(--font-display);font-size:14px;font-weight:600;letter-spacing:-0.01em}
+.ssc-sub{font-size:11px;color:var(--muted);line-height:1.5;margin-top:2px}
+
 /* OSINT TERMINAL */
 .osint-term{background:var(--card);border:1px solid var(--border-hi);border-radius:var(--radius-lg);overflow:hidden}
 .ot-bar{display:flex;align-items:center;gap:7px;padding:10px 14px;background:var(--panel);border-bottom:1px solid var(--border)}
@@ -655,6 +691,16 @@ footer{border-top:1px solid var(--border);padding:18px 28px;display:flex;align-i
 
     <div class="content">
 
+      <!-- Visual Infographics -->
+      <section class="section reveal" id="infographic-section" aria-label="Exposure analytics">
+        <div class="section-head">
+          <div class="sh-icon b" aria-hidden="true">📊</div>
+          <h2 class="sh-title">Exposure Breakdown</h2>
+          <div class="sh-badge">Visual Analysis</div>
+        </div>
+        <div id="infographic-wrap"></div>
+      </section>
+
       <!-- Confirmed Breaches -->
       <section class="section reveal" id="breach-section" aria-label="Confirmed breaches">
         <div class="section-head">
@@ -688,6 +734,7 @@ footer{border-top:1px solid var(--border);padding:18px 28px;display:flex;align-i
                 <div class="pc-tier">Exposure Report</div>
                 <div class="pc-price"><sup>₹</sup>29</div>
                 <div class="pc-sub">One-time · Instant access</div>
+                <div style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.06em;color:var(--jade);background:rgba(34,208,106,0.08);border:1px solid rgba(34,208,106,0.2);border-radius:4px;padding:3px 8px;margin-bottom:10px">📅 Report valid for 7 days</div>
                 <div class="pc-divider"></div>
                 <ul class="pc-list" aria-label="Features included">
                   <li>All breach details — every site, every data type</li>
@@ -703,6 +750,7 @@ footer{border-top:1px solid var(--border);padding:18px 28px;display:flex;align-i
                 <div class="pc-tier">Full Shadow Report</div>
                 <div class="pc-price"><sup>₹</sup>49</div>
                 <div class="pc-sub">One-time · Complete audit</div>
+                <div style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.06em;color:var(--jade);background:rgba(34,208,106,0.08);border:1px solid rgba(34,208,106,0.2);border-radius:4px;padding:3px 8px;margin-bottom:10px">📅 Report valid for 30 days</div>
                 <div class="pc-divider"></div>
                 <ul class="pc-list" aria-label="Features included">
                   <li>Everything in the ₹29 report</li>
@@ -791,9 +839,10 @@ footer{border-top:1px solid var(--border);padding:18px 28px;display:flex;align-i
   </main>
 
   <footer role="contentinfo">
-    <div class="footer-brand">© 2026 <strong>VENUX STUDIO</strong> — All rights reserved</div>
+    <div class="footer-brand">© 2026 <a href="https://www.google.com" target="_blank" rel="noopener" style="color:var(--text-soft);font-weight:700;text-decoration:none;transition:color 0.15s" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text-soft)'">VENUX STUDIO</a> — All rights reserved</div>
     <div class="footer-r">
       <a href="about.html" class="footer-link">About</a>
+      <a href="contact.html" class="footer-link">Contact</a>
       <a href="privacy-terms.html#privacy" class="footer-link">Privacy Policy</a>
       <a href="privacy-terms.html#terms" class="footer-link">Terms of Use</a>
       <div class="footer-powered">Powered by <span>Razorpay</span> &amp; <span>XposedOrNot</span></div>
@@ -958,10 +1007,15 @@ const OSINT_LINES = [
   {cls:'ot-alert', text:'  [RESULT]   High-confidence profile reconstruction possible from open sources'},
 ];
 
-// ── SCAN FLOW ──
+// ── STATE ──
 let currentEmail = '';
 let currentScore = 0;
+let currentReportToken = null;
+let allBreachesGlobal = [];
 let waitMsgTimeout = null;
+
+// ── TESTING FLAG — set false when ready to go live ──
+const TEST_MODE = true; // When true: payment button bypasses Razorpay
 
 const WAIT_MESSAGES = [
   '⏳ Building your report — cross-referencing threat intelligence feeds…',
@@ -1063,31 +1117,54 @@ function runScanAnimation(email){
   setTimeout(()=>{ fetchXON(email); }, 1500);
 }
 
-// ── XON API FETCH ──
-async function fetchXON(email){
-  if(DEMO_MODE){ showResults(DEMO_BREACHES, computeScore(DEMO_BREACHES), DEMO_EXTRA); return; }
+// ── API SCAN (calls backend /api/scan) ──
+async function fetchXON(email) {
+  if (DEMO_MODE) {
+    allBreachesGlobal = [...DEMO_BREACHES, ...DEMO_EXTRA];
+    showResults(DEMO_BREACHES, computeScore(DEMO_BREACHES), DEMO_EXTRA);
+    return;
+  }
   try {
-    const res = await fetch(`${XON_BASE}/breach-analytics?email=${encodeURIComponent(email)}`, {
-      headers: {'x-api-key': 'none'}
+    const res = await fetch('/api/scan', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
     });
-    if(res.status === 404 || res.status === 400){
-      // Try simple breaches endpoint
-      const res2 = await fetch(`${XON_BASE}/breaches/${encodeURIComponent(email)}`);
-      if(res2.status === 404){ showNoResults(); return; }
-      if(res2.status === 429){ showRateLimit(); return; }
-      if(!res2.ok){ showResults(DEMO_BREACHES, computeScore(DEMO_BREACHES), DEMO_EXTRA); return; }
-      const data2 = await res2.json();
-      const mapped = mapXONBreaches(data2);
-      showResults(mapped.visible, computeScore(mapped.visible), mapped.hidden);
+
+    const data = await res.json();
+
+    if (res.status === 429 || data.error === 'RATE_LIMIT') {
+      showRateLimit(); return;
+    }
+    if (!res.ok) {
+      // Fall back gracefully
+      allBreachesGlobal = [...DEMO_BREACHES, ...DEMO_EXTRA];
+      showResults(DEMO_BREACHES, computeScore(DEMO_BREACHES), DEMO_EXTRA);
       return;
     }
-    if(res.status === 429){ showRateLimit(); return; }
-    if(!res.ok){ showResults(DEMO_BREACHES, computeScore(DEMO_BREACHES), DEMO_EXTRA); return; }
-    const data = await res.json();
-    const mapped = mapXONAnalytics(data);
-    showResults(mapped.visible, computeScore(mapped.visible), mapped.hidden);
-  } catch(e){
-    // Network error or CORS — fallback to demo
+    if (data.no_breaches) {
+      showNoResults(); return;
+    }
+
+    currentReportToken = data.report_token;
+    const summary = data.free_summary;
+    allBreachesGlobal = [
+      ...(summary.free_breaches || []),
+      ...(summary.locked_breach_names || []).map(b => ({
+        ...b, tags: [], hot: [], desc: '', domain: '', country: '', industry: '',
+        icon: getBreachIcon(b.name), records: '?',
+      })),
+    ];
+    showResults(
+      summary.free_breaches || [],
+      summary.score,
+      summary.locked_breach_names || [],
+      summary
+    );
+
+  } catch (e) {
+    // Network error — use demo data so user still sees something
+    allBreachesGlobal = [...DEMO_BREACHES, ...DEMO_EXTRA];
     showResults(DEMO_BREACHES, computeScore(DEMO_BREACHES), DEMO_EXTRA);
   }
 }
@@ -1108,11 +1185,19 @@ function mapXONAnalytics(data){
     country: b.xposed_in || '',
     industry: b.industry || '',
   }));
-  const FREE_SHOW = Math.min(allBreaches.length, allBreaches.length <= 5 ? allBreaches.length : 4);
+  const FREE_SHOW = calcFreeShow(allBreaches.length);
   return {
     visible: allBreaches.slice(0, FREE_SHOW),
     hidden: allBreaches.slice(FREE_SHOW),
   };
+}
+
+function calcFreeShow(total){
+  // Dynamic: keep most for paid, show just enough to feel real
+  if(total <= 3) return 1;
+  if(total <= 6) return 2;
+  if(total <= 10) return 3;
+  return Math.min(4, Math.floor(total * 0.3)); // never more than 4 or 30%
 }
 
 function mapXONBreaches(data){
@@ -1129,7 +1214,7 @@ function mapXONBreaches(data){
     desc: `Your email was found in the ${name} data breach.`,
     domain: '', country: '', industry: '',
   }));
-  const FREE_SHOW = Math.min(allBreaches.length, allBreaches.length <= 5 ? allBreaches.length : 4);
+  const FREE_SHOW = calcFreeShow(allBreaches.length);
   return { visible: allBreaches.slice(0,FREE_SHOW), hidden: allBreaches.slice(FREE_SHOW) };
 }
 
@@ -1217,7 +1302,7 @@ function computeScore(breaches){
   return Math.min(s,99);
 }
 
-function showResults(breaches, score, extraBreaches){
+function showResults(breaches, score, extraBreaches, summary) {
   if(waitMsgTimeout){clearInterval(waitMsgTimeout);waitMsgTimeout=null;}
   document.getElementById('scan-wait-msg').classList.remove('visible');
   currentScore = score;
@@ -1264,6 +1349,13 @@ function showResults(breaches, score, extraBreaches){
   const thrEl=document.getElementById('qs-threat');
   thrEl.textContent=thr;
   thrEl.className='qs-val '+(score>50?'col-crimson':'col-amber');
+
+  // Build infographics — use pre-computed summary data if from backend
+  if (summary) {
+    buildInfographicsFromSummary(summary, breaches, extraBreaches || []);
+  } else {
+    buildInfographics(breaches, extraBreaches || []);
+  }
 
   // XON site pills
   const allSites = [...breaches,...(extraBreaches||[])].map(b=>b.name);
@@ -1322,20 +1414,23 @@ function showResults(breaches, score, extraBreaches){
 
   // Teaser section for locked/extra breaches
   const teaserSec = document.getElementById('teaser-section');
+  const allBreachNames = [...breaches,...(extraBreaches||[])].map(b=>b.name);
   const extraCount = extraBreaches ? extraBreaches.length : 0;
   if(extraCount > 0){
     teaserSec.style.display='block';
     document.getElementById('mbt-count').textContent='+'+extraCount;
-    document.getElementById('mbt-label').textContent='more site'+(extraCount!==1?'s':'')+' where your data was exposed';
-    // Build blur rows
+    const placeWord = extraCount === 1 ? 'place' : 'places';
+    document.getElementById('mbt-label').textContent=`more ${placeWord} your email was exposed — full details locked`;
+    // Build blur rows showing locked breach names visibly
     const blurRows = document.getElementById('mbt-blur-rows');
     blurRows.innerHTML = extraBreaches.slice(0,3).map(r=>
-      `<div class="mbt-blur-row" style="display:flex;align-items:center;padding:0 14px;gap:10px;">
+      `<div class="mbt-blur-row" style="display:flex;align-items:center;padding:8px 14px;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:7px;margin-bottom:6px;filter:blur(2.5px);opacity:0.35;pointer-events:none;user-select:none;">
         <span style="font-size:16px">${r.icon||'🔓'}</span>
         <span style="font-size:13px;font-weight:600;color:var(--text)">${r.name}</span>
-        <span style="font-size:11px;color:var(--muted);margin-left:auto">${r.year||''}</span>
+        <span style="font-size:11px;color:var(--muted);margin-left:auto">${r.year||''} · ${r.records||'?'}</span>
       </div>`
-    ).join('');
+    ).join('')
+    + (extraCount > 3 ? `<div style="font-size:11px;font-weight:600;color:var(--muted);text-align:center;padding:4px 0;filter:blur(2px);opacity:0.35">+ ${extraCount-3} more hidden</div>` : '');
   } else {
     teaserSec.style.display='none';
   }
@@ -1473,6 +1568,109 @@ async function checkPassword(){
   }
 }
 
+// ── INFOGRAPHICS FROM BACKEND SUMMARY ──
+function buildInfographicsFromSummary(summary, visible, hidden) {
+  // Use richer pre-computed data from backend
+  const fakeBreaches = allBreachesGlobal.length > 0 ? allBreachesGlobal
+    : [...visible, ...hidden.map(b => ({ ...b, tags: [], hot: [] }))];
+
+  // Override dtMap and yearMap with backend data if available
+  const dtMapOverride = summary.data_type_map || null;
+  const yearMapOverride = summary.year_map || null;
+  const sevCountsOverride = summary.sev_counts || null;
+
+  buildInfographics(visible, hidden, dtMapOverride, yearMapOverride, sevCountsOverride);
+}
+
+// ── INFOGRAPHICS ──
+function buildInfographics(visible, hidden, dtMapIn, yearMapIn, sevCountsIn){
+  const wrap = document.getElementById('infographic-wrap');
+  if(!wrap) return;
+  const all = [...visible, ...hidden];
+  if(!all.length && !dtMapIn){ wrap.innerHTML=''; return; }
+
+  // 1. Data types frequency — use backend pre-computed if available
+  const dtMap = dtMapIn ? {...dtMapIn} : {};
+  if (!dtMapIn) {
+    all.forEach(b=>{ (b.tags||[]).forEach(t=>{ dtMap[t]=(dtMap[t]||0)+1; }); });
+  }
+  const dtSorted = Object.entries(dtMap).sort((a,b)=>b[1]-a[1]).slice(0,6);
+  const maxDT = dtSorted[0]?dtSorted[0][1]:1;
+  const dtColors = ['var(--crimson)','var(--amber)','var(--blue)','var(--jade)','#A78BFA','#F472B6'];
+  const dtHTML = dtSorted.map(([name,count],i)=>`
+    <div class="dt-row">
+      <div class="dt-name">${name}</div>
+      <div class="dt-bar-bg"><div class="dt-bar-fill" style="width:${Math.round(count/maxDT*100)}%;background:${dtColors[i%dtColors.length]}"></div></div>
+      <div class="dt-count">${count}</div>
+    </div>`).join('');
+
+  // 2. Year timeline — use backend pre-computed if available
+  const yrMap = yearMapIn ? {...yearMapIn} : {};
+  if (!yearMapIn) {
+    all.forEach(b=>{ const y=parseInt(b.year)||2020; yrMap[y]=(yrMap[y]||0)+1; });
+  }
+  const yrKeys = Object.keys(yrMap).sort().filter(y=>parseInt(y)>=2013);
+  const maxYr = Math.max(...Object.values(yrMap).filter(v=>!isNaN(v)),1);
+  const yrHTML = yrKeys.map(yr=>{
+    const h = Math.max(Math.round((yrMap[yr]||0)/maxYr*52),4);
+    const col = yrMap[yr]>2?'var(--crimson)':yrMap[yr]>1?'var(--amber)':'var(--jade)';
+    return `<div class="yc-col"><div class="yc-bar" style="height:${h}px;background:${col}"></div><div class="yc-lbl">'${yr.toString().slice(2)}</div></div>`;
+  }).join('');
+
+  // 3. Severity — use backend pre-computed if available
+  const sevMap = sevCountsIn ? {...sevCountsIn} : {crit:0, high:0, med:0};
+  if (!sevCountsIn) {
+    all.forEach(b=>{ sevMap[b.sev]=(sevMap[b.sev]||0)+1; });
+  }
+  const sevTotal = Object.values(sevMap).reduce((a,b)=>a+(b||0),0)||1;
+  const sevItems = [
+    {label:'Critical',key:'crit',color:'var(--crimson)'},
+    {label:'High',key:'high',color:'var(--amber)'},
+    {label:'Medium',key:'med',color:'var(--muted)'},
+  ];
+  const sevHTML = sevItems.map(s=>`
+    <div class="risk-item-row">
+      <div class="risk-item-label"><div class="risk-dot" style="background:${s.color}"></div>${s.label}</div>
+      <div class="risk-bar-bg" style="max-width:120px"><div class="risk-bar-fill" style="width:${Math.round((sevMap[s.key]||0)/sevTotal*100)}%;background:${s.color}"></div></div>
+      <div class="risk-count" style="color:${s.color}">${sevMap[s.key]||0}</div>
+    </div>`).join('');
+
+  wrap.innerHTML = `
+    <div class="score-summary-card">
+      <div class="ssc-ring">
+        <svg width="52" height="52" viewBox="0 0 52 52" style="transform:rotate(-90deg)">
+          <circle cx="26" cy="26" r="22" fill="none" stroke="var(--surface)" stroke-width="4"/>
+          <circle cx="26" cy="26" r="22" fill="none" stroke="${currentScore>70?'var(--crimson)':currentScore>40?'var(--amber)':'var(--jade)'}" stroke-width="4" stroke-linecap="round"
+            stroke-dasharray="138" stroke-dashoffset="${138-(currentScore/100)*138}"/>
+        </svg>
+        <div class="ssc-val" style="font-size:13px;font-weight:700">${currentScore}</div>
+      </div>
+      <div class="ssc-info">
+        <div class="ssc-label">Shadow Score</div>
+        <div class="ssc-verdict" id="ssc-verdict-clone"></div>
+        <div class="ssc-sub">${all.length} breach${all.length!==1?'es':''} confirmed · ${visible.length} shown free</div>
+      </div>
+    </div>
+    <div class="infographic-grid">
+      <div class="info-card">
+        <div class="info-card-title"><span class="info-card-title-icon">📋</span>Data Types Exposed</div>
+        ${dtHTML||'<div style="font-size:12px;color:var(--muted)">No breakdown available</div>'}
+      </div>
+      <div class="info-card">
+        <div class="info-card-title"><span class="info-card-title-icon">⚠️</span>Breach Severity</div>
+        <div class="risk-summary">${sevHTML}</div>
+        <div style="margin-top:10px;border-top:1px solid var(--border);padding-top:10px">
+          <div class="info-card-title"><span class="info-card-title-icon">📅</span>By Year</div>
+          <div class="year-chart">${yrHTML}</div>
+        </div>
+      </div>
+    </div>`;
+
+  // Clone verdict text
+  const vClone = document.getElementById('ssc-verdict-clone');
+  if(vClone) vClone.textContent = document.getElementById('score-verdict').textContent;
+}
+
 // ── SCROLL REVEAL ──
 function setupReveal(){
   const obs=new IntersectionObserver(entries=>{
@@ -1539,18 +1737,33 @@ const PLANS={
 function openModal(planKey){
   const p=PLANS[planKey];
   document.getElementById('modal-head-text').textContent='Unlock '+p.tier;
+
+  const payBtnHTML = TEST_MODE
+    ? `<button class="modal-pay-btn" onclick="testModeUnlock('${planKey}')" style="cursor:pointer">
+        🧪 TEST MODE — Click to Unlock (No Payment)
+       </button>
+       <div style="font-size:10px;color:var(--amber);text-align:center;margin-bottom:8px;padding:6px 12px;background:rgba(245,166,35,0.08);border-radius:6px;border:1px solid rgba(245,166,35,0.2)">
+         Payment buttons are inactive for testing. Set TEST_MODE = false to go live.
+       </div>`
+    : `<button class="modal-pay-btn" onclick="initiatePayment('${planKey}')" id="pay-btn-main">
+        Pay ${p.price} — Unlock Instantly
+       </button>`;
+
   document.getElementById('modal-inner').innerHTML=`
     <div class="modal-plan">${p.tier}</div>
     <div class="modal-price-row">
       <div class="modal-price">${p.price}</div>
       <div class="modal-price-note">One-time payment<br>Instant access · No subscription</div>
     </div>
+    <div style="display:flex;gap:8px;margin-bottom:12px;font-size:11px;font-weight:600;color:var(--muted)">
+      <span style="padding:3px 8px;background:rgba(34,208,106,0.08);border:1px solid rgba(34,208,106,0.2);border-radius:4px;color:var(--jade)">
+        ${planKey==='basic'?'📅 Report valid 7 days':'📅 Report valid 30 days'}
+      </span>
+    </div>
     <div class="modal-feats" role="list">
       ${p.features.map(f=>`<div class="modal-feat" role="listitem">${f}</div>`).join('')}
     </div>
-    <a class="modal-pay-btn" href="${p.link}" target="_blank" rel="noopener" onclick="closeModal()" aria-label="Pay ${p.price} via Razorpay">
-      Pay ${p.price} via Razorpay →
-    </a>
+    ${payBtnHTML}
     <div class="modal-rp-row">
       🔒 Secured by <span class="rp-badge">Razorpay</span> &nbsp;·&nbsp; UPI · Cards · NetBanking
     </div>
@@ -1564,34 +1777,188 @@ function openModal(planKey){
   announce('Payment modal opened for '+p.tier);
   document.addEventListener('keydown',handleModalKey);
 }
+
+// ── TEST MODE UNLOCK (bypasses payment) ──
+function testModeUnlock(planKey) {
+  closeModal();
+  currentReportToken = currentReportToken || 'test_token_' + Date.now();
+  const expiresAt = new Date(Date.now() + (planKey==='full'?30:7) * 24*60*60*1000).toISOString();
+  onPaymentSuccess({ plan: planKey, report_token: currentReportToken, expires_at: expiresAt });
+}
+
+// ── REAL PAYMENT FLOW ──
+async function initiatePayment(planKey) {
+  const btn = document.getElementById('pay-btn-main');
+  if (btn) { btn.disabled = true; btn.textContent = 'Creating order…'; }
+
+  try {
+    const res = await fetch('/api/create-order', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ report_token: currentReportToken, plan: planKey }),
+    });
+    const order = await res.json();
+    if (!res.ok) throw new Error(order.error || 'Order creation failed');
+
+    // Open Razorpay checkout
+    const rzp = new window.Razorpay({
+      key: order.key_id,
+      amount: order.amount,
+      currency: order.currency,
+      order_id: order.order_id,
+      name: 'Shadow Profile',
+      description: order.plan_label,
+      image: '/favicon.ico',
+      handler: async function(response) {
+        // Verify payment on backend
+        try {
+          const vRes = await fetch('/api/verify-payment', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              razorpay_payment_id: response.razorpay_payment_id,
+              razorpay_order_id: response.razorpay_order_id,
+              razorpay_signature: response.razorpay_signature,
+            }),
+          });
+          const vData = await vRes.json();
+          if (!vRes.ok) throw new Error(vData.error);
+          closeModal();
+          onPaymentSuccess(vData);
+        } catch(e) {
+          alert('Payment verification failed. If you were charged, contact support with your payment ID: ' + response.razorpay_payment_id);
+        }
+      },
+      prefill: { email: currentEmail },
+      theme: { color: '#E8294A' },
+      modal: {
+        ondismiss: function() {
+          if (btn) { btn.disabled=false; btn.textContent='Pay '+PLANS[planKey].price+' — Unlock Instantly'; }
+        }
+      }
+    });
+    rzp.open();
+  } catch(e) {
+    if (btn) { btn.disabled=false; btn.textContent='Pay '+PLANS[planKey].price+' — Try Again'; }
+    console.error('Payment error:', e);
+  }
+}
+
+// ── AFTER SUCCESSFUL PAYMENT ──
+function onPaymentSuccess(data) {
+  const { plan, report_token, expires_at } = data;
+  const validityDays = plan === 'full' ? 30 : 7;
+  const expiryDate = new Date(expires_at).toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' });
+
+  // Redirect to premium report page
+  const reportUrl = `${window.location.origin}/report.html?token=${report_token}`;
+  window.location.href = reportUrl;
+}
 function handleModalKey(e){if(e.key==='Escape')closeModal();}
 function closeModal(){document.getElementById('modal-mask').classList.remove('open');document.removeEventListener('keydown',handleModalKey);}
 function closeModalBg(e){if(e.target===document.getElementById('modal-mask'))closeModal();}
+function snapScore(){
+  const toast=document.getElementById('snap-toast');
+  const txt=`My Shadow Profile Score: ${currentScore}/100 — Check yours at shadowprofile.online`;
+  navigator.clipboard.writeText(txt).then(()=>{
+    toast.textContent='📋 Score copied — share it anywhere!';
+  }).catch(()=>{ toast.textContent='Shadow Score: '+currentScore+'/100'; });
+  toast.classList.add('show');
+  setTimeout(()=>toast.classList.remove('show'),3000);
+}
 
-// ── UNLOCK CONTENT (post-payment) ──
-function showUnlockedContent(planKey){
-  const content=document.getElementById('content')||document.querySelector('.content');
-  const existing=document.getElementById('unlocked-section');
-  if(existing)existing.remove();
-  const sec=document.createElement('section');
+// ── RESET ──
+function resetAll(){
+  document.getElementById('result-state').style.display='none';
+  document.getElementById('scan-state').style.display='none';
+  document.getElementById('hero-state').style.display='block';
+  document.getElementById('email-input').value='';
+  const strip=document.getElementById('xon-sites-strip');if(strip)strip.style.display='none';
+  allBreachesGlobal=[];currentReportToken=null;
+  BG_COLOR={r:232,g:41,b:74};BG_SPEED=1.0;
+  const glowEl=document.getElementById('score-edge-glow');
+  if(glowEl)glowEl.classList.remove('glow-red','glow-green','visible');
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('email-input').focus();
+  announce('Ready to scan another email');
+}
+
+// ── ENTER KEY ──
+document.getElementById('email-input').addEventListener('keydown',e=>{if(e.key==='Enter')startScan();});
+</script>
+</body>
+</html>
+  // Reveal password check section for full plan
+  if(planKey==='full'){
+    const pwWrap = document.getElementById('pw-check-section-wrap');
+    pwWrap.style.display='block';
+    pwWrap.classList.add('reveal');
+    setTimeout(()=>pwWrap.classList.add('in'),50);
+  }
+
+  // Rebuild breach list with ALL breaches (not just free)
+  if(allBreachesGlobal.length > 0){
+    const list = document.getElementById('breach-list');
+    list.innerHTML='';
+    allBreachesGlobal.forEach((b,i)=>{
+      const card = document.createElement('div');
+      card.className=`breach-card sev-${b.sev}`;
+      card.setAttribute('role','listitem');
+      const detailItems=[
+        b.year&&b.year!==9999?`<div class="bc-detail-item"><div class="bc-detail-label">Year</div><div class="bc-detail-val">${b.year}</div></div>`:'',
+        b.records&&b.records!=='?'?`<div class="bc-detail-item"><div class="bc-detail-label">Records</div><div class="bc-detail-val">${b.records}</div></div>`:'',
+        b.country?`<div class="bc-detail-item"><div class="bc-detail-label">Country</div><div class="bc-detail-val">${b.country}</div></div>`:'',
+        b.industry?`<div class="bc-detail-item"><div class="bc-detail-label">Industry</div><div class="bc-detail-val">${b.industry}</div></div>`:'',
+      ].filter(Boolean).join('');
+      card.innerHTML=`
+        <div class="bc-header" onclick="toggleCard(this.parentElement)"
+          onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this.parentElement)}"
+          tabindex="0" role="button" aria-expanded="false">
+          <div class="bc-icon">${b.icon}</div>
+          <div class="bc-info">
+            <div class="bc-name">${b.name}</div>
+            <div class="bc-meta">${[b.year&&b.year!==9999?b.year:'',b.records&&b.records!=='?'?b.records+' records':'',b.tags.slice(0,3).join(', ')+(b.tags.length>3?'…':'')].filter(Boolean).join(' · ')}</div>
+          </div>
+          <div class="bc-right">
+            <span class="bc-pill ${b.sev}">${b.sev==='crit'?'CRITICAL':b.sev.toUpperCase()}</span>
+            <span class="bc-arrow">▶</span>
+          </div>
+        </div>
+        <div class="bc-body"><div class="bc-body-inner">
+          ${detailItems?`<div class="bc-details-grid">${detailItems}</div>`:''}
+          ${b.desc?`<p class="bc-desc">${b.desc}</p>`:''}
+          <div class="bc-tags">${(b.tags||[]).map(t=>`<span class="tag-chip ${(b.hot&&b.hot.includes(t))?'hot':''}">${t}</span>`).join('')}</div>
+        </div></div>`;
+      list.appendChild(card);
+    });
+    document.getElementById('breach-badge').textContent = allBreachesGlobal.length + ' confirmed';
+  }
+
+  // Hide locked teaser — show all
+  document.getElementById('teaser-section').style.display='none';
+
+  // Build recovery section
+  const content = document.getElementById('content') || document.querySelector('.content');
+  const existing = document.getElementById('unlocked-section');
+  if(existing) existing.remove();
+  const sec = document.createElement('section');
   sec.id='unlocked-section';
   sec.className='section reveal in';
   sec.setAttribute('aria-label','Unlocked report content');
-  if(planKey==='full'){
-    document.getElementById('pw-check-section-wrap').style.display='block';
-  }
+
   const checklist=RECOVERY_CHECKLIST.map((item,i)=>
     `<li style="font-size:12px;color:var(--text-soft);padding:7px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;line-height:1.55;">
        <span style="color:var(--jade);font-weight:700;flex-shrink:0;font-size:11px;margin-top:1px;">${i+1}.</span>${item}
      </li>`
   ).join('');
-  const maxBrokers=planKey==='full'?DATA_BROKERS.length:15;
-  const brokers=DATA_BROKERS.slice(0,maxBrokers).map(b=>
+  const maxBrokers = planKey==='full'? DATA_BROKERS.length:15;
+  const brokers = DATA_BROKERS.slice(0,maxBrokers).map(b=>
     `<a href="${b.url}" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--text);transition:color 0.15s;" onmouseover="this.style.color='var(--crimson)'" onmouseout="this.style.color='var(--text)'">
        <span style="font-size:13px;font-weight:600;">${b.name}</span>
        <span style="font-size:10px;color:var(--muted);">${b.note} →</span>
      </a>`
   ).join('');
+
   sec.innerHTML=`
     <div class="section-head">
       <div class="sh-icon j">✅</div>
@@ -1613,16 +1980,35 @@ function showUnlockedContent(planKey){
     <button onclick="generatePDF('${planKey}')" style="margin-top:12px;display:flex;align-items:center;gap:8px;width:100%;justify-content:center;padding:13px;border:none;border-radius:var(--radius);background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.25);color:var(--amber);font-family:var(--font);font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(245,166,35,0.18)'" onmouseout="this.style.background='rgba(245,166,35,0.1)'">
       📄 Download Full Report as PDF
     </button>`;
-  const sharePan=document.querySelector('.share-panel');
+
+  const sharePan = document.querySelector('.share-panel');
   sharePan.parentNode.insertBefore(sec,sharePan);
   setTimeout(()=>generatePDF(planKey),1000);
+  announce('Report unlocked. Generating PDF.');
 }
-
 function generatePDF(planKey){
-  const pwSection = planKey==='full' ? `
+  // Get pw result if available
+  const pwResultEl = document.getElementById('pw-result');
+  const pwChecked = planKey==='full' && pwResultEl && pwResultEl.style.display !== 'none';
+  const pwHTML = pwChecked ? `
+    <h2>Password Leak Check Result</h2>
+    <div class="breach-item" style="border-left-color:${pwResultEl.classList.contains('safe')?'#22D06A':'#E8294A'}">
+      <div class="breach-name">${document.querySelector('.pw-result-title')?.textContent||''}</div>
+      <div style="font-size:12px;color:#555;margin-top:4px">${pwResultEl.querySelector('div:not(.pw-result-title)')?.textContent||''}</div>
+    </div>` : planKey==='full' ? `
     <h2>Password Leak Check</h2>
-    <div class="item">✓ Password check unlocked — use the checker at shadowprofile.online to verify any password's breach status using k-anonymity (your password is never transmitted).</div>
-  ` : '';
+    <div class="item">✓ Password check unlocked — use the checker at shadowprofile.online to verify any password with k-anonymity (password never transmitted).</div>` : '';
+
+  // Use all breaches for paid report
+  const breachesToShow = allBreachesGlobal.length > 0 ? allBreachesGlobal
+    : Array.from(document.querySelectorAll('#breach-list .breach-card')).map(c=>({
+        name:c.querySelector('.bc-name')?.textContent||'',
+        meta:c.querySelector('.bc-meta')?.textContent||'',
+        tags:Array.from(c.querySelectorAll('.tag-chip')).map(t=>t.textContent).join(', '),
+        desc:c.querySelector('.bc-desc')?.textContent||'',
+        sev:c.classList.contains('sev-crit')?'CRITICAL':c.classList.contains('sev-high')?'HIGH':'MEDIUM',
+      }));
+
   const printContent=`
     <html><head><title>Shadow Profile Report — ${currentEmail}</title>
     <style>
@@ -1654,18 +2040,16 @@ function generatePDF(planKey){
       <div><div class="verdict">${document.getElementById('score-verdict').textContent}</div>
       <div class="desc">${document.getElementById('score-desc').textContent}</div></div>
     </div>
-    <h2>Confirmed Breaches (Free Report)</h2>
-    ${Array.from(document.querySelectorAll('#breach-list .breach-card')).map(c=>{
-      const name=c.querySelector('.bc-name')?.textContent||'';
-      const meta=c.querySelector('.bc-meta')?.textContent||'';
-      const tags=Array.from(c.querySelectorAll('.tag-chip')).map(t=>t.textContent).join(', ');
-      const desc=c.querySelector('.bc-desc')?.textContent||'';
-      const sev=c.classList.contains('sev-crit')?'CRITICAL':c.classList.contains('sev-high')?'HIGH':'MEDIUM';
+    <h2>All Confirmed Breaches (${breachesToShow.length})</h2>
+    ${breachesToShow.map(b=>{
+      const name=b.name||'';const meta=b.meta||(b.year&&b.year!==9999?b.year+' · ':'')+((b.records&&b.records!=='?')?b.records+' records · ':'')+((b.tags||[]).slice(0,4).join(', '));
+      const tags=(b.tags||[]).join(', ')||(b.tags||'');const desc=b.desc||b.description||'';
+      const sev=b.sev==='crit'?'CRITICAL':b.sev==='high'?'HIGH':'MEDIUM';
       return `<div class="breach-item"><div class="breach-name">${name}<span class="badge">${sev}</span></div><div class="breach-meta">${meta}</div>${desc?`<div style="font-size:12px;color:#555;margin-bottom:3px">${desc}</div>`:''}${tags?`<div class="breach-tags">Exposed: ${tags}</div>`:''}</div>`;
     }).join('')}
     <h2>Account Recovery Checklist</h2>
     ${RECOVERY_CHECKLIST.map((item,i)=>`<div class="item">${i+1}. ${item}</div>`).join('')}
-    ${pwSection}
+    ${pwHTML}
     <h2>Data Broker Removal Links</h2>
     ${DATA_BROKERS.map(b=>`<div class="item"><strong>${b.name}</strong> — ${b.note}: ${b.url}</div>`).join('')}
     <div class="cta">
@@ -1675,6 +2059,7 @@ function generatePDF(planKey){
     <div class="footer">© 2026 Venux Studio · Shadow Profile · Data sourced from XposedOrNot · No data was stored in generating this report</div>
     </body></html>`;
   const w=window.open('','_blank');
+  if(!w){announce('Please allow popups to download your PDF');return;}
   w.document.write(printContent);
   w.document.close();
   w.focus();
@@ -1703,6 +2088,8 @@ function resetAll(){
   document.getElementById('xon-sites-strip').style.display='none';
   document.getElementById('pw-check-section-wrap').style.display='none';
   document.getElementById('pw-result').style.display='none';
+  allBreachesGlobal=[];
+  const ul=document.getElementById('unlocked-section');if(ul)ul.remove();
   BG_COLOR={r:232,g:41,b:74};BG_SPEED=1.0;
   const glowEl=document.getElementById('score-edge-glow');
   glowEl.classList.remove('glow-red','glow-green','visible');
